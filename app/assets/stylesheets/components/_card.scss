@@ -1,0 +1,19 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  color: black;
+  flex: 0 1 24%;
+  margin-bottom: 1em;
+
+  li {
+    list-style: none;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+}

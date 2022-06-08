@@ -72,10 +72,11 @@
   </div>
 
 
-
-
-
-
-
-
 </div>
+
+<h2><%= current_user.first_name %></h2>
+<h2><%= current_user.last_name %></h2>
+<h2><%= current_user.email %></h2>
+
+<%# Meeeting summary, linked to new_user_meeeing_path %>
+<%= render partial: "shared/meetings"%>

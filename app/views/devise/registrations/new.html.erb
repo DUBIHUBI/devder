@@ -1,57 +1,64 @@
-<div class="container">
-  <h2>Sign up</h2>
+<div class="container my-5">
+  <h2 class="text-center">Sign up</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
     data: {turbo: false}) do |f| %>
+    <div data-controller="sign-up-form">
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :first_name,
+                    autofocus: true,
+                    required: true,
+                    error: 'Your name is mandatory, please specify one' %>
+        <%= f.input :last_name,
+                    required: true,
+                    error: 'Your name is mandatory, please specify one' %>
+          <%= f.input :age,
+                    collection: 18..60,
+                    prompt: "Select your age",
+                    # selected: 21,
+                    required: true %>
+        <%= f.input :location,
+                    required: true %>
+        <%= f.input :bio,
+                    required: true %>
+        <div data-action="change->sign-up-form#revealContent">
+          <%= f.input :student,
+                      required: true,
+                      as: :radio_buttons %>
+        </div>
+        <div data-sign-up-form-target="student">
+          <%= f.input :desired_role,
+                      required: true %>
+        </div>
+        <div data-sign-up-form-target="professional" class="d-none">
+          <%= f.input :role %>
+          <%= f.input :company_name %>
+          <%= f.input :company_type %>
+          <%= f.input :company_size %>
+          <%= f.input :funding_stage %>
+          <%= f.input :hq_location,
+                      label: 'Heaquarter location' %>
+        </div>
+      </div>
 
-    <div class="form-inputs">
-      <%= f.input :first_name,
-                  autofocus: true,
-                  required: true,
-                  error: 'Your name is mandatory, please specify one' %>
-      <%= f.input :last_name,
-                  required: true,
-                  error: 'Your name is mandatory, please specify one' %>
-        <%= f.input :age,
-                  collection: 18..60,
-                  prompt: "Select your age",
-                  # selected: 21,
-                  required: true %>
-      <%= f.input :location,
-                  required: true %>
-      <%= f.input :bio,
-                  required: true %>
-      <%= f.input :student,
-                  required: true,
-                  as: :radio_buttons %>
-      <%= f.input :desired_role,
-                  required: true %>
-      <%= f.input :role %>
-      <%= f.input :company_name %>
-      <%= f.input :company_type %>
-      <%= f.input :company_size %>
-      <%= f.input :funding_stage %>
-      <%= f.input :hq_location,
-                  label: 'Heaquarter location' %>
-      <%= f.input :email,
-                  required: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
+      <div class="form-actions btn btn-success">
+        <%= f.button :submit, "Sign up"%>
+      </div>
 
-    </div>
-
-    <div class="form-actions btn btn-success">
-      <%= f.button :submit, "Sign up"%>
     </div>
   <% end %>
 
-  <div class="btn btn-success">
+  <div>
     <%= render "devise/shared/links" %>
   </div>
 </div>

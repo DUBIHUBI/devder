@@ -1,5 +1,74 @@
-<h1>Profile</h1>
-
-<h2><%= @user.first_name %></h2>
-<h2><%= @user.last_name %></h2>
-<h2><%= @user.email %></h2>
+<div class="profiles-show">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col-4 profile-info">
+        <div class="row">
+          <h1><%= @user.first_name.upcase %> <%= @user.last_name.upcase %></h1>
+        </div>
+        <div class="row">
+          <h2><%= @user.role %></h3>
+        </div>
+        <div class="row my-3">
+          <h3><%= @user.company_name %></h3>
+        </div>
+        <div class="row my-3">
+          <div class="col-6">
+            <p><i class="fa-solid fa-arrow-up-right-dots"></i> <%= @user.company_type %></p>
+          </div>
+          <div class="col-6">
+            <p><i class="fa-solid fa-sack-dollar"></i> <%= @user.funding_stage %></p>
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col-6">
+            <p><i class="fa-solid fa-people-group"></i> <%= @user.company_size %></p>
+          </div>
+          <div class="col-6">
+            <p><i class="fa-solid fa-location-dot"></i> <%= @user.hq_location %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 text-center">
+        <div>
+          <%= image_tag(@user.image_url) %>
+        </div>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col">
+      </div>
+      <div class="col-8">
+        <h3>Bio</h3>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col-8">
+        <p><%= @user.bio %></p>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="map col-8 text-center my-5">
+        <%= image_tag('map') %>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center my-5">
+        <%= link_to "Message Dave", new_user_meeting_path(@user), class:"btn-purple" %>
+      </div>
+    </div>
+  </div>
+</div>

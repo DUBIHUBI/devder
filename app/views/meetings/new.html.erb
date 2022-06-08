@@ -1,0 +1,22 @@
+<div class="row mt-4">
+  <div class="col-12 px-3">
+    <div class="booking-form" >
+      <% if user_signed_in? %>
+        <h4 class="fw-bolder"> Book A Meeting </h4>
+          <%= simple_form_for [@user, @meeting] do |f| %>
+            <div class="form-inputs">
+                <%= f.input :date, html5: true %>
+            </div>
+             <div class="form-inputs">
+                <%= f.input :time, html5: true %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Good to go", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+      <% else %>
+        <h1>Please log in to book a meeting!</h1>
+      <% end %>
+    </div>
+  </div>
+</div>

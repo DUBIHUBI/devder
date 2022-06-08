@@ -1,12 +1,13 @@
 class MeetingsController < ApplicationController
   before_action :find_professional, only: [:new, :create]
 
-  # def show
-  #   @meeting = Meeting.find(params[:id])
-  # end
-
   def new
     @meeting = Meeting.new
+    # if Chatroom.exists_between(current_user, @user)
+    #   @chatroom = Catroom.between(current_user, @user)
+    # else
+    #   @chatroom = Chatroom.create(student: current_user, professional: @user)
+    # end
   end
 
   def create

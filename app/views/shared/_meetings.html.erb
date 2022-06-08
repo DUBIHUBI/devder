@@ -1,9 +1,22 @@
+
 <% if current_user.student? %>
   <% current_user.meetings_as_student.each do |meeting_as_student| %>
-    <p><%= meeting_as_student.professional.first_name %></p>
+    <p>Meeting with: <%= meeting_as_student.professional.first_name %></p>
+    <p>Meeting accepted <%= meeting_as_student.accepted ? "Accepted" : "Pending" %></p>
   <% end %>
 <% else %>
-  <% current_user.meetings_as_professional.each do |meetings_as_professional| %>
-    <p><%= meetings_as_professional.student %></p>
+  <% current_user.meetings_as_professional.each do |meeting_as_professional| %>
+    <div data-controller="meetings" data-user="<%=current_user.id %>" data-meeting="<%=meeting_as_professional.id %>">
+      <p>Meeting with: <%= meeting_as_professional.student.first_name %></p>
+
+      <div>
+        <% unless meeting_as_professional.accepted %>
+          <div class="btn btn-success" data-action="click->meetings#accept" data-meetings-target="accept">Accept</div>
+        <% end %>
+      </div>
+
+      <p data-meetings-target="status">Pending meeting request <%= meeting_as_professional.accepted ? "Accepted" : "Pending"  %></p>
+
+    </div>
   <% end %>
 <% end %>

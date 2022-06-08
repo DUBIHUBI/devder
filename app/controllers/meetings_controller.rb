@@ -22,10 +22,15 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def accept
+    @meeting = Meeting.find(params[:id])
+    @meeting.update(accepted: true)
+  end
+
   private
 
   def meeting_params
-    params.require(:meeting).permit(:date, :time)
+    params.require(:meeting).permit(:date, :time, :accepted)
   end
 
   def find_professional

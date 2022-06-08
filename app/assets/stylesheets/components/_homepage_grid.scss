@@ -1,0 +1,20 @@
+.homepage-grid {
+  h1 {
+    background-image: linear-gradient(45deg, #FF7900, #F8A991, #AC8FC6);
+    background-clip: text;
+    color: transparent;
+    padding: 80px 0px;
+    font-size: 48px;
+  }
+
+  h3 {
+    color: $light-gray;
+  }
+
+  img {
+    background-size: cover;
+    background-position: center;
+    width: 250px;
+    box-shadow: 0px 0px 8px #F97315;
+  }
+}

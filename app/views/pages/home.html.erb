@@ -1,2 +1,89 @@
-<h1>Landing Page</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render "shared/banner" %>
+
+<%# Testimonials Below %>
+
+<div class="homepage-testimonials">
+  <div class="container">
+    <div class="row gx-5">
+      <div class="col-4">
+          <div class="row">
+            <div class="col-4">
+              <img src="https://ca.slack-edge.com/T02NE0241-U03BG8BGHM3-1469b40be5b0-512" alt="">
+            </div>
+            <div class="col-8">
+              <p><em>"“I had no idea what I wanted to do until I found Devder!”"</em></p>
+              <p class="text-right"><strong>Anna Efthymiadou</strong><br>Fullstack Developer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-4">
+              <img src="https://ca.slack-edge.com/T02NE0241-U03BP67E9RB-3552484dd4f0-512" alt="">
+            </div>
+            <div class="col-8">
+              <p><em>"“I had no idea what I wanted to do until I found Devder!”"</em></p>
+              <p class="text-right"><strong>Carly Yuo</strong><br>Fullstack Developer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-4">
+              <img src="https://ca.slack-edge.com/T02NE0241-U03BE5997SA-1d7908470839-512" alt="">
+            </div>
+            <div class="col-8">
+              <p><em>"“I had no idea what I wanted to do until I found Devder!”"</em></p>
+              <p class="text-right"><strong>Hubert Yu</strong><br>Fullstack Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# How it works section below %>
+
+<div class="homepage-grid">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>How it works</h1>
+      </div>
+      <div class="row align-content-center">
+        <div class="col text-center">
+          <h1>1</h1>
+        </div>
+        <div class="col-4 d-flex align-items-center">
+          <h3>Find recently hired junior developers</h3>
+        </div>
+        <div class="col d-flex align-items-center">
+          <%= image_tag('how_it_works_1') %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <h1>2</h1>
+        </div>
+        <div class="col-4 d-flex align-items-center">
+          <h3>Speak with them within 24 hours</h3>
+        </div>
+        <div class="col d-flex align-items-center">
+          <%= image_tag('how_it_works_2') %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <h1>3</h1>
+        </div>
+        <div class="col-4 d-flex align-items-center">
+          <h3>Use learnings to find your dream job</h3>
+        </div>
+        <div class="col d-flex align-items-center">
+          <%= image_tag('how_it_works_3') %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

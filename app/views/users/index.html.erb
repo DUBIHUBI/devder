@@ -1,6 +1,45 @@
-<h1>List of users:</h1>
+<h1 class="text-center">List of users:</h1>
 
-<% @users.each do |user| %>
-<%= user.first_name %>
-<%= user.email %>
-<% end %>
+<div class="container">
+  <div class="row">
+  <div class="col-sm-12 col-md-4 col-lg-2">
+  <h2>Search</h2>
+    <div class="search-bar">
+
+      <%= form_tag users_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-input",
+          placeholder: "Find a pokemon near you!" %>
+        <%= submit_tag "Search", class: "btn btn-success" %>
+      <% end %>
+
+      <button type="button" data-controller="filter">Apply</button>
+    </div>
+  </div>
+    <div class="cards col-sm-12 col-md-8 col-lg-10">
+    <% @users.each do |user| %>
+      <div class="card">
+        <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
+        <% if user.image_url %>
+          <%= image_tag user.image_url %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= user.first_name %> <%= user.last_name %></h5>
+          <ul>
+          <li><strong>Email: </strong><%= user.email %></li>
+          <li><strong>Company name: </strong><%= user.company_name %></li>
+          <li><strong>Role: </strong><%= user.role %></li>
+          <%= link_to user_path(user), class:"text-decoration-none btn  btn-success" do %>
+          View profile
+          <% end %>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

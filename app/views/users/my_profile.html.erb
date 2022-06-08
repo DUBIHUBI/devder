@@ -5,12 +5,4 @@
 <h2><%= current_user.email %></h2>
 
 <%# Meeeting summary, linked to new_user_meeeing_path %>
-<% if current_user.student %>
-  <% current_user.meetings_as_student.each do |meeting_as_student| %>
-    <p><%= meeting_as_student.professional.first_name %></p>
-  <% end %>
-<% else %>
-  <% current_user.meetings_as_professional.each do |meetings_as_professional| %>
-    <p><%= meetings_as_professional.student.first_name %></p>
-  <% end %>
-<% end %>
+<%= render partial: "meetings"%>

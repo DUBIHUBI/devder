@@ -22,7 +22,7 @@
         <%= f.input :last_name,
                     required: true,
                     error: 'Your name is mandatory, please specify one' %>
-          <%= f.input :age,
+        <%= f.input :age,
                     collection: 18..60,
                     prompt: "Select your age",
                     # selected: 21,
@@ -43,9 +43,13 @@
         <div data-sign-up-form-target="professional" class="d-none">
           <%= f.input :role %>
           <%= f.input :company_name %>
-          <%= f.input :company_type %>
+          <%= f.input :company_type,
+                      prompt: "Select the type of company you work for",
+                      collection: ["Start-up", "Scale-up", "Enterprise"] %>
           <%= f.input :company_size %>
-          <%= f.input :funding_stage %>
+          <%= f.input :funding_stage,
+                      prompt: "Select the company fundging stage",
+                      collection: ["Pre-Seed", "Seed", "Series A", "Series B", "Series C", "Series D", "Post-IPO"]%>
           <%= f.input :hq_location,
                       label: 'Heaquarter location' %>
         </div>

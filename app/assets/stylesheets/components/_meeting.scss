@@ -1,0 +1,17 @@
+.meet-pending {
+  background-color: $dark-orange;
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+  margin-bottom: 16px;
+  height: 200px;
+}
+
+.meet-scheduled {
+  background-color: $white;
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+  color: $gray;
+  margin-bottom: 16px;
+  height: 200px;
+  max-width: 300px !important;
+}

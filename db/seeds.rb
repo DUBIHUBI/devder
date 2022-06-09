@@ -35,27 +35,27 @@ User.create!(email: "jake@123.com", password: "12345678", first_name: "Jake",
     role: "Junior Software Engineer", company_name: "Hamilton Associate", address: "Islington", gender: "male", student: false, company_type: "Scale-up", company_size: 100, funding_stage: "Seed", hq_location: "London", bio: Faker::Quote.famous_last_words)
 
 User.create!(email: "andrew@123.com", password: "12345678", first_name: "Andrew",
-    last_name: "Luo", image_url: "https://ca.slack-edge.com/T02NE0241-U033H6RMULA-455e860d3a79-192",
-    role: "Junior Fullstack Developer", company_name: "Le Wagon", address: "Hackney", gender: "male", student: false, company_type: "Enterprise", company_size: 1000, funding_stage: "Post-IPO", hq_location: "London", bio: Faker::Quote.famous_last_words)
+    last_name: "Moffat", image_url: "https://ca.slack-edge.com/T02NE0241-U033H6RMULA-455e860d3a79-192",
+    role: "General Manager", company_name: "Le Wagon", address: "Hackney", gender: "male", student: false, company_type: "Enterprise", company_size: 1000, funding_stage: "Post-IPO", hq_location: "London", bio: Faker::Quote.famous_last_words)
 
 User.create!(email: "boris@123.com", password: "12345678", first_name: "Boris",
     last_name: "Paillard", image_url: "https://ca.slack-edge.com/T02NE0241-U02NE1NL9-40998e0a5c92-192",
-    role: "Back-end Developer", company_name: "Le Wagon", address: "Hackney", gender: "male", student: false, company_type: "Enterprise", company_size: 25, funding_stage: "Series-B", hq_location: "London", bio: Faker::Quote.famous_last_words)
+    role: "Founder", company_name: "Le Wagon", address: "Hackney", gender: "male", student: false, company_type: "Enterprise", company_size: 25, funding_stage: "Series-B", hq_location: "London", bio: Faker::Quote.famous_last_words)
 
-    User.create!(email: "seb@123.com", password: "12345678", first_name: "Seb",
-      last_name: "Moffat", image_url: "https://ca.slack-edge.com/T02NE0241-U02NE0247-6fe39830661f-192",
-      role: "Front-end Developer", company_name: "Le Wagon", address: "Hackney", gender: "male", student: false, company_type: "Enterprise", company_size: 2500, funding_stage: "Post-IPO", hq_location: "London", bio: Faker::Quote.famous_last_words)
+User.create!(email: "seb@123.com", password: "12345678", first_name: "Seb",
+    last_name: "Saunier", image_url: "https://ca.slack-edge.com/T02NE0241-U02NE0247-6fe39830661f-192",
+    role: "Back-end Developer", company_name: "Le Wagon", address: "Hackney", gender: "male", student: false, company_type: "Enterprise", company_size: 2500, funding_stage: "Post-IPO", hq_location: "London", bio: Faker::Quote.famous_last_words)
 
-    User.create!(email: "carly@123.com", password: "12345678", first_name: "Carly",
-      last_name: "Efthymiadou", image_url: "https://ca.slack-edge.com/T02NE0241-U03BP67E9RB-3552484dd4f0-192",
-      desired_role: "Front-end Developer", address: "Woolwich", gender: "female", student: true, bio: Faker::Quote.famous_last_words)
+User.create!(email: "carly@123.com", password: "12345678", first_name: "Carly",
+    last_name: "Efthymiadou", image_url: "https://ca.slack-edge.com/T02NE0241-U03BP67E9RB-3552484dd4f0-192",
+    desired_role: "Front-end Developer", address: "Woolwich", gender: "female", student: true, bio: Faker::Quote.famous_last_words)
 
-    User.create!(email: "johan@123.com", password: "12345678", first_name: "Johan",
-      last_name: "van Meeuwen", image_url: "https://ca.slack-edge.com/T02NE0241-U03BQ1QS003-bf71b0faf5f4-512",
-      desired_role: "Front-end Developer", address: "Woolwich", gender: "female", student: true, bio: Faker::Quote.famous_last_words)
+User.create!(email: "johan@123.com", password: "12345678", first_name: "Johan",
+    last_name: "van Meeuwen", image_url: "https://ca.slack-edge.com/T02NE0241-U03BQ1QS003-bf71b0faf5f4-512",
+    desired_role: "Front-end Developer", address: "Battersea", gender: "male", student: true, bio: Faker::Quote.famous_last_words)
 
-    User.create!(email: "anna@123.com", password: "12345678", first_name: "Anna",
-      last_name: "Efthymiadou", image_url: "https://ca.slack-edge.com/T02NE0241-U03BG8BGHM3-1469b40be5b0-512",
-      desired_role: "Back-end Developer", address: "Woolwich", gender: "female", student: true, bio: Faker::Quote.famous_last_words)
+User.create!(email: "anna@123.com", password: "12345678", first_name: "Anna",
+    last_name: "Efthymiadou", image_url: "https://ca.slack-edge.com/T02NE0241-U03BG8BGHM3-1469b40be5b0-512",
+    desired_role: "Back-end Developer", address: "Poplar", gender: "female", student: true, bio: Faker::Quote.famous_last_words)
 
 puts "Finished!"

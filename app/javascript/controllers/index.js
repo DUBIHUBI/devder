@@ -10,6 +10,9 @@ application.register("filter", FilterController)
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 
+import MapController from "./map_controller.js"
+application.register("map", MapController)
+
 import MeetingsController from "./meetings_controller.js"
 application.register("meetings", MeetingsController)
 

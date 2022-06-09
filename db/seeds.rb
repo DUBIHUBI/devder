@@ -46,4 +46,16 @@ User.create!(email: "johan@123.com", password: "12345678", first_name: "Johan",
       last_name: "Efthymiadou", image_url: "https://ca.slack-edge.com/T02NE0241-U03BG8BGHM3-1469b40be5b0-512",
       role: "Back-end Developer", company_name: "Gymshark", address: "Woolwich", gender: "female", student: false, company_type: "Enterprise", company_size: 2500, funding_stage: "Post-IPO", hq_location: "London", bio: Faker::Quote.famous_last_words)
 
+    User.create!(email: "andrew@123.com", password: "12345678", first_name: "Andrew",
+      last_name: "Efthymiadou", image_url: "https://ca.slack-edge.com/T02NE0241-U033H6RMULA-455e860d3a79-192",
+      desired_role: "Back-end Developer", address: "Woolwich", gender: "female", student: true, bio: Faker::Quote.famous_last_words)
+
+    User.create!(email: "boris@123.com", password: "12345678", first_name: "Boris",
+      last_name: "Efthymiadou", image_url: "https://ca.slack-edge.com/T02NE0241-U03BG8BGHM3-1469b40be5b0-512",
+      desired_role: "Back-end Developer", address: "Woolwich", gender: "female", student: true, bio: Faker::Quote.famous_last_words)
+
+    User.create!(email: "anna@123.com", password: "12345678", first_name: "Anna",
+      last_name: "Efthymiadou", image_url: "https://ca.slack-edge.com/T02NE0241-U03BG8BGHM3-1469b40be5b0-512",
+      desired_role: "Back-end Developer", address: "Woolwich", gender: "female", student: true, bio: Faker::Quote.famous_last_words)
+
 puts "Finished!"

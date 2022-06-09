@@ -1,34 +1,34 @@
 
 <% if current_user.student? %>
 
-  <div class="row">
-    <h5>Pending Meetings</h5>
-    <% current_user.meetings_as_student.each do |meeting_as_student| %>
-      <% unless meeting_as_student.accepted %>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="meet-pending">
-            <h5 class="card-title"> Meeting with: <%= meeting_as_student.professional.first_name %> </h5>
-            <p class="card-text"> Meeting on <%= meeting_as_student.date.strftime("%d %B %Y ")%>, at <%= meeting_as_student.time%></p>
+    <div class="row">
+      <h5>Pending Meetings</h5>
+      <% current_user.meetings_as_student.each do |meeting_as_student| %>
+        <% unless meeting_as_student.accepted %>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="meet-pending">
+              <h5 class="card-title"> Meeting with: <%= meeting_as_student.professional.first_name %> </h5>
+              <p class="card-text"> Meeting on <%= meeting_as_student.date.strftime("%d %B %Y ")%>, at <%= meeting_as_student.time%></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <div class="row">
-    <h5>Scheduled Meetings</h5>
-    <% current_user.meetings_as_student.each do |meeting_as_student| %>
-      <% if meeting_as_student.accepted %>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="meet-scheduled">
-            <h5 class="card-title"> Meeting with: <%= meeting_as_student.professional.first_name %> <%= meeting_as_student.professional.last_name %></h5>
-            <p class="card-text"> Meeting on <%= meeting_as_student.date.strftime("%d %B %Y ")%>, at <%= meeting_as_student.time%></p>
-            <a href="#" class="btn" style="font-size: 12px;">Write a review</a>
+    <div class="row">
+      <h5>Scheduled Meetings</h5>
+      <% current_user.meetings_as_student.each do |meeting_as_student| %>
+        <% if meeting_as_student.accepted %>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="meet-scheduled">
+              <h5 class="card-title"> Meeting with: <%= meeting_as_student.professional.first_name %> <%= meeting_as_student.professional.last_name %></h5>
+              <p class="card-text"> Meeting on <%= meeting_as_student.date.strftime("%d %B %Y ")%>, at <%= meeting_as_student.time%></p>
+              <a href="#" class="btn" style="font-size: 12px;">Write a review</a>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
 <% else %>
 
@@ -44,11 +44,11 @@
   </div>
 
   <%# <div class="row" data-meeting-movement-target="scheduledwrapper"> %>
-  <div class="row">
+  <div class="row" data-meeting-movement-target="scheduledwrapper">
     <h5>Scheduled Meetings</h5>
     <% current_user.meetings_as_professional.each do |meeting_as_professional| %>
       <% if meeting_as_professional.accepted %>
-        <div class="col-sm-6 col-md-4 col-lg-3" data-meeting-movement-target="scheduledwrapper">
+        <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="meet-scheduled" >
             <h5 class="card-title"> Meeting with: <%= meeting_as_professional.student.first_name %> <%= meeting_as_professional.student.last_name %></h5>
             <p class="card-text"> Meeting on <%= meeting_as_professional.date.strftime("%d %B %Y ")%>, at <%= meeting_as_professional.time%></p>

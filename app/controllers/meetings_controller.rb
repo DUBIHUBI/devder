@@ -25,6 +25,11 @@ class MeetingsController < ApplicationController
   def accept
     @meeting = Meeting.find(params[:id])
     @meeting.update(accepted: true)
+
+    # respond_to do |format|
+    #   # format.html
+    #   format.text { render partial: "shared/meeting_infos", locals: { meeting: @meeting }, formats: [:html] }
+    # end
   end
 
   private

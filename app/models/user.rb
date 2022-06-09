@@ -8,4 +8,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def self.company_types
+    User.distinct.pluck(:company_type)
+  end
+
+  def self.funding_stages
+    User.distinct.pluck(:funding_stage)
+  end
 end

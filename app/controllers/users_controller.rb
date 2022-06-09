@@ -1,13 +1,17 @@
 class UsersController < ApplicationController
+  
   def index
-    if params[:query].present?
-      sql_query = "first_name ILIKE :query OR last_name ILIKE :query OR company_name ILIKE :query"
-      @users = User.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @users = User.all
-    end
+    sql_query = "first_name ILIKE :query OR last_name ILIKE :query OR company_name ILIKE :query"
+    # mama = "company_type ILIKE :company_type"
+    @users = User.all
+    @users = User.where(sql_query, query: "%#{params[:query]}%") if params[:query].present? && params[:query] != ""
+    # @users = User.where(mama, company_type: "%#{params[:company_type]}%") if params[:company_type].present? && params[:company_type] != ""
 
+    @users = @users.select { |user| user.company_type == params[:company_type] } if params[:company_type].present? && params[:company_type] != ""
 
+    @users = @users.select { |user| user.funding_stage == params[:funding_stage] } if params[:funding_stage].present? && params[:funding_stage] != ""
+
+    @users = @users.select { |user| user.gender == params[:gender] } if params[:gender].present? && params[:gender] != ""
 
     @markers = @users.geocoded.map do |user|
       {

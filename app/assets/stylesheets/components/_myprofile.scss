@@ -34,7 +34,14 @@ height: 40px;
 left: 100px;
 top: 409px;
 background-color: #9334E9;
+
+&:hover{
+  box-shadow: 10px 10px 30px #cbc2c8;
+  color: whitesmoke;
 }
+
+}
+
 
 .card-body.a{
   font-size: 12px;

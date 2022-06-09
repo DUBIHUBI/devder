@@ -1,7 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon align-items-center">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <%= image_tag ('logo') %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +12,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Explore", users_path, class: "nav-link" %>
+            <%= link_to "Professionals", users_path, class: "nav-explore" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag current_user.image_url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -25,13 +25,13 @@
           </li>
         <% else %>
           <li class="nav-item active">
-            <%= link_to "Home", users_path, class: "nav-link" %>
+            <%= link_to "Professionals", users_path, class: "nav-professionals mx-5" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link", data: {turbo: false} %>
+            <%= link_to "Login", new_user_session_path, class: "nav-login mx-4", data: {turbo: false} %>
           </li>
           <li class="nav-item">
-            <%= link_to "Sign-up", new_user_registration_path, class: "nav-link", data: {turbo: false} %>
+            <%= link_to "Sign-up", new_user_registration_path, class: "nav-sign-up", data: {turbo: false} %>
           </li>
         <% end %>
       </ul>

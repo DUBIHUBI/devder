@@ -13,6 +13,9 @@ application.register("hello", HelloController)
 import MeetingMovementController from "./meeting_movement_controller.js"
 application.register("meeting-movement", MeetingMovementController)
 
+import MapController from "./map_controller.js"
+application.register("map", MapController)
+
 import MeetingsController from "./meetings_controller.js"
 application.register("meetings", MeetingsController)
 

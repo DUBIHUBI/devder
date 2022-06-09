@@ -1,14 +1,14 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 120px;
+  padding: 80px 104px 104px 104px;
 }
 
 .banner h1 {
   margin: 0;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 96px;
-  font-weight: bold;
+  font-weight: bolder;
   background-image: linear-gradient(45deg, #9CAEF5, $dark-orange, $purple, #FB1F5B);
   background-clip: text;
   color: transparent;

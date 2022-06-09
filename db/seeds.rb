@@ -48,11 +48,11 @@ User.create!(email: "boris@123.com", password: "12345678", first_name: "Boris",
 
     User.create!(email: "carly@123.com", password: "12345678", first_name: "Carly",
       last_name: "Efthymiadou", image_url: "https://ca.slack-edge.com/T02NE0241-U03BP67E9RB-3552484dd4f0-192",
-      desired_role: "Back-end Developer", address: "Woolwich", gender: "female", student: true, bio: Faker::Quote.famous_last_words)
+      desired_role: "Front-end Developer", address: "Woolwich", gender: "female", student: true, bio: Faker::Quote.famous_last_words)
 
     User.create!(email: "johan@123.com", password: "12345678", first_name: "Johan",
       last_name: "van Meeuwen", image_url: "https://ca.slack-edge.com/T02NE0241-U03BQ1QS003-bf71b0faf5f4-512",
-      desired_role: "Back-end Developer", address: "Woolwich", gender: "female", student: true, bio: Faker::Quote.famous_last_words)
+      desired_role: "Front-end Developer", address: "Woolwich", gender: "female", student: true, bio: Faker::Quote.famous_last_words)
 
     User.create!(email: "anna@123.com", password: "12345678", first_name: "Anna",
       last_name: "Efthymiadou", image_url: "https://ca.slack-edge.com/T02NE0241-U03BG8BGHM3-1469b40be5b0-512",

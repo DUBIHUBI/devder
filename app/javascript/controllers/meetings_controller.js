@@ -3,10 +3,13 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="meetings"
 export default class extends Controller {
 
-  static targets = ["status", "accept"]
+  static targets = ["status", "accept", "card"]
 
   connect() {
     console.log('Loaded meetings controller')
+    console.dir(this.element)
+    // console.log(this.element.querySelector(".bg-warning"))
+    this.element.classList.remove("bg-warning")
   }
 
  accept(e){
@@ -16,10 +19,15 @@ export default class extends Controller {
    .then(response => response.text())
    .then((data) => {
      console.log(data)
-     this.statusTarget.innerText= "Pending meeting request accepted"
      this.acceptTarget.remove()
+
+     this.element.classList.remove("bg-warning")
+    //  this.cardTarget.outerHTML = data
+    //  this.statusTarget.innerText= "Scheduled meeting"
+     this.dispatch("confirmed", {target: this.element})
    })
  }
+
 
 
  getMetaValue = (name) => {

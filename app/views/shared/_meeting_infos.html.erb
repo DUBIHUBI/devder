@@ -1,0 +1,9 @@
+<div data-controller="meetings" data-user="<%=current_user.id %>" data-meeting="<%=meeting_as_professional.id %>" data-meetings-target="card" data-meeting-movement-target="card" data-action="meetings:confirmed->meeting-movement#moveMeeting" class="meet-card bg-warning">
+
+    <div class="card-body">
+      <h5 class="card-title"> Meeting with: <%= meeting_as_professional.student.first_name %> <%= meeting_as_professional.student.last_name %> </h5>
+    </div>
+    <div class="btn btn-success" data-action="click->meetings#accept" data-meetings-target="accept">Accept</div>
+
+  <%# <p data-meetings-target="status">Pending meeting request <%= meeting_as_professional.accepted ? "accepted" : "pending" %></p>
+</div>

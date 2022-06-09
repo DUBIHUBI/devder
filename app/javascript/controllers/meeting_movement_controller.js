@@ -15,7 +15,8 @@ export default class extends Controller {
      let meeting = e.target
      console.log(this.scheduledwrapperTarget)
      this.scheduledwrapperTarget.insertAdjacentHTML("beforeend", e.target.outerHTML)
-     e.target.remove()
+     meeting.remove()
+     meeting.classList.add("meet-scheduled")
    }
 
 }

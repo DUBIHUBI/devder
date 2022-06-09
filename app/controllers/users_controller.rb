@@ -1,13 +1,5 @@
 class UsersController < ApplicationController
-  # def index
-  #   if params[:query].present? && params[:query] != ""
-  #     sql_query = "first_name ILIKE :query OR last_name ILIKE :query OR company_name ILIKE :query"
-  #     @users = User.where(sql_query, query: "%#{params[:query]}%")
-  #   else
-  #     @users = User.all
-  #   end
-  # end
-
+  
   def index
     sql_query = "first_name ILIKE :query OR last_name ILIKE :query OR company_name ILIKE :query"
     # mama = "company_type ILIKE :company_type"
@@ -15,25 +7,35 @@ class UsersController < ApplicationController
     @users = User.where(sql_query, query: "%#{params[:query]}%") if params[:query].present? && params[:query] != ""
     # @users = User.where(mama, company_type: "%#{params[:company_type]}%") if params[:company_type].present? && params[:company_type] != ""
 
-    @aaa = params[:company_type]
-
     @users = @users.select { |user| user.company_type == params[:company_type] } if params[:company_type].present? && params[:company_type] != ""
 
     @users = @users.select { |user| user.funding_stage == params[:funding_stage] } if params[:funding_stage].present? && params[:funding_stage] != ""
 
     @users = @users.select { |user| user.gender == params[:gender] } if params[:gender].present? && params[:gender] != ""
 
-    @aaa = params[:gender]
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {user: user})
+      }
+    end
 
   end
 
-  # def index
-  #   @users = @listings.where("name = ?", params[:name]) if params[:name].present? && params[:name] != ""
-  #   @users = @listings.where("employment_type = ?", params[:employment_type]) if params[:employment_type].present? && params[:employment_type] != ""
-  # end
-
   def show
     @user = User.find(params[:id])
+    # @users = User.all
+    # @markers = @users.geocoded.map do |user|
+    #   {
+    #     lat: user.latitude,
+    #     lng: user.longitude
+    #   }
+    # end
+
+    # user = @user.geocoded
+    @markers = [{lat: @user.latitude, lng: @user.longitude}]
+
   end
 
   def my_profile

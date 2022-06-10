@@ -8,3 +8,54 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+
+.form-btn {
+
+  background-color: #9334E9;
+
+  &:hover{
+    box-shadow: 10px 10px 30px #cbc2c8;
+    color: whitesmoke;
+}
+}
+
+.mask-custom {
+  backdrop-filter: blur(15px);
+  background-color: rgba(255,255,255,.2);
+  border-radius: 3em;
+  border: 2px solid rgba(255,255,255,.1);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+  min-height: 500px;
+  min-width: 400px;
+}
+
+.form-inputs input {
+  background-color: #ffffff;
+  border-radius: 6px;
+  color: black;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+.form-actions input {
+  margin-top: 30px ;
+  width: 99%;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-weight:bold;
+}
+
+.devise-link a {
+  text-decoration:none;
+  color:white;
+  opacity: 70%;
+}
+
+.devise-link a:hover {
+  text-decoration:none;
+  color:black;
+}

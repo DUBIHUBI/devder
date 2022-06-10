@@ -15,3 +15,19 @@ body {
   color: $white;
   background-color: $dark-gray;
 }
+
+.nav-link.active {
+  background-color: $purple !important;
+  color: $white !important;
+  font-weight: bold !important;
+
+  // &:hover {
+  //   box-shadow: inset 270px 0 0 0 $dark-orange !important;
+  //   color: $white !important;
+  // }
+}
+
+.nav-link {
+  color: $purple !important;
+  font-weight: bold !important;
+}

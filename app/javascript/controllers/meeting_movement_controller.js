@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="meeting-movement"
 export default class extends Controller {
 
-  static targets = ["card", "scheduledwrapper"]
+  static targets = ["card", "scheduledwrapper", "status"]
 
   connect() {
     console.log("Movement controller loaded")
@@ -17,6 +17,7 @@ export default class extends Controller {
      this.scheduledwrapperTarget.insertAdjacentHTML("beforeend", e.target.outerHTML)
      meeting.remove()
      meeting.classList.add("meet-scheduled")
+    //  this.statusTarget.innerText = "Accepted"
    }
 
 }

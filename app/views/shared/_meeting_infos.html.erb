@@ -1,7 +1,8 @@
 <div data-controller="meetings" data-user="<%=current_user.id %>" data-meeting="<%=meeting_as_professional.id %>" data-meetings-target="card" data-meeting-movement-target="card" data-action="meetings:confirmed->meeting-movement#moveMeeting" class="meet-pending">
     <%# <h5 class="title-pending"> Meeting request from: <%= meeting_as_professional.student.first_name %> <%#= meeting_as_professional.student.last_name %> </h5>
-    <p class="text-pending"> <i class="fa-solid fa-calendar-days orange"> </i> <%= meeting_as_professional.date.strftime("%d %B %Y ")%></p>
-    <p class="text-pending"> <i class="fa-solid fa-clock orange"> </i> <%= meeting_as_professional.time.strftime("%H:%M")%></p>
+    <p class="text-pending"> <i class="fa-solid fa-calendar-days "> </i> <%= meeting_as_professional.date.strftime("%d %B %Y ")%></p>
+    <p class="text-pending"> <i class="fa-solid fa-clock"> </i> <%= meeting_as_professional.time.strftime("%H:%M")%></p>
+    <p data-meetings-target="status"></p>
     <div class="meeting-btn-purple" data-action="click->meetings#accept" data-meetings-target="accept">Accept</div>
     <%= image_tag meeting_as_professional.student.image_url, class:"meet-avatar-pending" %>
 

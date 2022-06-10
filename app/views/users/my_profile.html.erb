@@ -1,6 +1,10 @@
-<div class="profile-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1650473395434-8674d953ef2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3132&q=80)">
-  My profile
+<div class="profile-banner">
+  <%= image_tag('gradient_use') %>
+  <div class="profile-picture">
+    <%= image_tag current_user.image_url %>
+  </div>
 </div>
+
 
 <div class="container">
 
@@ -15,25 +19,19 @@
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
 
-      <div class="box">
-        <h4>Basic Info</h4>
-        <div class="info" style="width: 18rem;">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><%= current_user.first_name %> <%=current_user.last_name %></li>
-            <li class="list-group-item">Contact email: <%= current_user.email %></li>
-            <li class="list-group-item">Based In <%= current_user.address %></li>
-          </ul>
-        </div>
+      <div class="container">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-6 profile-info">
+            <div class="row text-center">
+              <h1><%= current_user.first_name.upcase %></h1>
+              <h1><%= current_user.last_name.upcase %></h1>
+            </div>
+          </div>
+        <div class="col"></div>
       </div>
 
-      <div class="box ">
-        <h4>I'm looking for...</h4>
-      </div>
-
-      <div class="box self-intro">
-        <h4>About Me</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque. Nulla porttitor massa id neque aliquam vestibulum morbi. Hendrerit dolor magna eget est lorem ipsum. Erat velit scelerisque in dictum non consectetur a erat nam. Blandit aliquam etiam erat velit scelerisque in dictum. Elementum nibh tellus molestie nunc non blandit massa. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros in.</p>
-      </div>
+    </div>
 
     </div>
 

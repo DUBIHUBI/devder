@@ -6,7 +6,7 @@
   box-shadow: 1px 1px 10px #d77506;
   border-radius: 8px;
 
-  i.orange {
+  i {
     color: $dark-orange;
     margin-right: 16px;
     font-size: 26px;
@@ -21,7 +21,7 @@
   box-shadow: 1px 1px 10px #9334E9;
   border-radius: 8px;
 
-  i.purple {
+  i {
     color: $purple;
     margin-right: 16px;
     font-size: 26px;
@@ -83,6 +83,7 @@
   &:hover {
     box-shadow: inset 270px 0 0 0 $dark-orange;
     color: $white;
+    cursor: pointer;
   }
 
 }

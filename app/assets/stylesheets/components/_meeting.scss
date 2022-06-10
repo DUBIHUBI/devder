@@ -1,24 +1,51 @@
 .meet-pending {
   background-color: $dark-orange;
-  // flex: 1 1 auto;
-  width: 350px;
+  width: 400px;
   padding: 1rem 1rem;
-  margin-bottom: 16px;
+  margin-bottom: 60px;
   height: 200px;
+  box-shadow: 1px 1px 10px #9334E9;
+  border-radius: 8px;
 }
 
 .meet-scheduled {
-  background-color: $white;
+  background-color: $purple;
   padding: 1rem 1rem;
-  color: $gray;
-  margin-bottom: 16px;
+  margin-bottom: 60px;
   height: 200px;
-  width: 350px !important;
+  width: 400px !important;
+  box-shadow: 1px 1px 10px #d77506;
+  border-radius: 8px;
 }
 
 .meeting-cards {
-  display: flex;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  margin: 16px;
+  border-right: #d77506;
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-gap: 16px;
   // justify-content: space-between;
+}
+
+.meeting-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.meet-avatar {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px #d77506;
+  position: relative;
+  right: -330px;
+  top: -25px;
+}
+
+.meet-avatar-pending {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px #9334E9 !important;
+  position: relative;
+  right: -330px;
+  top: -25px;
 }

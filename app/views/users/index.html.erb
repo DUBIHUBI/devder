@@ -45,7 +45,9 @@
 
             <h1><%= @aaa %></h1>
 
-            <%= submit_tag "Search", class: "btn btn-success" %>
+            <div class="text-center">
+              <%= submit_tag "Search", class: "btn-purple" %>
+            </div>
 
           <% end %>
         </div>
@@ -54,18 +56,20 @@
     <div class="cards col-sm-12 col-md-8 col-lg-9">
     <% @users.each do |user| %>
       <% if !user.student %>
-        <div class="card">
+        <div class="card p-3">
           <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
-          <% if user.image_url %>
-            <%= image_tag user.image_url %>
-          <% end %>
+            <% if user.image_url%>
+          <%# <div class="card-image"> %>
+              <%= image_tag user.image_url, class: "card-image" %>
+          <%# </div> %>
+            <% end %>
           <div class="card-body">
             <div class="border-bottom border-secondary">
             <h5 class="card-title text-center"><%= user.first_name %> <%= user.last_name %></h5>
             </div>
             <ul>
-            <li><strong>Company name: </strong><%= user.company_name %></li>
-            <li><strong>Role: </strong><%= user.role %></li>
+            <li><i class="fa-solid fa-building"></i>  <%= user.company_name %></li>
+            <li><i class="fa-solid fa-laptop"></i>  <%= user.role %></li>
             </ul>
           </div>
           <%= link_to user_path(user), class:"text-decoration-none" do %>

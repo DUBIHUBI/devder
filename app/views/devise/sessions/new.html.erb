@@ -1,32 +1,86 @@
+
+<style>
+  .mask-custom {
+    backdrop-filter: blur(15px);
+    background-color: rgba(255,255,255,.2);
+    border-radius: 3em;
+    border: 2px solid rgba(255,255,255,.1);
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+    min-height: 500px;
+    min-width: 400px;
+  }
+
+  .form-inputs input {
+    background-color: #ffffff;
+    border-radius: 6px;
+    color: black;
+  }
+
+  .form-actions {
+    text-align: center;
+  }
+
+  .form-actions input {
+    margin-top: 30px ;
+    width: 99%;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-weight:bold;
+  }
+
+  .devise-link a {
+    text-decoration:none;
+    color:white;
+    opacity: 70%;
+  }
+
+  .devise-link a:hover {
+    text-decoration:none;
+    color:black;
+  }
+
+</style>
+
+
+
 <div class="container my-5">
-  <h2 class="text-center">Log in</h2>
+  <div class="row justify-content-center  ">
+    <div class="col-4 mask-custom px-5 ">
+      <h2 class="text-center mt-5">Log in</h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
-      data: {turbo: false}) do |f| %>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
+          data: {turbo: false}) do |f| %>
 
-      <div class="form-inputs">
-        <div class="row">
-          <div class="col">
+          <div class="form-inputs">
             <%= f.input :email,
                         required: false,
                         autofocus: true,
                         input_html: { autocomplete: "email" } %>
           </div>
-          <div class="col">
+
+          <div class="form-inputs">
             <%= f.input :password,
                         required: false,
                         input_html: { autocomplete: "current-password" } %>
           </div>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        </div>
-      </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Log in", class: "btn btn-success" %>
-      </div>
-    <% end %>
+          <div class="form-inputs">
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
 
-  <div>
-    <%= render "devise/shared/links" %>
+          <div class="form-actions ">
+            <%= f.button :submit, "Log in", class: "btn btn-success" %>
+          </div>
+        <% end %>
+
+          <div class="devise-link mt-3">
+            <%= render "devise/shared/links" %>
+          </div>
+
+
+    </div>
   </div>
+
 </div>

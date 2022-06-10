@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   def index
     sql_query = "first_name ILIKE :query OR last_name ILIKE :query OR company_name ILIKE :query"
     # mama = "company_type ILIKE :company_type"
@@ -13,13 +13,13 @@ class UsersController < ApplicationController
 
     @users = @users.select { |user| user.gender == params[:gender] } if params[:gender].present? && params[:gender] != ""
 
-    @markers = @users.geocoded.map do |user|
-      {
-        lat: user.latitude,
-        lng: user.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {user: user})
-      }
-    end
+    # @markers = @users.geocoded.map do |user|
+    #   {
+    #     lat: user.latitude,
+    #     lng: user.longitude,
+    #     info_window: render_to_string(partial: "info_window", locals: {user: user})
+    #   }
+    # end
 
   end
 

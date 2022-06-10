@@ -9,11 +9,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
+
   def self.company_types
-    User.distinct.pluck(:company_type)
+
+    User.distinct.pluck(:company_type).reject { |value| value.nil? }
+
   end
 
   def self.funding_stages
-    User.distinct.pluck(:funding_stage)
+
+    User.distinct.pluck(:funding_stage).reject { |value| value.nil? }
+
   end
 end

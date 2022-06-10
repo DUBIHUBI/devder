@@ -1,68 +1,85 @@
-<div class="container my-5">
-  <h2 class="text-center">Sign up</h2>
+<style>
+  body{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('https://visionsandvoices.usc.edu/wp-content/uploads/2022/06/Homepage_Background_3000x1200.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+</style>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
-    data: {turbo: false}) do |f| %>
-    <div data-controller="sign-up-form">
-      <div class="form-inputs">
-        <%= f.input :email,
-                    required: true,
-                    input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :first_name,
-                    autofocus: true,
-                    required: true,
-                    error: 'Your name is mandatory, please specify one' %>
-        <%= f.input :last_name,
-                    required: true,
-                    error: 'Your name is mandatory, please specify one' %>
-        <%= f.input :age,
-                    collection: 18..60,
-                    prompt: "Select your age",
-                    # selected: 21,
-                    required: true %>
-        <%= f.input :address,
-                    required: true %>
-        <%= f.input :bio,
-                    required: true %>
-        <div data-action="change->sign-up-form#revealContent">
-          <%= f.input :student,
-                      required: true,
-                      as: :radio_buttons %>
-        </div>
-        <div data-sign-up-form-target="student">
-          <%= f.input :desired_role,
-                      required: true %>
-        </div>
-        <div data-sign-up-form-target="professional" class="d-none">
-          <%= f.input :role %>
-          <%= f.input :company_name %>
-          <%= f.input :company_type,
-                      prompt: "Select the type of company you work for",
-                      collection: ["Start-up", "Scale-up", "Enterprise"] %>
-          <%= f.input :company_size %>
-          <%= f.input :funding_stage,
-                      prompt: "Select the company fundging stage",
-                      collection: ["Pre-Seed", "Seed", "Series A", "Series B", "Series C", "Series D", "Post-IPO"]%>
-          <%= f.input :hq_location,
-                      label: 'Heaquarter location' %>
-        </div>
-      </div>
+<body >
+<div class="container p-5 mb-5">
+  <div class="row justify-content-center m-5">
+    <div class= 'col-6 mask-custom px-5' >
 
-      <div>
-        <%= f.button :submit, "Sign up"%>
+      <h2 class="text-center mt-5">Sign up</h2>
+
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
+        data: {turbo: false}) do |f| %>
+        <div data-controller="sign-up-form">
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: true,
+                        input_html: { autocomplete: "email" }%>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :first_name,
+                        autofocus: true,
+                        required: true,
+                        error: 'Your name is mandatory, please specify one' %>
+            <%= f.input :last_name,
+                        required: true,
+                        error: 'Your name is mandatory, please specify one' %>
+            <%= f.input :age,
+                        collection: 18..60,
+                        prompt: "Select your age",
+                        # selected: 21,
+                        required: true %>
+            <%= f.input :address,
+                        required: true %>
+            <%= f.input :bio,
+                        required: true %>
+            <div data-action="change->sign-up-form#revealContent">
+              <%= f.input :student,
+                          required: true,
+                          as: :radio_buttons %>
+            </div>
+            <div data-sign-up-form-target="student">
+              <%= f.input :desired_role,
+                          required: true %>
+            </div>
+            <div data-sign-up-form-target="professional" class="d-none">
+              <%= f.input :role %>
+              <%= f.input :company_name %>
+              <%= f.input :company_type,
+                          prompt: "Select the type of company you work for",
+                          collection: ["Start-up", "Scale-up", "Enterprise"] %>
+              <%= f.input :company_size %>
+              <%= f.input :funding_stage,
+                          prompt: "Select the company fundging stage",
+                          collection: ["Pre-Seed", "Seed", "Series A", "Series B", "Series C", "Series D", "Post-IPO"]%>
+              <%= f.input :hq_location,
+                          label: 'Heaquarter location' %>
+            </div>
+          </div>
+
+          <div class="form-actions ">
+            <%= f.button :submit, "Sign up", class:"form-btn"%>
+          </div>
+
+        </div>
+      <% end %>
+
+
+      <div class="devise-link my-3">
+        <%= render "devise/shared/links" %>
       </div>
 
     </div>
-  <% end %>
-
-  <div>
-    <%= render "devise/shared/links" %>
   </div>
 </div>
+</body>

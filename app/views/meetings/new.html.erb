@@ -1,36 +1,10 @@
 <style>
-  .mask-custom {
-    backdrop-filter: blur(15px);
-    background-color: rgba(255,255,255,.2);
-    border-radius: 3em;
-    border: 2px solid rgba(255,255,255,.1);
-    background-clip: padding-box;
-    box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+  body{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('https://visionsandvoices.usc.edu/wp-content/uploads/2022/06/Homepage_Background_3000x1200.png');
   }
-
-  .form-inputs input {
-    background-color: #ffffff;
-    border-radius: 6px;
-    color: black;
-  }
-
-  .form-actions {
-    text-align: center;
-  }
-
-  .form-actions input {
-    margin-top: 30px ;
-    width: 99%;
-    border-radius: 6px;
-    border: none;
-    color: white;
-    font-weight:bold;
-  }
-
 </style>
 
-<body style="background-image: url('https://images.unsplash.com/photo-1653676934208-021a2b5e7ca3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3200&q=80');">
-
+<body>
 
   <div class="mask d-flex align-items-center h-100">
     <div class="container p-5">
@@ -39,7 +13,7 @@
           <div class="background-color-white mask-custom">
             <div class="booking-form p-5 my-5 " >
               <% if user_signed_in? %>
-                <h4 class="text-center mb-5"> Book A Meeting </h4>
+                <h4 class="text-center mb-5"> Request A Meeting </h4>
                   <%= simple_form_for [@user, @meeting] do |f| %>
                     <div class="form-inputs background-color-white">
                         <%= f.input :date, html5: true %>
@@ -48,7 +22,7 @@
                         <%= f.input :time, html5: true %>
                     </div>
                     <div class="form-actions">
-                      <%= f.button :submit, "Book Now!", class: "btn" %>
+                      <%= f.button :submit, "Send Request", class: "form-btn" %>
                     </div>
                   <% end %>
               <% else %>
@@ -60,8 +34,4 @@
       </div>
     </div>
   </div>
-
-
-
-
 </body>

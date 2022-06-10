@@ -1,26 +1,23 @@
 .meet-pending {
-  background-color: $dark-orange;
   width: 400px;
   padding: 1rem 1rem;
   margin-bottom: 60px;
   height: 200px;
-  box-shadow: 1px 1px 10px #9334E9;
+  box-shadow: 1px 1px 10px #d77506;
   border-radius: 8px;
 }
 
 .meet-scheduled {
-  background-color: $purple;
   padding: 1rem 1rem;
   margin-bottom: 60px;
   height: 200px;
   width: 400px !important;
-  box-shadow: 1px 1px 10px #d77506;
+  box-shadow: 1px 1px 10px #9334E9;
   border-radius: 8px;
 }
 
 .meeting-cards {
   margin: 16px;
-  border-right: #d77506;
   // display: grid;
   // grid-template-columns: 1fr;
   // grid-gap: 16px;
@@ -35,7 +32,7 @@
 .meet-avatar {
   width: 100px;
   border-radius: 50%;
-  box-shadow: 1px 1px 10px #d77506;
+  box-shadow: 1px 1px 10px #9334E9 ;
   position: relative;
   right: -330px;
   top: -25px;
@@ -44,7 +41,7 @@
 .meet-avatar-pending {
   width: 100px;
   border-radius: 50%;
-  box-shadow: 1px 1px 10px #9334E9 !important;
+  box-shadow: 1px 1px 10px #d77506 !important;
   position: relative;
   right: -330px;
   top: -25px;

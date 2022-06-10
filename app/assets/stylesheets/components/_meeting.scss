@@ -1,17 +1,110 @@
 .meet-pending {
-  background-color: $dark-orange;
-  flex: 1 1 auto;
+  width: 400px;
   padding: 1rem 1rem;
-  margin-bottom: 16px;
+  margin-bottom: 75px;
   height: 200px;
+  box-shadow: 1px 1px 10px #d77506;
+  border-radius: 8px;
+
+  i.orange {
+    color: $dark-orange;
+    margin-right: 16px;
+    font-size: 26px;
+  }
 }
 
 .meet-scheduled {
-  background-color: $white;
-  flex: 1 1 auto;
   padding: 1rem 1rem;
-  color: $gray;
-  margin-bottom: 16px;
+  margin-bottom: 75px;
   height: 200px;
-  max-width: 300px !important;
+  width: 400px !important;
+  box-shadow: 1px 1px 10px #9334E9;
+  border-radius: 8px;
+
+  i.purple {
+    color: $purple;
+    margin-right: 16px;
+    font-size: 26px;
+  }
+}
+
+.meeting-cards {
+  margin: 16px;
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-gap: 16px;
+  // justify-content: space-between;
+}
+
+.meeting-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.meet-avatar {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px #9334E9 ;
+  position: relative;
+  right: -330px;
+  top: -25px;
+}
+
+.meet-avatar-pending {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px #d77506 !important;
+  position: relative;
+  right: -330px;
+  top: -25px;
+}
+
+.meet-avatar-student-accepted {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px #9334E9 !important;
+  position: relative;
+  right: -160px;
+  top: -25px;
+}
+
+.meeting-btn-purple {
+  width: 120px;
+  text-align: center;
+  justify-content: center;
+  background-color: $purple;
+  color: $white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.2s ease-out;
+  box-shadow: inset 0 0 0 0 $purple;
+
+  &:hover {
+    box-shadow: inset 270px 0 0 0 $dark-orange;
+    color: $white;
+  }
+
+}
+
+.btn-purple-review {
+  width: 120px;
+  text-align: center;
+  justify-content: center;
+  background-color: $purple;
+  color: $white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.2s ease-out;
+  box-shadow: inset 0 0 0 0 $purple;
+  position: relative;
+  top: -15px;
+  right: -100px;
+
+  &:hover {
+    box-shadow: inset 270px 0 0 0 $dark-orange;
+    color: $white;
+  }
+
 }

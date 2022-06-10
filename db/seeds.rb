@@ -8,6 +8,7 @@
 
 puts "Cleaning database!"
 User.destroy_all
+Meeting.destroy_all
 puts "Seeding the database!"
 
 User.create!(email: "marco@123.com", password: "12345678", first_name: "Marco",

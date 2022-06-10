@@ -15,3 +15,20 @@
     color: $white;
   }
 }
+
+.btn-index {
+  background-color: rgba($color: #9334E9, $alpha: 0.5);
+  color: $white;
+  font-weight: bolder;
+  transition: 0.5s;
+  // border-radius: 16px;
+
+  &:hover {
+    background-color: $purple;
+    transform: scale(1.05);
+    border-radius: 24px;
+    // transform: scale(0.95);
+    // margin-left: 48px;
+    // margin-right: 48px;
+  }
+}

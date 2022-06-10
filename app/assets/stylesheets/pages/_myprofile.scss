@@ -1,0 +1,67 @@
+.profile-banner {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  overflow: hidden;
+
+  .profile-picture img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    position: absolute;
+    top: 270px;
+    left: 100px;
+  }
+}
+
+
+.my-profile {
+
+  h5 {
+    margin-bottom: 24px;
+    color: $light-gray;
+    font-size: 24px;
+  }
+
+  .title-scheduled {
+    color: $white;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .title-pending {
+    color: $white;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .text-pending {
+    margin-top: 12px;
+    color: $white;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .text-scheduled {
+    margin-top: 12px;
+    color: $white;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+
+  // i.purple {
+  //   color: $purple;
+  //   margin-right: 16px;
+  //   font-size: 26px;
+  // }
+
+  // i.orange {
+  //   color: $dark-orange;
+  //   margin-right: 16px;
+  //   font-size: 26px;
+  // }
+
+
+
+}

@@ -19,29 +19,31 @@
   }
 
   .text-pending {
+    margin-top: 12px;
     color: $white;
     font-size: 16px;
     font-weight: bold;
   }
 
   .text-scheduled {
+    margin-top: 12px;
     color: $white;
     font-size: 16px;
     font-weight: bold;
   }
 
 
-  i.purple {
-    color: $purple;
-    margin-right: 16px;
-    font-size: 26px;
-  }
+  // i.purple {
+  //   color: $purple;
+  //   margin-right: 16px;
+  //   font-size: 26px;
+  // }
 
-  i.orange {
-    color: $dark-orange;
-    margin-right: 16px;
-    font-size: 26px;
-  }
+  // i.orange {
+  //   color: $dark-orange;
+  //   margin-right: 16px;
+  //   font-size: 26px;
+  // }
 
 
 

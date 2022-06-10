@@ -5,7 +5,8 @@
       </div>
       <div class="col-4 profile-info">
         <div class="row">
-          <h1><%= @user.first_name.upcase %> <%= @user.last_name.upcase %></h1>
+          <h1><%= @user.first_name.upcase %></h1>
+          <h1> <%= @user.last_name.upcase %></h1>
         </div>
         <div class="row">
           <h2><%= @user.role %></h3>
@@ -31,7 +32,7 @@
         </div>
       </div>
       <div class="col-4 text-center">
-        <div>
+        <div class="image-container">
           <%= image_tag(@user.image_url) %>
         </div>
       </div>
@@ -52,6 +53,15 @@
       </div>
       <div class="col-8">
         <p><%= @user.bio %></p>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col-8">
+        <h3>Location</h3>
       </div>
       <div class="col">
       </div>

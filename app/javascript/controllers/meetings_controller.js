@@ -25,7 +25,7 @@ export default class extends Controller {
      //  this.element.classList.add("col-md-6")
      //  this.element.classList.add("col-lg-4")
      //  this.cardTarget.outerHTML = data
-     //  this.statusTarget.innerText= "Accepted"
+    //  this.statusTarget.innerText= "Accepted"
      this.dispatch("confirmed", {target: this.element})
      this.element.remove
 

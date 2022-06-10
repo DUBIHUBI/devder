@@ -21,11 +21,11 @@ export default class extends Controller {
      console.log(data)
      this.acceptTarget.remove()
      this.element.classList.remove("meet-pending")
-     this.element.classList.add("meet-scheduled")
+     this.element.classList.add("meet-scheduled purple")
     //  this.element.classList.add("col-md-6")
     //  this.element.classList.add("col-lg-4")
     //  this.cardTarget.outerHTML = data
-    //  this.statusTarget.innerText= "Scheduled meeting"
+    //  this.statusTarget.innerText= "Accepted"
      this.dispatch("confirmed", {target: this.element})
      this.element.remove
 

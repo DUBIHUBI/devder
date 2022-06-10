@@ -8,10 +8,10 @@
       <% current_user.meetings_as_student.each do |meeting_as_student| %>
         <% unless meeting_as_student.accepted %>
           <div class="meet-pending">
-            <%# <p class="title-pending"> Meeting requested for <%= meeting_as_student.professional.first_name %> </p>
-            <p class="text-pending"><i class="fa-solid fa-calendar-days purple"></i><%= meeting_as_student.date.strftime("%d %B %Y ")%></p>
-            <p class="text-pending"><i class="fa-solid fa-clock purple"></i><%= meeting_as_student.time.strftime("%H:%M")%></p>
-            <p class="text-pending"><em> <i class="fa-solid fa-question purple"></i> Pending </em> </p>
+            <%# <p class="title-pending"> Meeting requested for <%= meeting_as_student.professional.first_name %>
+            <p class="text-pending"><i class="fa-solid fa-calendar-days orange"></i><%= meeting_as_student.date.strftime("%d %B %Y ")%></p>
+            <p class="text-pending"><i class="fa-solid fa-clock orange"></i><%= meeting_as_student.time.strftime("%H:%M")%></p>
+            <p class="text-pending"><em> <i class="fa-solid fa-question orange"></i> Pending </em> </p>
             <%= image_tag meeting_as_student.professional.image_url, class:"meet-avatar-pending" %>
           </div>
         <% end %>
@@ -24,11 +24,11 @@
         <% if meeting_as_student.accepted %>
           <div class="meet-scheduled">
             <%# <p class="title-scheduled"> Meeting with: <%= meeting_as_student.professional.first_name %> <%#= meeting_as_student.professional.last_name %></p>
-            <p class="text-scheduled"><i class="fa-solid fa-calendar-days orange"></i> <%= meeting_as_student.date.strftime("%d %B %Y ")%></em></p>
-            <p class="text-scheduled"><i class="fa-solid fa-clock orange"></i><%= meeting_as_student.time.strftime("%H:%M")%></p>
-            <p class="text-scheduled"><em> <i class="fa-solid fa-circle-check orange"></i> Accepted </em> </p>
-            <a href="#" class="btn" style="font-size: 12px;">Write a review</a>
-            <%= image_tag meeting_as_student.professional.image_url, class:"meet-avatar" %>
+            <p class="text-scheduled"><i class="fa-solid fa-calendar-days purple"></i> <%= meeting_as_student.date.strftime("%d %B %Y ")%></em></p>
+            <p class="text-scheduled"><i class="fa-solid fa-clock purple"></i><%= meeting_as_student.time.strftime("%H:%M")%></p>
+            <p class="text-scheduled"><em> <i class="fa-solid fa-circle-check purple"></i> Accepted </em> </p>
+            <a href="#" class="btn-purple-review">Leave a review 🤩</a>
+            <%= image_tag meeting_as_student.professional.image_url, class:"meet-avatar-student-accepted" %>
           </div>
         <% end %>
       <% end %>
@@ -55,7 +55,7 @@
         <% current_user.meetings_as_professional.each do |meeting_as_professional| %>
           <% if meeting_as_professional.accepted %>
             <div class="meet-scheduled">
-              <%# <p class="title-scheduled"> Meeting with: <%= meeting_as_professional.student.first_name %> <%#= meeting_as_professional.student.last_name %></p>
+              <%# <p class="title-scheduled"> Meeting with: <%= meeting_as_professional.student.first_name %> <%#= meeting_as_professional.student.last_name %>
               <p class="text-scheduled"> <i class="fa-solid fa-calendar-days purple"> </i> <%= meeting_as_professional.date.strftime("%d %B %Y ")%></p>
               <p class="text-scheduled"> <i class="fa-solid fa-clock purple"> </i> <%= meeting_as_professional.time.strftime("%H:%M")%></p>
               <p class="text-scheduled"> <em> <i class="fa-solid fa-circle-check purple"></i> Accepted </em> </p>

@@ -53,43 +53,49 @@
                 </div>
               </div>
               <div class="row basic-role">
-                <h2><%= current_user.role %></h2>
+                <% if current_user.student %>
+                  <h2><%= current_user.desired_role %></h2>
+                <% else %>
+                  <h2><%= current_user.role %></h2>
+                <% end %>
               </div>
-              <div class="row basic-company">
-                <h2><%= current_user.company_name %></h2>
-              </div>
-              <div class="row">
-                <div class="col-1">
-                  <i class="fa-solid fa-arrow-up-right-dots"></i>
+              <% if current_user.student == false %>
+                <div class="row basic-company">
+                  <h2><%= current_user.company_name %></h2>
                 </div>
-                <div class="col-11">
-                  <p><%= current_user.company_type %></p>
+                <div class="row">
+                  <div class="col-1">
+                    <i class="fa-solid fa-arrow-up-right-dots"></i>
+                  </div>
+                  <div class="col-11">
+                    <p><%= current_user.company_type %></p>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-1">
-                  <i class="fa-solid fa-sack-dollar"></i>
+                <div class="row">
+                  <div class="col-1">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                  </div>
+                  <div class="col-11">
+                    <p><%= current_user.funding_stage %></p>
+                  </div>
                 </div>
-                <div class="col-11">
-                  <p><%= current_user.funding_stage %></p>
+                <div class="row">
+                  <div class="col-1">
+                    <i class="fa-solid fa-people-group"></i>
+                  </div>
+                  <div class="col-11">
+                    <p><%= current_user.company_size %></p>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-1">
-                  <i class="fa-solid fa-people-group"></i>
+                <div class="row">
+                  <div class="col-1">
+                    <i class="fa-solid fa-building"></i>
+                  </div>
+                  <div class="col-11">
+                    <p><%= current_user.hq_location %></p>
+                  </div>
                 </div>
-                <div class="col-11">
-                  <p><%= current_user.company_size %></p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-1">
-                  <i class="fa-solid fa-building"></i>
-                </div>
-                <div class="col-11">
-                  <p><%= current_user.address %></p>
-                </div>
-              </div>
+              <% end %>
               <div class="row basic-company">
                 <h2>Bio</h2>
               </div>

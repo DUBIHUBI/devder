@@ -1,20 +1,3 @@
-.profile-banner {
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-  overflow: hidden;
-
-  .profile-picture img {
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    position: absolute;
-    top: 270px;
-    left: 100px;
-  }
-}
-
-
 .my-profile {
 
   padding: 50px;
@@ -63,7 +46,4 @@
   //   margin-right: 16px;
   //   font-size: 26px;
   // }
-
-
-
 }

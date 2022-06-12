@@ -3,9 +3,10 @@
   // background-position: center;
   // display: flex;
   // align-items: center;
-  height: 50vh;
-  width: 110vw;
+  height: 40vh;
+  width: 100vw;
   clip-path: polygon(0 0, 100% 0, 100% 55%, 0 80%);
+  overflow: hidden;
 }
 
 

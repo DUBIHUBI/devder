@@ -7,6 +7,7 @@
   width: 100vw;
   clip-path: polygon(0 0, 100% 0, 100% 55%, 0 80%);
   overflow: hidden;
+
 }
 
 
@@ -46,18 +47,21 @@
   }
 }
 
-.profile-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-}
+// .profile-container {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: flex-start;
+// }
 
-.profile-image img {
-  position: fixed;
-  bottom: 0;
+.profile-image {
+  position: sticky;
+  top: 40vh;
   opacity: 0.5;
-  right: 120px;
-  width: 525px;
+
+  img {
+    right: 120px;
+    width: 525px;
+  }
 }
 
 // Legacy profile page classes below:

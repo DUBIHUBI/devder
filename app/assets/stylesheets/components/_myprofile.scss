@@ -3,27 +3,38 @@
   // background-position: center;
   // display: flex;
   // align-items: center;
-  height: 40vh;
+  height: 45vh;
   width: 100vw;
-  clip-path: polygon(0 0, 100% 0, 100% 55%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 95%);
   overflow: hidden;
-
+  margin-bottom: -32px;
 }
 
+.profile-name {
+  i {
+    color: $light-gray;
+    font-size: 28px;
+  }
 
-.icon-gray {
-  color: $light-gray;
-}
+  h1 {
+    font-size: 56px;
+  }
 
-.profile-name h1 {
-  font-size: 56px;
 }
 
 .profile-basic {
 
+  .row {
+    padding: 12px 0px;
+  }
+
+  h2 {
+    color: $white;
+  }
+
   i {
     color: $purple;
-    font-size: 24px;
+    font-size: 32px;
   }
 
   p {
@@ -32,18 +43,16 @@
   }
 
   .basic-role {
-    color: $dark-orange;
     padding: 16px 0px;
+
+    h2 {
+      color: $dark-orange;
+    }
   }
 
   .basic-company {
     color: $light-gray;
     padding: 16px 0px;
-
-    p {
-      color: $white;
-      font-size: 16px;
-    }
   }
 }
 

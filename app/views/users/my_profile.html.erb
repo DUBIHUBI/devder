@@ -1,14 +1,11 @@
 <div class="profile-banner">
   <%= image_tag('gradient_use') %>
-  <div class="profile-picture">
-    <%= image_tag current_user.image_url %>
-  </div>
 </div>
 
 
 <div class="container">
 
-  <ul class="nav nav-pills mb-3 mt-3 justify-content-center" id="pills-tab" role="tablist">
+  <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Me</button>
     </li>
@@ -16,16 +13,108 @@
       <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Meetings</button>
     </li>
   </ul>
+
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
 
+      <div class="container profile-content">
+        <div class="row">
+          <div class="col-2">
+          </div>
+          <div class="col-4">
+            <div class="profile-name">
+              <i class="fa-solid fa-pen-to-square icon-gray"></i>
+              <h1><%= current_user.first_name.upcase %></h1>
+              <h1><%= current_user.last_name.upcase %></h1>
+            </div>
+            <div class="profile-basic">
+              <div class="row align-middle">
+                <div class="col-1">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="col-11">
+                  <p><%= current_user.email %></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <i class="fa-solid fa-cake-candles"></i>
+                </div>
+                <div class="col-11">
+                  <p><%= current_user.age %></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <i class="fa-solid fa-house"></i>
+                </div>
+                <div class="col-11">
+                  <p><%= current_user.address %></p>
+                </div>
+              </div>
+              <div class="row basic-role">
+                <h2><%= current_user.role %></h2>
+              </div>
+              <div class="row basic-company">
+                <h2><%= current_user.company_name %></h2>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <i class="fa-solid fa-arrow-up-right-dots"></i>
+                </div>
+                <div class="col-11">
+                  <p><%= current_user.company_type %></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <i class="fa-solid fa-sack-dollar"></i>
+                </div>
+                <div class="col-11">
+                  <p><%= current_user.funding_stage %></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <i class="fa-solid fa-people-group"></i>
+                </div>
+                <div class="col-11">
+                  <p><%= current_user.company_size %></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <i class="fa-solid fa-building"></i>
+                </div>
+                <div class="col-11">
+                  <p><%= current_user.address %></p>
+                </div>
+              </div>
+              <div class="row basic-company">
+                <h2>Bio</h2>
+              </div>
+              <div class="row basic-company">
+                <p><%= current_user.bio %></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="profile-container">
+              <div class="profile-image">
+                <%= image_tag('ife-removebg-preview.png') %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- From Johan: For some reason, removing the divs below messes with the page structure, so I'm keeping it for now -->
       <div class="container">
         <div class="row">
           <div class="col"></div>
           <div class="col-6 profile-info">
             <div class="row text-center">
-              <h1><%= current_user.first_name.upcase %></h1>
-              <h1><%= current_user.last_name.upcase %></h1>
             </div>
           </div>
         <div class="col"></div>
@@ -45,10 +134,5 @@
 
     </div>
   </div>
-
-
-
-
-
 
 </div>

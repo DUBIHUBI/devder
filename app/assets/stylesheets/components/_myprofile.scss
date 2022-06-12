@@ -1,15 +1,65 @@
 .profile-banner {
-  background-size: cover;
-  background-position: center;
-  height: 320px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 36px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // background-size: cover;
+  // background-position: center;
+  // display: flex;
+  // align-items: center;
+  height: 50vh;
+  width: 110vw;
+  clip-path: polygon(0 0, 100% 0, 100% 55%, 0 80%);
 }
+
+
+.icon-gray {
+  color: $light-gray;
+}
+
+.profile-name h1 {
+  font-size: 56px;
+}
+
+.profile-basic {
+
+  i {
+    color: $purple;
+    font-size: 24px;
+  }
+
+  p {
+    color: $light-gray;
+    font-size: 24px;
+  }
+
+  .basic-role {
+    color: $dark-orange;
+    padding: 16px 0px;
+  }
+
+  .basic-company {
+    color: $light-gray;
+    padding: 16px 0px;
+
+    p {
+      color: $white;
+      font-size: 16px;
+    }
+  }
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.profile-image img {
+  position: fixed;
+  bottom: 0;
+  opacity: 0.5;
+  right: 120px;
+  width: 525px;
+}
+
+// Legacy profile page classes below:
 .box {
   border: 1px solid whitesmoke;
   padding: 15px;
@@ -29,11 +79,11 @@
 }
 
 .abtn {
-width: 100px;
-height: 40px;
-left: 100px;
-top: 409px;
-background-color: #9334E9;
+  width: 100px;
+  height: 40px;
+  left: 100px;
+  top: 409px;
+  background-color: #9334E9;
 
 &:hover{
   box-shadow: 10px 10px 30px #cbc2c8;

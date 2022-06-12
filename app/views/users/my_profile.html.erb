@@ -2,7 +2,6 @@
   <%= image_tag('gradient_use') %>
 </div>
 
-
 <div class="container">
 
   <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
@@ -21,7 +20,7 @@
         <div class="row">
           <div class="col-2">
           </div>
-          <div class="col-4">
+          <div class="col-5">
             <div class="profile-name">
               <i class="fa-solid fa-pen-to-square icon-gray"></i>
               <h1><%= current_user.first_name.upcase %></h1>
@@ -104,7 +103,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-5">
             <div class="profile-image">
               <div>
                 <%= image_tag("no-bg-#{current_user.id}") %>

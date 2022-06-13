@@ -31,3 +31,11 @@
   }
 
 }
+
+.card:hover {
+  .heart {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+}

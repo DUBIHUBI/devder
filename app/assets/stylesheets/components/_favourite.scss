@@ -1,0 +1,19 @@
+.heart {
+  position: relative;
+  color: $red;
+  top: -250px;
+  font-size: 24px;
+  opacity: 0;
+
+    &::before {
+      border: 1px solid red;
+    }
+
+    &.selected {
+      opacity: 1;
+    }
+
+    &.selected:hover {
+      opacity: 0;
+    }
+}

@@ -76,7 +76,6 @@
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-
       </div>
       <div class="col">
       </div>
@@ -86,5 +85,47 @@
         <%= link_to "Book #{@user.first_name}", new_user_meeting_path(@user), class:"btn-purple" %>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="container review-cards">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-8" id="reviews-section">
+      <% if @user.reviews_as_professional.any? %>
+        <h3>Check out what Devder users are saying about <%= @user.first_name %></h3>
+      <% end %>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-10">
+        <div class="row">
+          <% @user.reviews_as_professional.each do |review| %>
+            <div class="col-5 mx-3 review-card">
+              <div class="row">
+                <div class="col-3">
+                  <%= image_tag review.student.image_url %>
+                </div>
+                <div class="col"></div>
+                <div class="col-7">
+                  <% review.rating.times do %>
+                    <i class="fa-solid fa-star"></i>
+                  <% end %>
+                  <% (5 - review.rating).times do %>
+                    <i class="fa-regular fa-star"></i>
+                  <% end %>
+                  <p><em>"<%= review.content %>"</em></p>
+                  <p class="review-author px-3"><strong><%= review.student.first_name %></strong><br>
+                  Reviewed on <%= review.created_at.strftime("%d %B %Y ") %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
   </div>
 </div>

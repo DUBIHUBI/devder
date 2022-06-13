@@ -1,7 +1,5 @@
 .profiles-show {
 
-  padding-top: 48px;
-
   h1 {
     font-size: 64px;
   }
@@ -47,4 +45,49 @@
   .map img {
     width: 700px;
   }
+}
+
+.review-cards {
+
+  h3 {
+    color: $light-gray;
+    margin: 32px 0px 40px 0px;
+  }
+
+  p {
+    font-size: 14px;
+    color: $light-gray;
+  }
+
+  strong {
+    color: $white;
+  }
+
+  em {
+    color: $light-gray;
+  }
+
+  .review-card {
+    margin: 40px 0px;
+    padding: 8px 16px;
+    box-shadow: 4px 4px 0px 4px #181818;
+    border-radius: 15px;
+    border: 2px solid #181818;
+    background-color: $dark-gray;
+  }
+
+  .review-card img {
+    border: 2px solid #181818;
+    width: 120px;
+    border-radius: 50%;
+  }
+
+  .review-card i {
+    color: $dark-orange;
+  }
+
+  .review-author {
+    text-align: end;
+  }
+
 }

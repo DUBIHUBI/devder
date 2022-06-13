@@ -34,10 +34,10 @@ class UsersController < ApplicationController
 
     # user = @user.geocoded
     @markers = [{lat: @user.latitude, lng: @user.longitude}]
-
   end
 
   def my_profile
     redirect_to root_path unless current_user
+    @review = Review.new
   end
 end

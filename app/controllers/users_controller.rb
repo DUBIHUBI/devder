@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def index
     sql_query = "first_name ILIKE :query OR last_name ILIKE :query OR company_name ILIKE :query"
 
@@ -12,32 +11,57 @@ class UsersController < ApplicationController
 
     @users = @users.select { |user| user.gender == params[:gender] } if params[:gender].present? && params[:gender] != ""
 
-    # @markers = @users.geocoded.map do |user|
-    #   {
-    #     lat: user.latitude,
-    #     lng: user.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: {user: user})
-    #   }
-    # end
-
   end
 
   def show
     @user = User.find(params[:id])
-    # @users = User.all
-    # @markers = @users.geocoded.map do |user|
-    #   {
-    #     lat: user.latitude,
-    #     lng: user.longitude
-    #   }
-    # end
-
-    # user = @user.geocoded
     @markers = [{lat: @user.latitude, lng: @user.longitude}]
+
+    @message = Message.new
+
+    if current_user.chatrooms_as_student.exists?(professional: @user)
+      if current_user.student?
+        @chatroom = Chatroom.where(student: current_user, professional: @user).first
+      else
+        @chatroom = Chatroom.where(professional: current_user, student: @user).first
+      end
+    else
+      if current_user.student?
+        @chatroom = Chatroom.create(student: current_user, professional: @user)
+        # @message = Message.new(message_params)
+        # @message.chatroom = @chatroom
+        # @message.user = current_user
+        # raise
+        # if @message.save
+        # redirect_to user_chatrooms_path(params[:id])
+        # else
+        #  render "new", status: :unprocessable_entity
+        # end
+      else
+        @chatroom = Chatroom.create(professional: current_user, student: @user)
+        # @message = Message.new(message_params)
+        # @message.chatroom = @chatroom
+        # @message.user = current_user
+        # if @message.save
+      #  redirect_to user_chatrooms_path(params[:id])
+        # else
+        #   render "new", status: :unprocessable_entity
+        # end
+      end
+
+    end
   end
+
+
 
   def my_profile
     redirect_to root_path unless current_user
     @review = Review.new
   end
+
+  # private
+
+  #   def message_params
+  #     params.require(:message).permit(:content)
+  #   end
 end

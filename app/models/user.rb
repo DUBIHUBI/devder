@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   has_many :meetings_as_student, class_name: "Meeting", foreign_key: :student_id
   has_many :meetings_as_professional, class_name: "Meeting", foreign_key: :professional_id
+
+  has_many :chatrooms_as_student, class_name: "Chatroom", foreign_key: :student_id
+  has_many :chatrooms_as_professional, class_name: "Chatroom", foreign_key: :professional_id
+
   has_many :reviews_as_student, class_name: "Review", foreign_key: :student_id
   has_many :reviews_as_professional, class_name: "Review", foreign_key: :professional_id
 
@@ -23,5 +27,9 @@ class User < ApplicationRecord
 
     User.distinct.pluck(:funding_stage).reject { |value| value.nil? }
 
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 end

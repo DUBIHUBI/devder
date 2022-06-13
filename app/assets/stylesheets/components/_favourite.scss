@@ -1,19 +1,32 @@
 .heart {
   position: relative;
-  color: $red;
-  top: -250px;
-  font-size: 24px;
-  opacity: 0;
+  color: $purple;
+  right: -200px;
+  top: -245px;
+  font-size: 20px;
+  opacity: 1;
+  border-radius: 50px;
+
 
     &::before {
-      border: 1px solid red;
+      padding: 8px;
+      border-radius: 50%;
+      border: 2px solid $purple;
     }
 
-    &.selected {
-      opacity: 1;
-    }
+    // &.selected {
+    //   opacity: 1;
+    // }
 
-    &.selected:hover {
-      opacity: 0;
-    }
+    // &.selected:hover {
+    //   opacity: 0;
+    // }
+}
+
+.heart:hover {
+  &::before {
+    cursor: pointer;
+    box-shadow: 1px 1px 10px $light-gray;
+    color: $purple;
+  }
 }

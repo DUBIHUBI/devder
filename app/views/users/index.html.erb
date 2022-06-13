@@ -61,7 +61,7 @@
               <%= image_tag user.image_url, class: "card-image" %>
           <%# </div> %>
             <% end %>
-          <i class="fa-solid fa-heart heart" data-favourites-target="icon" data-action="click->favourites#save" id="<%=user.id %>"></i>
+          <i class="fa-regular fa-heart heart" data-favourites-target="icon" data-action="click->favourites#save" id="<%=user.id %>"></i>
           <div class="card-body">
             <div class="border-bottom border-secondary">
             <h5 class="card-title text-center"><%= user.first_name %> <%= user.last_name %></h5>

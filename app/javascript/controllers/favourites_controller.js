@@ -11,13 +11,13 @@ export default class extends Controller {
 
   save(e) {
     console.log(e)
-    console.log(e.target.id)
     console.log(`/profiles/${e.target.id}`)
     fetch(`/profiles/${e.target.id}/favourites`, {method: "POST", headers: {"X-CSRF-Token": this.getMetaValue("csrf-token")}})
     .then(response => response.text())
     .then((data) => {
-      // this.iconTarget.innerHTML= '<p class="text-scheduled"> <em> <i class="fa-solid fa-circle-check"></i> Accepted </em> </p>'
-      this.iconTarget.classList.add("selected")
+      this.iconTarget.classList.toggle("fa-regular")
+      // this.iconTarget.innerHTML= '<i class="fa-solid fa-heart heart"></i>'
+      this.iconTarget.classList.toggle("fa-solid")
     })
 
   }

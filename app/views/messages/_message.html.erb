@@ -1,5 +1,6 @@
 <div class="cont-<%=message.user.first_name%>">
   <div class="message-box msg-<%= message.user.first_name %>">
+    <%= message.user == current_user ? "Me: " : "#{message.user.first_name}: " %>
     <%= message.content %>
   </div>
 </div>

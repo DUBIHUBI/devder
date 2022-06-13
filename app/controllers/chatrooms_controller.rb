@@ -44,6 +44,11 @@ class ChatroomsController < ApplicationController
     render 'index'
   end
 
+  # def destroy
+  #   @chatroom.destroy
+  #   redirect_to chatrooms_path, notice: "This chatroom was successfully destroyed."
+  # end
+
   private
 
   def find_professional

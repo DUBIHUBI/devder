@@ -17,6 +17,11 @@
     <%= render "shared/navbar" %>
     <%= yield %>
     <%= render "shared/flashes" %>
+
+    <script src="js/star-rating.js"></script>
+    <script>
+        const stars = new StarRating('.star-rating');
+    </script>
   </body>
   <%# <footer> %>
     <%# <%= render "shared/footer" %>

@@ -1,16 +1,28 @@
 .homepage-testimonials {
 
   img {
-    height: 130px;
+    height: 140px;
     border-radius: 50%;
   }
 
   p {
-    margin-left: -4px;
-    margin-bottom: -2px;
+    color: $light-gray;
   }
 
-  .text-right {
+  .testimonial-name {
     text-align: end;
+  }
+
+  .testimonial-content {
+    font-size: 14px;
+    padding-left: 16px;
+
+    i {
+      color: $dark-orange;
+    }
+  }
+
+  .testimonial-stars {
+    padding-left: 16px;
   }
 }

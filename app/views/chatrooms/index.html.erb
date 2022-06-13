@@ -69,19 +69,22 @@ INBOX
 
   <div id="room_container" class="col-md-8 col-sm-8 bg-dark text-light">
 
-      <div id="single_room">
-        <h4 class="text-center">  </h4>
+      <div class="container chatroom"
+        data-controller="chatroom-subscription"
+        data-chatroom-subscription-chatroom-id-value="<%= @active_chatroom.id %>">
+
+        <h4 class="text-center"><%= @active_chatroom.name  %></h4>
 
         <div id="messages">
 
-        <div class="card-white">
+        <div class="messages" data-chatroom-subscription-target="messages">
           <% @active_chatroom.messages.each do |message| %>
             <%= render partial: "messages/message", locals: { message: message } %>
 
           <% end %>
         </div>
 
-        <%= simple_form_for([@active_chatroom, @message]) do |f| %>
+        <%= simple_form_for [@active_chatroom, @message] do |f| %>
           <%= f.input :content, label:false %>
           <%= f.submit %>
         <% end %>

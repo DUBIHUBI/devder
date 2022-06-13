@@ -1,6 +1,13 @@
-<div class="cont-<%=message.user.first_name%>">
-  <div class="message-box msg-<%= message.user.first_name %>">
-    <%= message.user == current_user ? "Me: " : "#{message.user.first_name}: " %>
+
+
+<div id="message-<%= message.id %>">
+  <div class="message-box">
+   <small>
+    <i><%= message.created_at.strftime("%b %e at %l:%M %p") %></i><br>
+    <strong><%= message.user == current_user ? "Me: " : "#{message.user.first_name}: " %></strong>
+   </small>
+
+
     <%= message.content %>
   </div>
 </div>

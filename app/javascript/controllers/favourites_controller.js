@@ -13,7 +13,7 @@ export default class extends Controller {
     console.log(e)
     console.log(e.target.id)
     console.log(`/profiles/${e.target.id}`)
-    fetch(`/users/${e.target.id}/favourites`, {method: "POST", headers: {"X-CSRF-Token": this.getMetaValue("csrf-token")}})
+    fetch(`/profiles/${e.target.id}/favourites`, {method: "POST", headers: {"X-CSRF-Token": this.getMetaValue("csrf-token")}})
     .then(response => response.text())
     .then((data) => {
       // this.iconTarget.innerHTML= '<p class="text-scheduled"> <em> <i class="fa-solid fa-circle-check"></i> Accepted </em> </p>'
@@ -21,7 +21,6 @@ export default class extends Controller {
     })
 
   }
-
 
   getMetaValue = (name) => {
     const element = document.head.querySelector(`meta[name="${name}"]`)

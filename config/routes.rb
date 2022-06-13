@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, path: 'profiles' do
     resources :meetings, only: [:new, :create]
     post "meetings/:id/accept", to: 'meetings#accept'
+    resources :reviews, only: [:new, :create]
   end
   resources :chatrooms do
     resources :messages, only: [:create]

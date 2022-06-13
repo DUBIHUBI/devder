@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2022_06_13_114734) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_114734) do
     t.index ["student_id"], name: "index_meetings_on_student_id"
   end
 
+
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chatroom_id", null: false
@@ -44,6 +47,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_114734) do
     t.bigint "user_id", null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "content"
+    t.integer "rating"
+    t.bigint "professional_id"
+    t.bigint "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["professional_id"], name: "index_reviews_on_professional_id"
+    t.index ["student_id"], name: "index_reviews_on_student_id"
+
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,6 +94,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_114734) do
   add_foreign_key "chatrooms", "users", column: "student_id"
   add_foreign_key "meetings", "users", column: "professional_id"
   add_foreign_key "meetings", "users", column: "student_id"
+
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+
+  add_foreign_key "reviews", "users", column: "professional_id"
+  add_foreign_key "reviews", "users", column: "student_id"
+
 end

@@ -22,5 +22,8 @@ application.register("meeting-movement", MeetingMovementController)
 import MeetingsController from "./meetings_controller.js"
 application.register("meetings", MeetingsController)
 
+import NewReviewController from "./new_review_controller.js"
+application.register("new-review", NewReviewController)
+
 import SignUpFormController from "./sign_up_form_controller.js"
 application.register("sign-up-form", SignUpFormController)

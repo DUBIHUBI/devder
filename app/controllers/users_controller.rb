@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @markers = [{lat: @user.latitude, lng: @user.longitude}]
+
     @message = Message.new
 
     if current_user.chatrooms_as_student.exists?(professional: @user)
@@ -55,6 +56,7 @@ class UsersController < ApplicationController
 
   def my_profile
     redirect_to root_path unless current_user
+    @review = Review.new
   end
 
   # private

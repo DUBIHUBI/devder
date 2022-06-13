@@ -20,11 +20,11 @@ User.create!(
   last_name: "Ricci",
   age: (20..35).to_a.sample,
   image_url: "https://avatars.githubusercontent.com/u/65777698?v=4",
-  profile_image:
-    RemoveBg.from_url(
-      "https://avatars.githubusercontent.com/u/65777698?v=4",
-      api_key: ENV['REMOVE_BG_API_KEY'],
-    ).save("app/assets/images/no-bg-#{@counter += 1}.png"),
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://avatars.githubusercontent.com/u/65777698?v=4",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   role: "Full Stack Web Developer",
   company_name: "MammaMia Limited",
   address: "Westminster",
@@ -44,11 +44,11 @@ User.create!(
   last_name: "Leslie",
   age: (20..35).to_a.sample,
   image_url: "https://ca.slack-edge.com/T02NE0241-U01K2UZ287J-413c3a4571b1-512",
-  profile_image:
-    RemoveBg.from_url(
-      "https://ca.slack-edge.com/T02NE0241-U01K2UZ287J-413c3a4571b1-512",
-      api_key: ENV['REMOVE_BG_API_KEY'],
-    ).save("app/assets/images/no-bg-#{@counter += 1}.png"),
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U01K2UZ287J-413c3a4571b1-512",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   role: "Full Stack Shifu",
   company_name: "Windsor Castle",
   address: "Southwark", gender: "male",
@@ -66,11 +66,11 @@ User.create!(
   last_name: "Odugbesan",
   age: (20..35).to_a.sample,
   image_url: "https://ca.slack-edge.com/T02NE0241-UD478BM6G-8b49cda00a95-512",
-  profile_image:
-    RemoveBg.from_url(
-      "https://ca.slack-edge.com/T02NE0241-UD478BM6G-8b49cda00a95-512",
-      api_key: ENV['REMOVE_BG_API_KEY'],
-    ).save("app/assets/images/no-bg-#{@counter += 1}.png"),
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-UD478BM6G-8b49cda00a95-512",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   role: "Frontend Master",
   company_name: "Le Dragon",
   address: "Lambeth",
@@ -90,11 +90,11 @@ User.create!(
   last_name: "Qureshi",
   age: (20..35).to_a.sample,
   image_url: "https://ca.slack-edge.com/T02NE0241-U01BHHMF87R-755eb2936b41-512",
-  profile_image:
-    RemoveBg.from_url(
-      "https://ca.slack-edge.com/T02NE0241-U01BHHMF87R-755eb2936b41-512",
-      api_key: ENV['REMOVE_BG_API_KEY'],
-    ).save("app/assets/images/no-bg-#{@counter += 1}.png"),
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U01BHHMF87R-755eb2936b41-512",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   role: "Full Stack Angel",
   company_name: "Greenrake Heaven",
   address: "Hackney",
@@ -114,11 +114,11 @@ User.create!(
   last_name: "Dunleavy",
   age: (20..35).to_a.sample,
   image_url: "https://ca.slack-edge.com/T02NE0241-U2JHP75T3-bc41a8100593-512",
-  profile_image:
-    RemoveBg.from_url(
-      "https://ca.slack-edge.com/T02NE0241-U2JHP75T3-bc41a8100593-512",
-      api_key: ENV['REMOVE_BG_API_KEY'],
-    ).save("app/assets/images/no-bg-#{@counter += 1}.png"),
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U2JHP75T3-bc41a8100593-512",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   role: "St. Backend Developer",
   company_name: "Guinness Storehouse",
   address: "Greenwich",
@@ -138,11 +138,11 @@ User.create!(
   last_name: "Pople",
   age: (20..35).to_a.sample,
   image_url: "https://ca.slack-edge.com/T02NE0241-U02SU3A11UP-d4bef5f0084e-512",
-  profile_image:
-    RemoveBg.from_url(
-      "https://ca.slack-edge.com/T02NE0241-U02SU3A11UP-d4bef5f0084e-512",
-      api_key: ENV['REMOVE_BG_API_KEY'],
-    ).save("app/assets/images/no-bg-#{@counter += 1}.png"),
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U02SU3A11UP-d4bef5f0084e-512",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   role: "Junior Software Engineer",
   company_name: "Hamilton Associate",
   address: "Islington",
@@ -162,11 +162,11 @@ User.create!(
   last_name: "Moffat",
   age: (20..35).to_a.sample,
   image_url: "https://ca.slack-edge.com/T02NE0241-U033H6RMULA-455e860d3a79-192",
-  profile_image:
-    RemoveBg.from_url(
-      "https://ca.slack-edge.com/T02NE0241-U033H6RMULA-455e860d3a79-192",
-      api_key: ENV['REMOVE_BG_API_KEY'],
-    ).save("app/assets/images/no-bg-#{@counter += 1}.png"),
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U033H6RMULA-455e860d3a79-192",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   role: "General Manager",
   company_name: "Le Wagon",
   address: "Hackney",
@@ -186,11 +186,11 @@ User.create!(
   last_name: "Paillard",
   age: (20..35).to_a.sample,
   image_url: "https://ca.slack-edge.com/T02NE0241-U02NE1NL9-40998e0a5c92-192",
-    profile_image:
-    RemoveBg.from_url(
-      "https://ca.slack-edge.com/T02NE0241-U02NE1NL9-40998e0a5c92-192",
-      api_key: ENV['REMOVE_BG_API_KEY'],
-    ).save("app/assets/images/no-bg-#{@counter += 1}.png"),
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U02NE1NL9-40998e0a5c92-192",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   role: "Founder",
   company_name: "Le Wagon",
   address: "Hackney",
@@ -210,11 +210,11 @@ User.create!(
   last_name: "Saunier",
   age: (20..35).to_a.sample,
   image_url: "https://ca.slack-edge.com/T02NE0241-U02NE0247-6fe39830661f-192",
-  profile_image:
-    RemoveBg.from_url(
-      "https://ca.slack-edge.com/T02NE0241-U02NE0247-6fe39830661f-192",
-      api_key: ENV['REMOVE_BG_API_KEY'],
-    ).save("app/assets/images/no-bg-#{@counter += 1}.png"),
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U02NE0247-6fe39830661f-192",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   role: "Back-end Developer",
   company_name: "Le Wagon",
   address: "Hackney",
@@ -234,11 +234,11 @@ User.create!(
   last_name: "Yuo",
   age: (20..35).to_a.sample,
   image_url: "https://ca.slack-edge.com/T02NE0241-U03BP67E9RB-3552484dd4f0-192",
-  profile_image:
-    RemoveBg.from_url(
-      "https://ca.slack-edge.com/T02NE0241-U03BP67E9RB-3552484dd4f0-192",
-      api_key: ENV['REMOVE_BG_API_KEY'],
-    ).save("app/assets/images/no-bg-#{@counter += 1}.png"),
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U03BP67E9RB-3552484dd4f0-192",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   desired_role: "Front-end Developer",
   address: "Woolwich",
   gender: "female",
@@ -253,11 +253,11 @@ User.create!(
   last_name: "van Meeuwen",
   age: (20..35).to_a.sample,
   image_url: "https://ca.slack-edge.com/T02NE0241-U03BQ1QS003-bf71b0faf5f4-512",
-  profile_image:
-    RemoveBg.from_url(
-      "https://ca.slack-edge.com/T02NE0241-U03BQ1QS003-bf71b0faf5f4-512",
-      api_key: ENV['REMOVE_BG_API_KEY'],
-    ).save("app/assets/images/no-bg-#{@counter += 1}.png"),
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U03BQ1QS003-bf71b0faf5f4-512",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   desired_role: "Front-end Developer",
   address: "Battersea",
   gender: "male",
@@ -272,11 +272,11 @@ User.create!(
   last_name: "Efthymiadou",
   age: (20..35).to_a.sample,
   image_url: "https://ca.slack-edge.com/T02NE0241-U03BG8BGHM3-1469b40be5b0-512",
-  profile_image:
-    RemoveBg.from_url(
-      "https://ca.slack-edge.com/T02NE0241-U03BG8BGHM3-1469b40be5b0-512",
-      api_key: ENV['REMOVE_BG_API_KEY'],
-    ).save("app/assets/images/no-bg-#{@counter += 1}.png"),
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U03BG8BGHM3-1469b40be5b0-512",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   desired_role: "Back-end Developer",
   address: "Poplar",
   gender: "female",

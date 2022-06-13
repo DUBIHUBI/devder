@@ -1,15 +1,79 @@
 .profile-banner {
-  background-size: cover;
-  background-position: center;
-  height: 320px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 36px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // background-size: cover;
+  // background-position: center;
+  // display: flex;
+  // align-items: center;
+  height: 45vh;
+  width: 100vw;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 95%);
+  overflow: hidden;
+  margin-bottom: -40px;
 }
+
+.profile-name {
+  i {
+    color: $light-gray;
+    font-size: 28px;
+  }
+
+  h1 {
+    font-size: 56px;
+  }
+
+}
+
+.profile-basic {
+
+  .row {
+    padding: 12px 0px;
+  }
+
+  h2 {
+    color: $white;
+  }
+
+  i {
+    color: $purple;
+    font-size: 32px;
+  }
+
+  p {
+    color: $light-gray;
+    font-size: 24px;
+  }
+
+  .basic-role {
+    padding: 16px 0px;
+
+    h2 {
+      color: $dark-orange;
+    }
+  }
+
+  .basic-company {
+    color: $light-gray;
+    padding: 16px 0px;
+  }
+}
+
+// .profile-container {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: flex-start;
+// }
+
+.profile-image {
+  position: sticky;
+  top: 30vh;
+  opacity: 0.5;
+
+  img {
+    right: 80px;
+    width: 550px;
+  }
+}
+
+// Legacy profile page classes below:
 .box {
   border: 1px solid whitesmoke;
   padding: 15px;
@@ -29,11 +93,11 @@
 }
 
 .abtn {
-width: 100px;
-height: 40px;
-left: 100px;
-top: 409px;
-background-color: #9334E9;
+  width: 100px;
+  height: 40px;
+  left: 100px;
+  top: 409px;
+  background-color: #9334E9;
 
 &:hover{
   box-shadow: 10px 10px 30px #cbc2c8;

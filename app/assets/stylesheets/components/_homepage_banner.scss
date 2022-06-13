@@ -1,10 +1,10 @@
-.banner {
+.homepage-banner {
   background-size: cover;
   background-position: center;
   padding: 80px 104px 104px 104px;
 }
 
-.banner h1 {
+.homepage-banner h1 {
   margin: 0;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 96px;
@@ -13,11 +13,4 @@
   background-clip: text;
   color: transparent;
   padding-bottom: 56px;
-}
-
-.banner p {
-  font-size: 20px;
-  color: red;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }

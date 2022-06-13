@@ -1,0 +1,43 @@
+INBOX
+
+
+<div id="chatroom_container" class="row bg-dark text-light">
+  <div id="side_panel" class="col-md-4 col-sm-4">
+    <h5> <%= current_user.first_name %> </h5>
+    <h4> Users </h4>
+
+    <div id="users">
+
+    </div>
+    <h4> Rooms </h4>
+    <%# <%= turbo_stream_from "rooms" %>
+
+    <div id="rooms">
+      <% @chatrooms.each do |chatroom| %>
+      <p class="<%= 'active' if chatroom == @active_chatroom %>"><%= link_to chatroom.professional.full_name, chatrooms_path(active: chatroom.id) %></p>
+
+
+      <% end %>
+    </div>
+  </div>
+  <div id="room_container"
+  class="col-md-8 col-sm-8 bg-dark text-light">
+
+      <div id="single_room">
+        <h4 class="text-center"> <%= current_user.first_name%> </h4>
+
+        <div id="messages">
+
+        <% @active_chatroom.messages.each do |message| %>
+          <%= render partial: "messages/message", locals: { message: message } %>
+        <% end %>
+
+        <%= simple_form_for([@active_chatroom, @message]) do |f| %>
+          <%= f.input :content %>
+          <%= f.submit %>
+        <% end %>
+        </div>
+      </div>
+
+  </div>
+</div>

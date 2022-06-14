@@ -109,3 +109,15 @@
       border-bottom: 5px solid $dark-orange;
     }
   }
+
+.fav-notifications {
+  position: relative;
+  background-color: purple;
+  right: 29px;
+  bottom: -41px;
+  border-radius: 50%;
+  width: 25px;
+  align-items: center;
+  text-align: center;
+  height: 25px;
+}

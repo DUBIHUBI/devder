@@ -17,40 +17,30 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @markers = [{lat: @user.latitude, lng: @user.longitude}]
 
-    @message = Message.new
+      @user = User.find(params[:id])
 
-    if current_user.chatrooms_as_student.exists?(professional: @user)
-      if current_user.student?
-        @chatroom = Chatroom.where(student: current_user, professional: @user).first
-      else
-        @chatroom = Chatroom.where(professional: current_user, student: @user).first
-      end
-    else
-      if current_user.student?
-        @chatroom = Chatroom.create(student: current_user, professional: @user)
-        # @message = Message.new(message_params)
-        # @message.chatroom = @chatroom
-        # @message.user = current_user
-        # raise
-        # if @message.save
-        # redirect_to user_chatrooms_path(params[:id])
-        # else
-        #  render "new", status: :unprocessable_entity
-        # end
-      else
-        @chatroom = Chatroom.create(professional: current_user, student: @user)
-        # @message = Message.new(message_params)
-        # @message.chatroom = @chatroom
-        # @message.user = current_user
-        # if @message.save
-      #  redirect_to user_chatrooms_path(params[:id])
-        # else
-        #   render "new", status: :unprocessable_entity
-        # end
+      if user_signed_in? && current_user.student?
+        @message = Message.new
+
+        if current_user.chatrooms_as_student.exists?(professional: @user)
+          if current_user.student?
+            @chatroom = Chatroom.where(student: current_user, professional: @user).first
+          else
+            @chatroom = Chatroom.where(professional: current_user, student: @user).first
+          end
+        else
+          if current_user.student?
+            @chatroom = Chatroom.create(student: current_user, professional: @user)
+          else
+            @chatroom = Chatroom.create(professional: current_user, student: @user)
+          end
+
+        end
       end
 
-    end
+
   end
+
 
 
 

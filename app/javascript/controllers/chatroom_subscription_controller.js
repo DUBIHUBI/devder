@@ -18,9 +18,7 @@ export default class extends Controller {
 
          }
 
-        //  resetForm: (event) {
-        //     event.target.reset()
-        //   }
+
         // , html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"}
         }
 
@@ -29,13 +27,15 @@ export default class extends Controller {
 
 
 
-    // disconnect() {
-    //   console.log("Unsubscribed from the chatroom")
-    //   this.channel.unsubscribe()
-    // }
+
   }
 
+  resetForm(event) {
+    event.target.reset()
+  }
 
-
-
+  disconnect() {
+    console.log("Unsubscribed from the chatroom")
+    this.channel.unsubscribe()
+  }
 }

@@ -1,0 +1,120 @@
+.active {
+  background-color: purple;
+  text-decoration: none;
+}
+
+.active a {
+  color: white;
+  text-decoration: none;
+}
+
+.chatlist a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.msg-form {
+  width: 100%;
+  height: 56px;
+  padding: 10px;
+}
+
+#messages {
+  height: calc(100vh - 200px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+}
+
+#room_container {
+  height: 100vh;
+  margin-right: 0px !important;
+}
+
+#side_panel {
+  height: 100vh;
+  min-width: 25%;
+  margin-right: 0px !important;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-bottom: 55px;
+}
+#chatroom_container {
+  height: 100vh;
+  min-width: 75%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.msg-content {
+  width: 80%;
+  margin-right: 5px;
+}
+
+.big-box-1 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.big-box-2 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message-box-1 {
+  word-wrap: break-word;
+  width: fit-content;
+  max-width: 80%;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #7940c9;
+  padding: 10px;
+}
+
+.message-box-2 {
+  word-wrap: break-word;
+  width: fit-content;
+  max-width: 80%;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #d587dcba;
+  padding: 10px;
+
+ }
+
+ i {
+  color: lightgray;
+  font-weight: lighter;
+  font-size: 12px;
+
+}
+
+#new_message {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+
+  .msg-inputs {
+    width: 75%;
+    margin-right: 6px ;
+
+  }
+  .msg-actions {
+    width: 25%;
+    margin-left: 4px ;
+  }
+  input {
+    margin: 0;
+  }
+
+}
+
+.chatlist{
+
+  padding: 20px;
+}

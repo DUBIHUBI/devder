@@ -79,12 +79,15 @@
       <div class="col">
       </div>
     </div>
-    <div class="row">
-      <div class="col text-center my-5">
-        <div class="btn-purple"><%= "Message #{@user.first_name}" %></div>
-        <%= render partial: "shared/chat_window" %>
+
+    <% if user_signed_in? && current_user.student? %>
+      <div class="row">
+        <div class="col text-center my-5">
+          <%= render partial: "shared/chat_window" %>
+        </div>
       </div>
-    </div>
+    <% end %>
+
   </div>
 </div>
 

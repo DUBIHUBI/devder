@@ -13,14 +13,18 @@ class ChatroomsController < ApplicationController
     @chatroom.student = current_user
     @chatroom.professional = @user
     if @chatroom.save
-      redirect_to user_chatrooms_path
+      redirect_to chatrooms_path(@chatroom)
     else
       render "new", status: :unprocessable_entity
     end
+
   end
 
   def index
-    @chatrooms = Chatroom.where(student: current_user).or(Chatroom.where(professional: current_user))
+    @chatrooms = Chatroom.joins(:messages).where.associated(:messages).where(student: current_user).or(Chatroom.where(professional: current_user)).distinct
+                          .order(created_at: :desc)
+
+
     if params[:active].present?
       @active_chatroom = @chatrooms.find(params[:active])
     else
@@ -35,6 +39,7 @@ class ChatroomsController < ApplicationController
     # else
     #   @chatroom = Chatroom.create(student: current_user, professional: @user)
     # end
+    redirect_to root_path unless current_user
   end
 
   def show

@@ -1,36 +1,57 @@
-<div class="row justify-content-center">
-          <div class="col-auto">
-            <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#createchat">
-              Chat
+<style>
+
+.mask-window {
+  backdrop-filter: blur(15px);
+  background-color: rgba(255,255,255,.5);
+  border-radius: 3em;
+  border: 2px solid rgba(255,255,255,.1);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+  min-height: 200px;
+  min-width: 300px;
+}
+
+</style>
+
+
+
+
+      <div class="row justify-content-center">
+
+          <div class="col-auto" >
+
+            <button   type="button" class="btn-purple"  data-bs-toggle="modal" data-bs-target="#createchat">
+              <%= "Message #{@user.first_name}" %>
             </button>
 
             <div class="modal fade" id="createchat" tabindex="-1" aria-labelledby="createchatLabel" aria-hidden="true">
-              <div class="modal-dialog text-black">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="createchatLabel"><%= "Chat with #{@user.first_name} " %></h5>
-                  </div>
-                  <div class="modal-body">
+              <div class="modal-dialog text-white">
+
+                <div class="modal-content mask-window justify-content-center">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="createchatLabel"><%= "Chat with #{@user.first_name} " %></h5>
+                      </div>
 
 
-                    <% @chatroom.messages.each do |message| %>
-                      <p><%= message.content %></p>
-                    <% end %>
+                    <div class="abc">
 
+                      <div class="modal-body ">
+                        <%= simple_form_for [@chatroom, @message] do |f| %>
+                          <div class="form-inputs" >
+                            <%= f.input :content, as: :text, label: false %>
+                          </div>
+                          <div class="form-actions mb-3">
+                            <%= f.button :submit, "Send", class: "send-btn"%>
+                          </div>
+                        <% end %>
+                      </div>
 
-                    <%= simple_form_for [@chatroom, @message],
+                    </div>
 
-                        html: {class: "d-flex"} do |f|
-                      %>
-                        <%= f.input :content,
-                          label: false,
-                          wrapper_html: {class: "flex-grow-1"}
-                        %>
-                        <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-                      <% end %>
-                  </div>
                 </div>
+
               </div>
             </div>
           </div>
-        </div>
+
+      </div>

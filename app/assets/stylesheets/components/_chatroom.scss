@@ -21,9 +21,10 @@
 }
 
 #messages {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 200px);
   overflow-x: hidden;
   overflow-y: scroll;
+  position: relative;
 }
 
 #room_container {
@@ -33,6 +34,7 @@
 
 #side_panel {
   height: 100vh;
+  min-width: 25%;
   margin-right: 0px !important;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -40,7 +42,8 @@
 }
 #chatroom_container {
   height: 100vh;
-  margin:0 200px;
+  min-width: 75%;
+  margin: 0 auto;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -63,7 +66,7 @@
 .message-box-1 {
   word-wrap: break-word;
   width: fit-content;
-  max-width: 40%;
+  max-width: 80%;
   padding: 5px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -74,7 +77,7 @@
 .message-box-2 {
   word-wrap: break-word;
   width: fit-content;
-  max-width: 40%;
+  max-width: 80%;
   padding: 5px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -88,4 +91,30 @@
   font-weight: lighter;
   font-size: 12px;
 
+}
+
+#new_message {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+
+  .msg-inputs {
+    width: 75%;
+    margin-right: 6px ;
+
+  }
+  .msg-actions {
+    width: 25%;
+    margin-left: 4px ;
+  }
+  input {
+    margin: 0;
+  }
+
+}
+
+.chatlist{
+
+  padding: 20px;
 }

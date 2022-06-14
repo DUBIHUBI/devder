@@ -47,3 +47,9 @@
     transform: scale(1.0);
   }
 }
+
+.fav-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

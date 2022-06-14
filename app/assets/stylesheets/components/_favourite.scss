@@ -7,21 +7,14 @@
   opacity: 1;
   border-radius: 50px;
 
-
     &::before {
       padding: 8px;
       border-radius: 50%;
       border: 2px solid $purple;
     }
 
-    // &.selected {
-    //   opacity: 1;
-    // }
-
-    // &.selected:hover {
-    //   opacity: 0;
-    // }
 }
+
 
 .heart:hover {
   &::before {

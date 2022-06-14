@@ -1,7 +1,7 @@
 <div class="m-3 p-3">
   <div class="row">
     <div class="col-sm-12 col-md-4 col-lg-3">
-      <div class="filter">
+      <div class="filter p-4">
         <h2 class="text-center my-3">Search</h2>
         <div class="search-bar">
 
@@ -18,7 +18,7 @@
 
             <div class="filter-content">
               <%= select_tag :company_type,
-                options_for_select((User.company_types), params[:company_type]),
+                options_for_select((User.company_types.sort), params[:company_type]),
               class: "form-control search-input",
                 include_blank: "Select company type" %>
             </div>
@@ -27,21 +27,28 @@
 
             <div class="filter-content">
               <%= select_tag :funding_stage,
-                options_for_select((User.funding_stages), params[:funding_stage]),
+                options_for_select((User.funding_stages.sort), params[:funding_stage]),
               class: "form-control search-input",
                 include_blank: "Select funding stage" %>
             </div>
 
-            <div class="filter-label">Gender:</div>
+            <div class="filter-label">Role:</div>
 
             <div class="filter-content">
-              <%= radio_button_tag :gender, "male", params[:gender]%>
-              <%= label_tag "gender_Male", "male" %>
-              <%= radio_button_tag :gender, "female", params[:gender]%>
-              <%= label_tag "gender_Female", "female" %>
+              <%= select_tag :role,
+                options_for_select((User.roles.sort), params[:role]),
+              class: "form-control search-input",
+                include_blank: "Select role" %>
             </div>
 
-            <h1><%= @aaa %></h1>
+            <%# <div class="filter-label">Gender:</div> %>
+
+            <%# <div class="filter-content"> %>
+              <%# <%= radio_button_tag :gender, "male", params[:gender]%>
+              <%# <%= label_tag "gender_Male", "male" %>
+              <%# <%= radio_button_tag :gender, "female", params[:gender]%>
+              <%# <%= label_tag "gender_Female", "female" %>
+            <%# </div> %>
 
             <div class="text-center">
               <%= submit_tag "Search", class: "btn-purple" %>

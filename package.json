@@ -12,5 +12,8 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.17.12"
   }
 }

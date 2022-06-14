@@ -26,20 +26,25 @@
             <p class="text-scheduled"><i class="fa-solid fa-calendar-days"></i> <%= meeting_as_student.date.strftime("%d %B %Y ")%></em></p>
             <p class="text-scheduled"><i class="fa-solid fa-clock"></i><%= meeting_as_student.time.strftime("%H:%M")%></p>
             <p class="text-scheduled"><em> <i class="fa-solid fa-circle-check"></i> Accepted </em> </p>
-            <a href="#" class="btn-purple-review" data-new-review-target="button" data-action="click->new-review#revealContent">Leave a review 🤩</a>
-            <%= simple_form_for([meeting_as_student.professional, @review], html: {class: "d-none review-form", data: {new_review_target: "form", action: "submit->new-review#create"}}) do |f| %>
-              <div class="content-input">
-                <%= f.input :content, required: true, placeholder: "How did your meeting go?" %>
-              </div>
-              <div class="star-rating">
-                <%= f.input :rating, collection: 1..5, required: true %>
-              </div>
-              <div>
-                <%= f.button :submit, "Submit Review", class:"btn-purple-sm", data: {new_review_target: "submit"} %>
-              </div>
+            <% if meeting_as_student.professional.reviews_as_professional.any? %>
+              <p class="reviewed-message text-center">Thanks for your review!</p>
+              <%= image_tag meeting_as_student.professional.image_url, class:"meet-avatar-student-accepted-reviewed", data: {new_review_target: "avatar"} %>
+            <% else %>
+              <a href="#" class="btn-purple-review" data-new-review-target="button" data-action="click->new-review#revealContent">Leave a review 🤩</a>
+              <%= simple_form_for([meeting_as_student.professional, @review], html: {class: "d-none review-form", data: {new_review_target: "form", action: "submit->new-review#create"}}) do |f| %>
+                <div class="content-input">
+                  <%= f.input :content, required: true, placeholder: "How did your meeting go?" %>
+                </div>
+                <div class="star-rating">
+                  <%= f.input :rating, collection: 1..5, required: true %>
+                </div>
+                <div>
+                  <%= f.button :submit, "Submit Review", class:"btn-purple-sm", data: {new_review_target: "submit"} %>
+                </div>
+              <% end %>
+              <%= image_tag meeting_as_student.professional.image_url, class:"meet-avatar-student-accepted-no-review", data: {new_review_target: "avatar"} %>
+            </div>
             <% end %>
-            <%= image_tag meeting_as_student.professional.image_url, class:"meet-avatar-student-accepted", data: {new_review_target: "avatar"} %>
-          </div>
         <% end %>
       <% end %>
     </div>

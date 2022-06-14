@@ -53,7 +53,9 @@
                           required: true %>
             </div>
             <div data-sign-up-form-target="professional" class="d-none">
-              <%= f.input :role %>
+              <%= f.input :role
+                          prompt: "Select your job title",
+                          collection: ["Front-end developer", "Back-end developer", "Full-stack developer", "Software engineer", "Data scientist"] %>
               <%= f.input :company_name %>
               <%= f.input :company_type,
                           prompt: "Select the type of company you work for",

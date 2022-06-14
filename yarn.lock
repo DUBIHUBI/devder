@@ -111,6 +111,11 @@
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.5.tgz"
   integrity sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==
 
+"@rails/actioncable@^6.0.5":
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.0.5.tgz#a889f25b0c13ea0215d747e32fa3d1a52967f17b"
+  integrity sha512-79sIsTpIoHnJ6pRHKaC6h5NMRpY+VZD4mqOKN/035X1ehxHgToDWvgMZ4jV5y1qeObg4enmNESmgeKoImYGzOw==
+
 "@rails/actioncable@^7.0":
   version "7.0.3"
   resolved "https://registry.npmjs.org/@rails/actioncable/-/actioncable-7.0.3.tgz"
@@ -386,7 +391,7 @@ cross-spawn@^7.0.3:
 
 detect-it@^4.0.0:
   version "4.0.1"
-  resolved "https://registry.yarnpkg.com/detect-it/-/detect-it-4.0.1.tgz#3f8de6b8330f5086270571251bedf10aec049e18"
+  resolved "https://registry.npmjs.org/detect-it/-/detect-it-4.0.1.tgz"
   integrity sha512-dg5YBTJYvogK1+dA2mBUDKzOWfYZtHVba89SyZUhc4+e3i2tzgjANFg5lDRCd3UOtRcw00vUTMK8LELcMdicug==
 
 electron-to-chromium@^1.4.147:
@@ -792,7 +797,7 @@ source-map@^0.6.0:
 
 star-rating.js@^4.2.3:
   version "4.2.3"
-  resolved "https://registry.yarnpkg.com/star-rating.js/-/star-rating.js-4.2.3.tgz#34cfa60d34373b64a58eee33e258c8361dc5573f"
+  resolved "https://registry.npmjs.org/star-rating.js/-/star-rating.js-4.2.3.tgz"
   integrity sha512-BzoQUPxybTZmFw4JvQjmBaC3YiOhTZwrNCJkNivQVAsK0uvsb7p2de+1Ok/Dc95IwGVEU6JBlHO25dmeuGVKIA==
   dependencies:
     detect-it "^4.0.0"

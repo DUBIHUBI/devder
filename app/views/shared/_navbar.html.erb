@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon align-items-center">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand mx-3" do %>
       <%= image_tag ('logo') %>
@@ -9,12 +9,22 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav  me-auto align-item-center">
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Professionals", users_path, class: "nav-explore" %>
+
+          <li class="nav-item tabs">
+           <%= link_to "Messages", chatrooms_path, class: "nav-professionals #{controller_name == "chatrooms" ? "current" : ""}" %>
           </li>
-          <li class="nav-item dropdown">
+
+          <li class="nav-item tabs">
+            <%= link_to "Professionals", users_path, class: "nav-professionals #{controller_name == "users" ? "current" : ""}" %>
+          </li>
+
+          <li class="nav-item tabs">
+            <%= link_to "My favourites", favourites_path, class: "nav-professionals #{controller_name == "favourites" ? "current" : ""}" %>
+          </li>
+
+          <li class="nav-item dropdown ml-3">
             <%= image_tag current_user.image_url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
@@ -23,12 +33,13 @@
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
+
         <% else %>
-          <li class="nav-item active">
-            <%= link_to "Professionals", users_path, class: "nav-professionals mx-5" %>
+          <li class="nav-item tabs">
+            <%= link_to "Professionals", users_path, class: "nav-professionals #{controller_name == "users" ? "current" : ""}" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-login mx-4", data: {turbo: false} %>
+          <li class="nav-item m-3">
+            <%= link_to "Login", new_user_session_path, class: "nav-login", data: {turbo: false} %>
           </li>
           <li class="nav-item">
             <%= link_to "Sign-up", new_user_registration_path, class: "nav-sign-up", data: {turbo: false} %>

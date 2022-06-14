@@ -1,0 +1,25 @@
+.heart {
+  position: relative;
+  color: $purple;
+  right: -200px;
+  top: -245px;
+  font-size: 20px;
+  opacity: 1;
+  border-radius: 50px;
+
+    &::before {
+      padding: 8px;
+      border-radius: 50%;
+      border: 2px solid $purple;
+    }
+
+}
+
+
+.heart:hover {
+  &::before {
+    cursor: pointer;
+    box-shadow: 1px 1px 10px $light-gray;
+    color: $purple;
+  }
+}

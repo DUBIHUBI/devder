@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :chatrooms, only: :index
   resources :users, path: 'profiles' do
     resources :meetings, only: [:new, :create]
+    resources :favourites, only: [:create]
     post "meetings/:id/accept", to: 'meetings#accept'
     resources :reviews, only: [:new, :create]
   end
@@ -17,4 +18,6 @@ Rails.application.routes.draw do
   get :my_profile, to: "users#my_profile" do
     resources :meetings, only: [:show]
   end
+
+  resources :favourites, only: [:index, :destroy]
 end

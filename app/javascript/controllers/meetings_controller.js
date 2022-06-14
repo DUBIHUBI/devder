@@ -8,8 +8,6 @@ export default class extends Controller {
   connect() {
     console.log('Loaded meetings controller')
     console.dir(this.element)
-    // console.log(this.element.querySelector(".bg-warning"))
-    // this.element.classList.remove("bg-warning")
   }
 
  accept(e){
@@ -22,8 +20,6 @@ export default class extends Controller {
      this.acceptTarget.remove()
      this.element.classList.remove("meet-pending")
      this.element.classList.add("meet-scheduled")
-     //  this.element.classList.add("col-md-6")
-     //  this.element.classList.add("col-lg-4")
      //  this.cardTarget.outerHTML = data
      this.statusTarget.innerHTML= '<p class="text-scheduled"> <em> <i class="fa-solid fa-circle-check"></i> Accepted </em> </p>'
      this.dispatch("confirmed", {target: this.element})
@@ -31,8 +27,6 @@ export default class extends Controller {
 
    })
  }
-
-
 
  getMetaValue = (name) => {
   const element = document.head.querySelector(`meta[name="${name}"]`)

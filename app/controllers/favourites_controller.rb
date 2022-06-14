@@ -2,10 +2,14 @@ class FavouritesController < ApplicationController
   before_action :find_professional, only: [:create, :delete]
 
   def index
-    @favourites = Favourite.where(student_id: current_user.id)
-    @users = []
-    @favourites.each do |favourite|
-      @users << User.find(favourite.professional_id)
+    if current_user
+      @favourites = Favourite.where(student_id: current_user.id)
+      @users = []
+      @favourites.each do |favourite|
+        @users << User.find(favourite.professional_id)
+      end
+    else
+      redirect_to root_path
     end
   end
 
@@ -13,21 +17,7 @@ class FavouritesController < ApplicationController
     @favourite = Favourite.new
     @favourite.student = current_user
     @favourite.professional = @user
-
-    if @favourite.save
-      respond_to do |format|
-        format.html { redirect_to favourites_path }
-        format.text do
-          puts '>>>>>>>>>>>>>>>>>>>>>'
-          puts 'HELLO'
-          puts '>>>>>>>>>>>>>>>>>>>>>'
-          render partial: "users/card", locals: { user: @user }, formats: [:html]
-
-        end
-      end
-    else
-      render 'new', status: :unprocessable_entity
-    end
+    @favourite.save
   end
 
   def destroy

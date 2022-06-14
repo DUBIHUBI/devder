@@ -20,6 +20,10 @@
             <%= link_to "Professionals", users_path, class: "nav-professionals #{controller_name == "users" ? "current" : ""}" %>
           </li>
 
+          <li class="nav-item tabs">
+            <%= link_to "My favourites", favourites_path, class: "nav-professionals #{controller_name == "favourites" ? "current" : ""}" %>
+          </li>
+
           <li class="nav-item dropdown ml-3">
             <%= image_tag current_user.image_url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -33,9 +37,6 @@
         <% else %>
           <li class="nav-item tabs">
             <%= link_to "Professionals", users_path, class: "nav-professionals #{controller_name == "users" ? "current" : ""}" %>
-          </li>
-          <li class="nav-item tabs">
-            <%= link_to "My favourites", users_path, class: "nav-professionals #{controller_name == "favourites" ? "current" : ""}" %>
           </li>
           <li class="nav-item m-3">
             <%= link_to "Login", new_user_session_path, class: "nav-login", data: {turbo: false} %>

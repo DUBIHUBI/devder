@@ -9,6 +9,8 @@ class UsersController < ApplicationController
 
     @users = @users.select { |user| user.funding_stage == params[:funding_stage] } if params[:funding_stage].present? && params[:funding_stage] != ""
 
+    @users = @users.select { |user| user.role == params[:role] } if params[:role].present? && params[:role] != ""
+
     @users = @users.select { |user| user.gender == params[:gender] } if params[:gender].present? && params[:gender] != ""
 
   end

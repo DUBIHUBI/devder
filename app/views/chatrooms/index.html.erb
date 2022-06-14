@@ -1,95 +1,52 @@
-INBOX
-<style>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8">
 
-.msg-form {
-  width: 100%;
-  height: 56px;
-  padding: 10px;
-}
+      <div id="chatroom_container" class="row bg-dark text-light">
 
-#single_room {
-  height: calc(100vh - 150px);
-}
-
-#messages {
-  height: calc(100vh - 150px);
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-#room_container {
-  height: 100vh;
-  margin-right: 0px !important;
-}
-
-#side_panel {
-  height: 100vh;
-  margin-right: 0px !important;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  margin-bottom: 55px;
-}
-#chatroom_container {
-  height: 100vh;
-  margin-right: 0px !important;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-.msg-content {
-  width: 80%;
-  margin-right: 5px;
-}
-.message-box {
-  word-wrap: break-word;
-  width: fit-content;
-  max-width: 40%;
-  padding: 5px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  background-color: #555555;
-  padding: 10px;
-}
-
-</style>
-
-<div id="chatroom_container" class="row bg-dark text-light">
-  <div id="side_panel" class="col-md-4 col-sm-4">
-    <h4> Rooms </h4>
-    <div id="rooms">
-      <% @chatrooms.each do |chatroom| %>
-        <% if current_user.student? %>
-        <p class="<%= 'active' if chatroom == @active_chatroom %>"><%= link_to chatroom.professional.full_name, chatrooms_path(active: chatroom.id) %></p>
-        <% else %>
-        <p class="<%= 'active' if chatroom == @active_chatroom %>"><%= link_to chatroom.student.full_name, chatrooms_path(active: chatroom.id) %></p>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-
-  <div id="room_container" class="col-md-8 col-sm-8 bg-dark text-light">
-
-      <div class="container chatroom"
-        data-controller="chatroom-subscription"
-        data-chatroom-subscription-chatroom-id-value="<%= @active_chatroom.id %>">
-
-        <h4 class="text-center"><%= @active_chatroom.name  %></h4>
-
-        <div id="messages">
-
-        <div class="messages" data-chatroom-subscription-target="messages">
-          <% @active_chatroom.messages.each do |message| %>
-            <%= render partial: "messages/message", locals: { message: message } %>
-
-          <% end %>
+        <div id="side_panel" class="col-md-4 col-sm-4">
+          <h4 class="text-center mb-5"> Direct Messages </h4>
+          <div class="chatlist">
+            <% @chatrooms.each do |chatroom| %>
+              <% if current_user.student? %>
+              <p class="<%= 'active' if chatroom == @active_chatroom %>"><%= link_to chatroom.professional.full_name, chatrooms_path(active: chatroom.id) %></p>
+              <% else %>
+              <p class="<%= 'active' if chatroom == @active_chatroom %>"><%= link_to chatroom.student.full_name, chatrooms_path(active: chatroom.id) %></p>
+              <% end %>
+            <% end %>
+          </div>
         </div>
 
-        <%= simple_form_for [@active_chatroom, @message] do |f| %>
-          <%= f.input :content, label:false %>
-          <%= f.submit %>
-        <% end %>
+        <div id="room_container" class="col-md-8 col-sm-8 bg-dark text-light">
+
+            <div class="container chatroom"
+              data-controller="chatroom-subscription"
+              data-chatroom-subscription-chatroom-id-value="<%= @active_chatroom.id %>">
+
+              <h4 class="text-center mb-5"><%= current_user.student? ? @active_chatroom.professional.full_name : @active_chatroom.student.full_name  %></h4>
+
+              <div id="messages">
+
+                <div class="messages" data-chatroom-subscription-target="messages">
+                  <% @active_chatroom.messages.each do |message| %>
+                    <%= render partial: "messages/message", locals: { message: message } %>
+                  <% end %>
+                </div>
+
+                <%= simple_form_for [@active_chatroom, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" } } do |f| %>
+                  <div class="msg-inputs">
+                    <%= f.input :content, label:false %>
+                  </div>
+                  <div class="msg-actions">
+                    <%= f.button :submit, "Send", class: "form-btn" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
         </div>
+
       </div>
 
+    </div>
   </div>
 </div>

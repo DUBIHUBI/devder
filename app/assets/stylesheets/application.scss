@@ -6,10 +6,12 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+// @import 'star-rating';
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+// @import "components/star_rating";
 
 body {
   color: $white;
@@ -25,9 +27,4 @@ body {
 .nav-link {
   color: $purple !important;
   font-weight: bold !important;
-}
-
-
-.active {
-  background-color: white;
 }

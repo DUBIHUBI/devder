@@ -21,14 +21,15 @@
           </li>
 
           <li class="nav-item tabs">
+            <%# if current_user.student? %>
+              <!--p class="fav-notifications"><%= @favourite_count  %></p-->
+            <%# end %>
             <%= link_to "My favourites", favourites_path, class: "nav-professionals #{controller_name == "favourites" ? "current" : ""}" %>
           </li>
 
           <li class="nav-item dropdown ml-3">
             <%= image_tag current_user.image_url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
               <%= link_to "My Profile", my_profile_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>

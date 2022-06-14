@@ -27,9 +27,6 @@ class FavouritesController < ApplicationController
     redirect_to favourites_path, status: :see_other
   end
 
-
-
-
   private
 
   def favourite_params

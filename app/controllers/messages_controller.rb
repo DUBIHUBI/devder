@@ -9,7 +9,11 @@ class MessagesController < ApplicationController
         @chatroom,
         render_to_string(partial: "message", locals: {message: @message})
       )
-      head :ok
+      if request.referer.include?('profiles')
+        redirect_to chatrooms_path(active: @chatroom.id)
+      else
+        head :ok
+      end
       # redirect_to chatrooms_path(active: @chatroom.id)
     else
       render "new", status: :unprocessable_entity

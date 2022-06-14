@@ -29,6 +29,12 @@ class User < ApplicationRecord
 
   end
 
+  def self.roles
+
+    User.distinct.pluck(:role).reject { |value| value.nil? }
+
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end

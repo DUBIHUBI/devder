@@ -2,10 +2,12 @@
   position: sticky;
   z-index: 10;
   top: 0;
-  padding-top: 16px;
-  padding-bottom: 20px;
+  // padding-top: 16px;
+  // padding-bottom: 20px;
   justify-content: space-between;
+  align-items: center;
   background: $dark-gray;
+  border-bottom: 1px solid $dark-orange;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -19,19 +21,23 @@
 
 .navbar-lewagon .navbar-collapse .nav-professionals {
   text-decoration: none;
-  position: absolute;
-  top: 30px;
-  right: 240px;
+  // position: absolute;
+  // top: 30px;
+  // right: 240px;
   color: $white;
   font-weight: 700;
+  // border-bottom: 5px solid $dark-orange;
+  // text-align: start;
+}
+
+.navbar-lewagon .navbar-collapse .current {
   border-bottom: 5px solid $dark-orange;
-  text-align: start;
 }
 
 .navbar-lewagon .navbar-collapse .nav-login {
-  position: absolute;
-  top: 16px;
-  right: 120px;
+  // position: absolute;
+  // top: 16px;
+  // right: 120px;
   background-color: $purple;
   color: $white;
   text-decoration: none;
@@ -50,9 +56,9 @@
 }
 
 .navbar-lewagon .navbar-collapse .nav-sign-up {
-  position: absolute;
-  top: 16px;
-  right: 32px;
+  // position: absolute;
+  // top: 16px;
+  // right: 32px;
   background-color: transparent;
   color: $purple;
   text-decoration: none;
@@ -70,17 +76,36 @@
   }
 }
 
-.navbar-lewagon .navbar-collapse .nav-explore {
-  text-decoration: none;
-  position: absolute;
-  top: 36px;
-  right: 120px;
-  color: $white;
-  font-weight: 700;
-  border-bottom: 5px solid $dark-orange;
-  text-align: start;
-}
+// .navbar-lewagon .navbar-collapse .nav-explore {
+  //   text-decoration: none;
+  //   position: absolute;
+  //   top: 36px;
+  //   right: 120px;
+  //   color: $white;
+  //   font-weight: 700;
+  //   // border-bottom: 5px solid $dark-orange;
+  //   text-align: start;
+  // }
 
-.navbar .navbar-collapse .avatar {
-  width: 60px;
-}
+  .navbar .navbar-collapse .avatar {
+    width: 60px;
+  }
+
+  .navbar-nav {
+    align-items: center;
+  }
+
+  .container-fluid {
+    height: 60px;
+  }
+
+  .tabs {
+    margin: 0 36px;
+    transition: 0.25s;
+
+    &:hover {
+      // transform: scale(1.2);
+      // color: black;
+      border-bottom: 5px solid $dark-orange;
+    }
+  }

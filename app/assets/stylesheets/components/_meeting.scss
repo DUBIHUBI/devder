@@ -1,9 +1,24 @@
 .meet-pending {
   width: 400px;
   padding: 1rem 1rem;
-  margin-bottom: 75px;
+  margin-bottom: 98px;
   height: 200px;
-  box-shadow: 1px 1px 10px #d77506;
+  box-shadow: 1px 1px 10px #7f0f0f;
+  border-radius: 8px;
+
+  i {
+    color: #7f0f0f;
+    margin-right: 16px;
+    font-size: 26px;
+  }
+}
+
+.meet-scheduled {
+  padding: 1rem 1rem;
+  margin-bottom: 98px;
+  height: 200px;
+  width: 400px !important;
+  box-shadow: 1px 1px 10px $dark-orange;
   border-radius: 8px;
 
   i {
@@ -13,12 +28,11 @@
   }
 }
 
-.meet-scheduled {
+.meet-reviewed {
   padding: 1rem 1rem;
-  margin-bottom: 75px;
   height: 200px;
   width: 400px !important;
-  box-shadow: 1px 1px 10px #9334E9;
+  box-shadow: 1px 1px 10px $purple;
   border-radius: 8px;
 
   i {
@@ -30,6 +44,15 @@
   .reviewed-message {
     color: $light-gray;
   }
+}
+
+.meet-avatar-reviewed {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px #9334E9 ;
+  position: relative;
+  right: -288px;
+  top: -55px;
 }
 
 .meeting-cards {
@@ -57,18 +80,18 @@
 .meet-avatar-pending {
   width: 100px;
   border-radius: 50%;
-  box-shadow: 1px 1px 10px #d77506 !important;
+  box-shadow: 1px 1px 10px #7f0f0f !important;
   position: relative;
-  right: -330px;
-  top: -25px;
+  right: -270px;
+  top: -16px;
 }
 
 .meet-avatar-student-accepted-no-review {
   width: 100px;
   border-radius: 50%;
-  box-shadow: 1px 1px 10px #9334E9 !important;
+  box-shadow: 1px 1px 10px $dark-orange !important;
   position: relative;
-  right: -175px;
+  right: -109px;
   top: -25px;
 }
 
@@ -105,22 +128,21 @@
   width: 120px;
   text-align: center;
   justify-content: center;
-  background-color: $purple;
+  background-color: $dark-orange;
   color: $white;
   text-decoration: none;
   padding: 12px;
   border-radius: 8px;
   transition: 0.2s ease-out;
-  box-shadow: inset 0 0 0 0 $purple;
+  box-shadow: inset 0 0 0 0 $dark-orange;
   position: relative;
   top: -15px;
   right: -100px;
 
   &:hover {
-    box-shadow: inset 270px 0 0 0 $dark-orange;
+    box-shadow: inset 270px 0 0 0 $purple;
     color: $white;
   }
-
 }
 
 .review-form {

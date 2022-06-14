@@ -7,6 +7,9 @@ import { application } from "./application"
 import FavouritesController from "./favourites_controller.js"
 application.register("favourites", FavouritesController)
 
+import ChatroomSubscriptionController from "./chatroom_subscription_controller.js"
+application.register("chatroom-subscription", ChatroomSubscriptionController)
+
 import FilterController from "./filter_controller.js"
 application.register("filter", FilterController)
 
@@ -21,6 +24,9 @@ application.register("meeting-movement", MeetingMovementController)
 
 import MeetingsController from "./meetings_controller.js"
 application.register("meetings", MeetingsController)
+
+import NewReviewController from "./new_review_controller.js"
+application.register("new-review", NewReviewController)
 
 import SignUpFormController from "./sign_up_form_controller.js"
 application.register("sign-up-form", SignUpFormController)

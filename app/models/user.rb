@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_many :meetings_as_student, class_name: "Meeting", foreign_key: :student_id
   has_many :meetings_as_professional, class_name: "Meeting", foreign_key: :professional_id
-  has_many :favoutites_as_student, class_name: "Favourite", foreign_key: :student_id
-  has_many :favoutites_as_professional, class_name: "Favourite", foreign_key: :professional_id
+  has_many :favourites_as_student, class_name: "Favourite", foreign_key: :student_id
+  has_many :favourites_as_professional, class_name: "Favourite", foreign_key: :professional_id
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

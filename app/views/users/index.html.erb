@@ -53,32 +53,7 @@
     </div>
     <div class="cards col-sm-12 col-md-8 col-lg-9">
     <% @users.each do |user| %>
-      <% if !user.student %>
-        <div class="card p-3" data-controller="favourites">
-          <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
-            <% if user.image_url%>
-          <%# <div class="card-image"> %>
-              <%= image_tag user.image_url, class: "card-image" %>
-          <%# </div> %>
-            <% end %>
-          <i class="fa-regular fa-heart heart" data-favourites-target="icon" data-action="click->favourites#save" id="<%=user.id %>"></i>
-          <div class="card-body">
-            <div class="border-bottom border-secondary">
-            <h5 class="card-title text-center"><%= user.first_name %> <%= user.last_name %></h5>
-            </div>
-            <ul>
-            <li><i class="fa-solid fa-building"></i>  <%= user.company_name %></li>
-            <li><i class="fa-solid fa-laptop"></i>  <%= user.role %></li>
-            </ul>
-          </div>
-          <%= link_to user_path(user), class:"text-decoration-none" do %>
-            <div class="card-footer text-center btn-index">
-              View profile
-              <%# <small class="text-muted">Last updated 3 mins ago</small> %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+      <%= render 'users/card', user: user %>
     <% end %>
     </div>
   </div>

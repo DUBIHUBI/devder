@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_13_114734) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_06_13_160441) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favourites", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "student_id"
+    t.bigint "professional_id"
+    t.index ["professional_id"], name: "index_favourites_on_professional_id"
+    t.index ["student_id"], name: "index_favourites_on_student_id"
+  end
 
   create_table "chatrooms", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -87,8 +98,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_114734) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favourites", "users", column: "professional_id"
+  add_foreign_key "favourites", "users", column: "student_id"
+
   add_foreign_key "chatrooms", "users", column: "professional_id"
   add_foreign_key "chatrooms", "users", column: "student_id"
+
   add_foreign_key "meetings", "users", column: "professional_id"
   add_foreign_key "meetings", "users", column: "student_id"
   add_foreign_key "messages", "chatrooms"

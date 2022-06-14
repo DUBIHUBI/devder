@@ -20,14 +20,14 @@
     <div class="meeting-cards">
       <h5>Scheduled Meetings</h5>
       <% current_user.meetings_as_student.each do |meeting_as_student| %>
-        <% if meeting_as_student.accepted %>
-          <div class="meet-scheduled" data-controller="new-review">
+        <% if meeting_as_student.accepted && !(meeting_as_student.professional.reviews_as_professional & current_user.reviews_as_student).present? %>
+          <div class="meet-scheduled" data-controller="new-review" data-action="submit->meeting-movement#moveScheduled">
             <%# <p class="title-scheduled"> Meeting with: <%= meeting_as_student.professional.first_name %> <%#= meeting_as_student.professional.last_name %></p>
             <p class="text-scheduled"><i class="fa-solid fa-calendar-days"></i> <%= meeting_as_student.date.strftime("%d %B %Y ")%></em></p>
             <p class="text-scheduled"><i class="fa-solid fa-clock"></i><%= meeting_as_student.time.strftime("%H:%M")%></p>
             <p class="text-scheduled"><em> <i class="fa-solid fa-circle-check"></i> Accepted </em> </p>
             <a href="#" class="btn-purple-review" data-new-review-target="button" data-action="click->new-review#revealContent">Leave a review 🤩</a>
-            <%= simple_form_for([meeting_as_student.professional, @review], html: {class: "d-none review-form", data: {new_review_target: "form", action: "submit->new-review#create"}}) do |f| %>
+            <%= simple_form_for([meeting_as_student.professional, @review], html: {class: "d-none review-form", data: {new_review_target: "form", meeting_movement_target: "reviewForm", action: "submit->new-review#create"}}) do |f| %>
               <div class="content-input">
                 <%= f.input :content, required: true, placeholder: "How did your meeting go?" %>
               </div>
@@ -35,15 +35,33 @@
                 <%= f.input :rating, collection: 1..5, required: true %>
               </div>
               <div>
-                <%= f.button :submit, "Submit Review", class:"btn-purple-sm", data: {new_review_target: "submit"} %>
+                <%= f.button :submit, "Submit Review", class:"btn-purple-sm", data: {new_review_target: "submit", meeting_movement_target: "banana"} %>
               </div>
             <% end %>
-            <%= image_tag meeting_as_student.professional.image_url, class:"meet-avatar-student-accepted", data: {new_review_target: "avatar"} %>
+            <%= image_tag meeting_as_student.professional.image_url, class:"meet-avatar-student-accepted-no-review", data: {new_review_target: "avatar"} %>
           </div>
         <% end %>
       <% end %>
     </div>
 
+    <div class="meeting-cards">
+      <h5>Reviewed Meetings</h5>
+      <div data-meeting-movement-target="reviewedwrapper">
+        <% current_user.meetings_as_student.each do |meeting_as_student| %>
+          <% if meeting_as_student.accepted && (meeting_as_student.professional.reviews_as_professional & current_user.reviews_as_student).present? %>
+            <%# TODO: Change meet-scheduled class to meet-reviewed and create that class %>
+            <div class="meet-reviewed">
+              <%# TODO: Change text-scheduled class to text-reviewed and create that class %>
+              <p class="text-scheduled"><i class="fa-solid fa-calendar-days"></i> <%= meeting_as_student.date.strftime("%d %B %Y ")%></em></p>
+              <p class="text-scheduled"><i class="fa-solid fa-clock"></i><%= meeting_as_student.time.strftime("%H:%M")%></p>
+              <p class="text-scheduled"><em> <i class="fa-solid fa-circle-check"></i> Reviewed </em> </p>
+              <p class="reviewed-message"><em>Thanks for your review!</em></p>
+            </div>
+            <%= image_tag meeting_as_student.professional.image_url, class:"meet-avatar-reviewed", data: {new_review_target: "avatar"} %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
 <% else %>
@@ -75,6 +93,5 @@
         <% end %>
       </div>
     </div>
-
   </div>
 <% end %>

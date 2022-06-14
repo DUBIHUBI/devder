@@ -9,6 +9,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 
+    <%# <link href="css/star-rating.css" rel="stylesheet"> %>
+
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
   </head>
@@ -18,12 +20,13 @@
     <%= yield %>
     <%= render "shared/flashes" %>
 
-    <script src="js/star-rating.js"></script>
-    <script>
+    <%# <script src="js/star-rating.js"></script> %>
+    <%# <script>
         const stars = new StarRating('.star-rating');
-    </script>
+    </script> %>
   </body>
-  <%# <footer> %>
-    <%# <%= render "shared/footer" %>
-  <%# </footer> %>
+
+  <footer>
+    <%= render "shared/footer" %>
+  </footer>
 </html>

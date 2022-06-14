@@ -19,9 +19,14 @@ export default class extends Controller {
       fetch(`/profiles/${e.target.id}/favourites`, {method: "POST", headers: {"X-CSRF-Token": this.getMetaValue("csrf-token")}})
       .then(response => response.text())
       .then((data) => {
-        this.iconTarget.classList.toggle("fa-regular")
+        const icon = this.iconTarget
+        icon.classList.toggle("fa-regular")
+        icon.style.animation = 'likeheart 0.8s ease'
         // this.iconTarget.innerHTML= '<i class="fa-solid fa-heart heart"></i>'
-        this.iconTarget.classList.toggle("fa-solid")
+        icon.classList.toggle("fa-solid")
+        setTimeout(function() {
+          icon.style.animation = ''
+        }, 700)
       })
 
     }
@@ -31,9 +36,14 @@ export default class extends Controller {
       fetch(`/favourites/${e.target.id}`, {method: "DELETE", headers: {"X-CSRF-Token": this.getMetaValue("csrf-token")}})
       .then(response => response.text())
       .then((data) => {
-        this.iconTarget.classList.toggle("fa-regular")
+        const icon = this.iconTarget
+        icon.classList.toggle("fa-solid")
+        icon.style.animation = 'likeheart 0.8s ease'
         // this.iconTarget.innerHTML= '<i class="fa-solid fa-heart heart"></i>'
-        this.iconTarget.classList.toggle("fa-solid")
+        icon.classList.toggle("fa-regular")
+        setTimeout(function() {
+          icon.style.animation = ''
+        }, 700)
       })
 
     }

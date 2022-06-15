@@ -7,8 +7,13 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database!"
-User.destroy_all
 Meeting.destroy_all
+Review.destroy_all
+Chatroom.destroy_all
+Favourite.destroy_all
+Message.destroy_all
+User.destroy_all
+
 puts "Seeding the database!"
 
 @counter = 0
@@ -25,14 +30,14 @@ User.create!(
     #   "https://avatars.githubusercontent.com/u/65777698?v=4",
     #   api_key: ENV['REMOVE_BG_API_KEY'],
     # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
-  role: "Full Stack Web Developer",
+  role: "Front-End Web Developer",
   company_name: "Huel",
   address: "Westminster",
   gender: "male",
   student: false,
-  company_type: "Start-up",
+  company_type: "Scale-up",
   company_size: 330,
-  funding_stage: "Series-A",
+  funding_stage: "Series-C",
   hq_location: "London",
   bio: "I am a full stack web developer with a vast array of knowledge in many different fron end and back end languages, responsive frameworks, databases, and best coding practices.
   My objective is simply to be the best web developer that I can be and to contribute to the technology industry everything that I know 💪🏽"
@@ -72,7 +77,7 @@ User.create!(
     #   "https://ca.slack-edge.com/T02NE0241-UD478BM6G-8b49cda00a95-512",
     #   api_key: ENV['REMOVE_BG_API_KEY'],
     # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
-  role: "Self Employed Full Stack Web Developer",
+  role: "Front-End Web Developer",
   company_name: "Ife Odugbesan",
   address: "Shoreditch",
   gender: "male",
@@ -96,7 +101,7 @@ User.create!(
     #   "https://ca.slack-edge.com/T02NE0241-U01BHHMF87R-755eb2936b41-512",
     #   api_key: ENV['REMOVE_BG_API_KEY'],
     # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
-  role: "Full Stack Web Developer",
+  role: "Front-End Web Developer",
   company_name: "Thought Machine",
   address: "Hackney",
   gender: "female",
@@ -120,15 +125,15 @@ User.create!(
     #   "https://ca.slack-edge.com/T02NE0241-U2JHP75T3-bc41a8100593-512",
     #   api_key: ENV['REMOVE_BG_API_KEY'],
     # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
-  role: "Back-end Developer",
+  role: "Software Engineer",
   company_name: "Apple",
   address: "Greenwich",
   gender: "male",
   student: false,
-  company_type: "Start-up",
-  company_size: 5,
-  funding_stage: "Pre-Seed",
-  hq_location: "Dublin",
+  company_type: "Enterprice",
+  company_size: 260000,
+  funding_stage: "Post-IPO",
+  hq_location: "California",
   bio: Faker::Quote.famous_last_words
 )
 
@@ -144,14 +149,14 @@ User.create!(
     #   "https://ca.slack-edge.com/T02NE0241-U02SU3A11UP-d4bef5f0084e-512",
     #   api_key: ENV['REMOVE_BG_API_KEY'],
     # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
-  role: "Junior Software Engineer",
-  company_name: "Hamilton Associate",
+  role: "Full Stack Web Developer",
+  company_name: "Paddle",
   address: "Islington",
   gender: "male",
   student: false,
   company_type: "Scale-up",
-  company_size: 100,
-  funding_stage: "Seed",
+  company_size: 287,
+  funding_stage: "Series-D",
   hq_location: "London",
   bio: Faker::Quote.famous_last_words
 )
@@ -175,8 +180,8 @@ User.create!(
   student: false,
   company_type: "Enterprise",
   company_size: 1000,
-  funding_stage: "Post-IPO",
-  hq_location: "London",
+  funding_stage: "Series-A",
+  hq_location: "Paris",
   bio: Faker::Quote.famous_last_words
 )
 
@@ -192,15 +197,15 @@ User.create!(
     #   "https://ca.slack-edge.com/T02NE0241-U02NE1NL9-40998e0a5c92-192",
     #   api_key: ENV['REMOVE_BG_API_KEY'],
     # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
-  role: "Founder",
+  role: "CEO & Founder",
   company_name: "Le Wagon",
   address: "Hackney",
   gender: "male",
   student: false,
   company_type: "Enterprise",
-  company_size: 25,
-  funding_stage: "Series-B",
-  hq_location: "London",
+  company_size: 1000,
+  funding_stage: "Series-A",
+  hq_location: "Paris",
   bio: Faker::Quote.famous_last_words
 )
 
@@ -216,15 +221,15 @@ User.create!(
     #   "https://ca.slack-edge.com/T02NE0241-U02NE0247-6fe39830661f-192",
     #   api_key: ENV['REMOVE_BG_API_KEY'],
     # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
-  role: "Back-end Developer",
+  role: "CTO",
   company_name: "Le Wagon",
   address: "Hackney",
   gender: "male",
   student: false,
   company_type: "Enterprise",
-  company_size: 2500,
-  funding_stage: "Post-IPO",
-  hq_location: "London",
+  company_size: 1000,
+  funding_stage: "Series-A",
+  hq_location: "Paris",
   bio: Faker::Quote.famous_last_words
 )
 
@@ -263,7 +268,8 @@ User.create!(
   address: "Battersea",
   gender: "male",
   student: true,
-  bio: Faker::Quote.famous_last_words
+  bio: "Hey👋🏽! Great to be on Devder! I'm looking to speak to frontend engineers, ideally in well-funded scale-up companies.
+  Looking to get a job ASAP!"
 )
 
 User.create!(
@@ -282,6 +288,78 @@ User.create!(
   address: "Poplar",
   gender: "female",
   student: true,
+  bio: Faker::Quote.famous_last_words
+)
+
+User.create!(
+  email: "jeff@123.com",
+  password: "12345678",
+  first_name: "Jeff",
+  last_name: "Bezos",
+  age: (20..35).to_a.sample,
+  image_url: "https://pbs.twimg.com/profile_images/669103856106668033/UF3cgUk4_400x400.jpg",
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U02NE0247-6fe39830661f-192",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
+  role: "Front-End Web Developer",
+  company_name: "Amazon",
+  address: "Greenwich",
+  gender: "male",
+  student: false,
+  company_type: "Enterprise",
+  company_size: 1000,
+  funding_stage: "Post-IPO",
+  hq_location: "California",
+  bio: Faker::Quote.famous_last_words
+)
+
+User.create!(
+  email: "larry@123.com",
+  password: "12345678",
+  first_name: "Larry",
+  last_name: "Page",
+  age: (20..35).to_a.sample,
+  image_url: "https://pbs.twimg.com/profile_images/1231038234/page_400x400.jpg",
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U02NE0247-6fe39830661f-192",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
+  role: "Front-End Web Developer",
+  company_name: "Google",
+  address: "Bermondsey",
+  gender: "male",
+  student: false,
+  company_type: "Scale-up",
+  company_size: 10000,
+  funding_stage: "Series-C",
+  hq_location: "California",
+  bio: Faker::Quote.famous_last_words
+)
+
+User.create!(
+  email: "bill@123.com",
+  password: "12345678",
+  first_name: "Bill",
+  last_name: "Gates",
+  age: (20..35).to_a.sample,
+  image_url: "https://media-exp1.licdn.com/dms/image/C4D03AQHqRRhVsnaziA/profile-displayphoto-shrink_800_800/0/1626063510328?e=1660780800&v=beta&t=ybWYvo-C_9YBQcfsN-rRAm1HSThxj9piEUMHqY5r2rA",
+  profile_image: "app/assets/images/profile-img-no-bg-#{@counter += 1}.png",
+    # RemoveBg.from_url(
+    #   "https://ca.slack-edge.com/T02NE0241-U02NE0247-6fe39830661f-192",
+    #   api_key: ENV['REMOVE_BG_API_KEY'],
+    # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
+  role: "CEO",
+  company_name: "Microsoft",
+  address: "Battersea",
+  gender: "male",
+  student: false,
+  company_type: "Enterprise",
+  company_size: 100000,
+  funding_stage: "Post-IPO",
+  hq_location: "California",
   bio: Faker::Quote.famous_last_words
 )
 

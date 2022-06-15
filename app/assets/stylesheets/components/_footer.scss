@@ -1,4 +1,8 @@
 .footer {
+  // position:absolute;
+  //   left:0;
+  //   bottom:0;
+  //   right: 0;
   /* position: fixed;
   left: 0;
   bottom: 0; */
@@ -8,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  min-height: 100px;
+  height: 100px;
   padding: 30px 50px;
   color: white;
 }
@@ -16,18 +20,18 @@
 .footer-links {
   display: flex;
   align-items: center;
+  padding: 0 16px;
 }
 
-.footer-links a {
+.footer-links i {
   color: rgb(255, 255, 255);
-  opacity: 0.15;
+  opacity: 0.2;
   text-decoration: none;
   font-size: 36px;
-  padding: 0 16px;
   transition: 0.5s;
 }
 
-.footer-links a:hover {
+.footer-links i:hover {
   opacity: 1;
   transform: scale(1.2);
 }

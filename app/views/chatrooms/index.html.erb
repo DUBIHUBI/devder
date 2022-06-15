@@ -56,11 +56,15 @@
       <p>You have no messages yet. </p>
       <% end %>
     </div>
-    <div class="col-md-4">
-    <div class="row justify-content-end mt-5">
-    <%=link_to "Request A Meeting", new_user_meeting_path(@active_chatroom.professional), class:"btn btn-purple" %>
-    </div>
-    </div>
+
+    <% if current_user.student? %>
+      <div class="col-md-4">
+        <div class="row justify-content-end mt-5">
+          <%=link_to "Request A Meeting", new_user_meeting_path(@active_chatroom.professional), class:"btn btn-purple" %>
+        </div>
+      </div>
+    <% end %>
+
 
   </div>
 </div>

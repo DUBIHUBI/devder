@@ -53,7 +53,7 @@
                           required: true %>
             </div>
             <div data-sign-up-form-target="professional" class="d-none">
-              <%= f.input :role
+              <%= f.input :role,
                           prompt: "Select your job title",
                           collection: ["Front-end developer", "Back-end developer", "Full-stack developer", "Software engineer", "Data scientist"] %>
               <%= f.input :company_name %>
@@ -62,7 +62,7 @@
                           collection: ["Start-up", "Scale-up", "Enterprise"] %>
               <%= f.input :company_size %>
               <%= f.input :funding_stage,
-                          prompt: "Select the company fundging stage",
+                          prompt: "Select the company funding stage",
                           collection: ["Pre-Seed", "Seed", "Series A", "Series B", "Series C", "Series D", "Post-IPO"]%>
               <%= f.input :hq_location,
                           label: 'Heaquarter location' %>

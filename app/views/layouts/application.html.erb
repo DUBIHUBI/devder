@@ -17,16 +17,16 @@
 
   <body>
     <%= render "shared/navbar" %>
-    <%= yield %>
+    <div style="min-height: calc(100vh - 177px)"><%= yield %></div>
     <%= render "shared/flashes" %>
 
     <%# <script src="js/star-rating.js"></script> %>
     <%# <script>
         const stars = new StarRating('.star-rating');
     </script> %>
-  </body>
-
   <footer>
     <%= render "shared/footer" %>
   </footer>
+  </body>
+
 </html>

@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container mt-1">
   <div class="row justify-content-center mx-0">
     <div class="col-md-8">
 
       <% if @active_chatroom %>
 
-        <div id="chatroom_container" class="row bg-primary text-light">
+        <div id="chatroom_container" class="row text-light">
 
 
-          <div id="side_panel" class="col-4 bg-warning">
+          <div id="side_panel" class="col-4 ">
             <h4 class="text-center my-3"> Direct Messages </h4>
             <div class="chatlist">
               <% @chatrooms.each do |chatroom| %>
@@ -20,7 +20,7 @@
             </div>
           </div>
 
-          <div id="room_container" class="row col-8 bg-white text-light mx-0">
+          <div id="room_container" class="row col-8 text-light mx-0">
 
             <div id="name_head">
               <% name = current_user.student? ? @active_chatroom.professional : @active_chatroom.student %>
@@ -56,5 +56,11 @@
       <p>You have no messages yet. </p>
       <% end %>
     </div>
+    <div class="col-md-4">
+    <div class="row justify-content-end mt-5">
+    <%=link_to "Request A Meeting", new_user_meeting_path(@active_chatroom.professional), class:"btn btn-purple" %>
+    </div>
+    </div>
+
   </div>
 </div>

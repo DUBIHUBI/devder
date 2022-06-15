@@ -20,7 +20,7 @@
 
 .name a{
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   &:hover{
     text-decoration: none;
     color: rgb(69, 32, 87);
@@ -39,25 +39,28 @@
   margin-right: 0px !important;
   overflow-x: hidden;
   overflow-y: scroll;
-  margin-bottom: 55px;
+  background-color: rgba(255,255,255,.1);
+  // margin-bottom: 55px;
 }
 
 #room_container {
   height: 80vh;
   margin-right: 0px !important;
   position: relative;
+  background-color: rgb(0, 0, 0);
 }
 
 #name_head {
   border-bottom: 0.5px solid lightgray;
   height: 70px;
 
+
 }
 
 
 #chatbox {
   height: 73vh;
-  background-color: pink;
+  background-color: rgb(0, 0, 0);
   overflow-x: hidden;
   overflow-y: scroll;
 
@@ -69,10 +72,11 @@
   width: unset;
   position: absolute;
   bottom: 0;
-  background-color:white;
+
   height: 70px;
   display: flex;
   align-items: center;
+  background-color: rgb(0, 0, 0);
 }
 
 //_message html

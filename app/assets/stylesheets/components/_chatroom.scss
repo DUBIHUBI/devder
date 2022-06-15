@@ -13,6 +13,45 @@
   text-decoration: none;
 }
 
+.name a{
+  text-decoration: none;
+  color: black;
+  &:hover{
+    text-decoration: none;
+    color: rgb(69, 32, 87);
+  }
+}
+
+#chatroom_container {
+  height: 100vh;
+  width: 100%;
+  margin-top: 16px;
+}
+
+#room_container {
+  height: 80vh;
+  margin-right: 0px !important;
+  overflow-x: hidden;
+
+}
+
+#side_panel {
+  height: 80vh;
+  min-width: 25%;
+  margin-right: 0px !important;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-bottom: 55px;
+}
+
+#chatbox {
+  height: 60vh;
+  background-color: pink;
+}
+
+#typebox {
+  height: 20vh;
+}
 
 .msg-form {
   width: 100%;
@@ -20,33 +59,16 @@
   padding: 10px;
 }
 
-#messages {
+.messages {
   height: calc(100vh - 200px);
   overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
 }
 
-#room_container {
-  height: 100vh;
-  margin-right: 0px !important;
-}
 
-#side_panel {
-  height: 100vh;
-  min-width: 25%;
-  margin-right: 0px !important;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  margin-bottom: 55px;
-}
-#chatroom_container {
-  height: 100vh;
-  min-width: 75%;
-  margin: 0 auto;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
+
+
 
 .msg-content {
   width: 80%;
@@ -95,9 +117,10 @@
 
 #new_message {
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   width: 100%;
   display: flex;
+  background-color: aqua;
 
   .msg-inputs {
     width: 75%;
@@ -115,6 +138,5 @@
 }
 
 .chatlist{
-
   padding: 20px;
 }

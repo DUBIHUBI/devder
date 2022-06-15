@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-8">
+    <div class="col-md-8">
 
       <% if @active_chatroom %>
 
-        <div id="chatroom_container" class="row bg-dark text-light">
+        <div id="chatroom_container" class="row bg-primary text-light">
 
-          <div id="side_panel" class="col-md-4 col-sm-4">
-            <h4 class="text-center mb-5"> Direct Messages </h4>
+
+          <div id="side_panel" class="col-4 bg-warning">
+            <h4 class="text-center my-3"> Direct Messages </h4>
             <div class="chatlist">
               <% @chatrooms.each do |chatroom| %>
                 <% if current_user.student? %>
@@ -19,14 +20,17 @@
             </div>
           </div>
 
-          <div id="room_container" class="col-md-8 col-sm-8 bg-dark text-light">
+          <div id="room_container" class="row col-8 bg-white text-light">
 
-              <div class="container chatroom"
+              <div id="chatbox"
                 data-controller="chatroom-subscription"
                 data-chatroom-subscription-chatroom-id-value="<%= @active_chatroom.id %>">
-                <h4 class="text-center mb-5"><%= current_user.student? ? @active_chatroom.professional.full_name : @active_chatroom.student.full_name  %></h4>
 
-                <div id="messages">
+                <% name = current_user.student? ? @active_chatroom.professional : @active_chatroom.student %>
+
+                <h4 class="name text-center my-3"><%= link_to name.full_name, user_path(name.id) %></h4>
+
+
 
                   <div class="messages" data-chatroom-subscription-target="messages">
                     <% @active_chatroom.messages.each do |message| %>
@@ -34,21 +38,26 @@
                     <% end %>
                   </div>
 
-                  <%= simple_form_for [@active_chatroom, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" } } do |f| %>
-                    <div class="msg-inputs">
-                      <%= f.input :content, label:false %>
-                    </div>
-                    <div class="msg-actions">
-                      <%= f.button :submit, "Send", class: "form-btn" %>
-                    </div>
-                  <% end %>
-                </div>
+
               </div>
+
+              <div id="typebox">
+                <%= simple_form_for [@active_chatroom, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" } } do |f| %>
+                  <div class="msg-inputs">
+                    <%= f.input :content, label:false %>
+                  </div>
+                  <div class="msg-actions">
+                    <%= f.button :submit, "Send", class: "form-btn" %>
+                  </div>
+                <% end %>
+              </div>
+
           </div>
+
 
         </div>
       <% else %>
-      <p>You have no messages yet. (TODO: style the chat.)</p>
+      <p>You have no messages yet. </p>
       <% end %>
     </div>
   </div>

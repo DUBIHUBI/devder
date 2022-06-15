@@ -2,53 +2,54 @@
   <div class="row justify-content-center">
     <div class="col-8">
 
+      <% if @active_chatroom %>
 
+        <div id="chatroom_container" class="row bg-dark text-light">
 
-      <div id="chatroom_container" class="row bg-dark text-light">
-
-        <div id="side_panel" class="col-md-4 col-sm-4">
-          <h4 class="text-center mb-5"> Direct Messages </h4>
-          <div class="chatlist">
-            <% @chatrooms.each do |chatroom| %>
-              <% if current_user.student? %>
-              <p class="<%= 'active' if chatroom == @active_chatroom %>"><%= link_to chatroom.professional.full_name, chatrooms_path(active: chatroom.id) %></p>
-              <% else %>
-              <p class="<%= 'active' if chatroom == @active_chatroom %>"><%= link_to chatroom.student.full_name, chatrooms_path(active: chatroom.id) %></p>
+          <div id="side_panel" class="col-md-4 col-sm-4">
+            <h4 class="text-center mb-5"> Direct Messages </h4>
+            <div class="chatlist">
+              <% @chatrooms.each do |chatroom| %>
+                <% if current_user.student? %>
+                <p class="<%= 'active' if chatroom == @active_chatroom %>"><%= link_to chatroom.professional.full_name, chatrooms_path(active: chatroom.id) %></p>
+                <% else %>
+                <p class="<%= 'active' if chatroom == @active_chatroom %>"><%= link_to chatroom.student.full_name, chatrooms_path(active: chatroom.id) %></p>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
-        </div>
 
-        <div id="room_container" class="col-md-8 col-sm-8 bg-dark text-light">
+          <div id="room_container" class="col-md-8 col-sm-8 bg-dark text-light">
 
-            <div class="container chatroom"
-              data-controller="chatroom-subscription"
-              data-chatroom-subscription-chatroom-id-value="<%= @active_chatroom.id %>">
+              <div class="container chatroom"
+                data-controller="chatroom-subscription"
+                data-chatroom-subscription-chatroom-id-value="<%= @active_chatroom.id %>">
+                <h4 class="text-center mb-5"><%= current_user.student? ? @active_chatroom.professional.full_name : @active_chatroom.student.full_name  %></h4>
 
-              <h4 class="text-center mb-5"><%= current_user.student? ? @active_chatroom.professional.full_name : @active_chatroom.student.full_name  %></h4>
+                <div id="messages">
 
-              <div id="messages">
+                  <div class="messages" data-chatroom-subscription-target="messages">
+                    <% @active_chatroom.messages.each do |message| %>
+                      <%= render partial: "messages/message", locals: { message: message } %>
+                    <% end %>
+                  </div>
 
-                <div class="messages" data-chatroom-subscription-target="messages">
-                  <% @active_chatroom.messages.each do |message| %>
-                    <%= render partial: "messages/message", locals: { message: message } %>
+                  <%= simple_form_for [@active_chatroom, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" } } do |f| %>
+                    <div class="msg-inputs">
+                      <%= f.input :content, label:false %>
+                    </div>
+                    <div class="msg-actions">
+                      <%= f.button :submit, "Send", class: "form-btn" %>
+                    </div>
                   <% end %>
                 </div>
-
-                <%= simple_form_for [@active_chatroom, @message], html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" } } do |f| %>
-                  <div class="msg-inputs">
-                    <%= f.input :content, label:false %>
-                  </div>
-                  <div class="msg-actions">
-                    <%= f.button :submit, "Send", class: "form-btn" %>
-                  </div>
-                <% end %>
               </div>
-            </div>
+          </div>
+
         </div>
-
-      </div>
-
+      <% else %>
+      <p>You have no messages yet. (TODO: style the chat.)</p>
+      <% end %>
     </div>
   </div>
 </div>

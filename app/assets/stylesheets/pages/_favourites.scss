@@ -1,32 +1,32 @@
-.heart {
-    position: absolute;
+.favourites {
+
+  padding: 50px;
+
+  h1 {
+    margin-bottom: 24px;
+    color: $white;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 24px;
+    color: $light-gray;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .heart-big {
+    margin-left: 12px;
     color: #9334E9;
     right: -8px;
     top: -6px;
-    font-size: 20px;
+    font-size: 32px;
     opacity: 1;
     border-radius: 50px;
-    // animation: likeheart 0.7s ease;
-
-
-    &::before {
-      padding: 8px;
-      border-radius: 50%;
-      border: 2px solid $purple;
-
-    }
-
-}
-
-.heart:hover {
-  // animation: likeheart 0.7s ease;
-
-  &::before {
-    cursor: pointer;
-    box-shadow: 1px 1px 10px $light-gray;
-    color: $purple;
-
+    animation: likeheart 1.0s ease infinite;
   }
+
 }
 
 @keyframes likeheart {
@@ -46,10 +46,4 @@
     filter: drop-shadow(0 0 0 rgba(0,0,0,0.2));
     transform: scale(1.0);
   }
-}
-
-.fav-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
 }

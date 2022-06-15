@@ -26,15 +26,16 @@ User.create!(
     #   api_key: ENV['REMOVE_BG_API_KEY'],
     # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
   role: "Full Stack Web Developer",
-  company_name: "MammaMia Limited",
+  company_name: "Huel",
   address: "Westminster",
   gender: "male",
   student: false,
   company_type: "Start-up",
-  company_size: 10,
+  company_size: 330,
   funding_stage: "Series-A",
   hq_location: "London",
-  bio: Faker::Quote.famous_last_words
+  bio: "I am a full stack web developer with a vast array of knowledge in many different fron end and back end languages, responsive frameworks, databases, and best coding practices.
+  My objective is simply to be the best web developer that I can be and to contribute to the technology industry everything that I know 💪🏽"
 )
 
 User.create!(
@@ -49,11 +50,11 @@ User.create!(
     #   "https://ca.slack-edge.com/T02NE0241-U01K2UZ287J-413c3a4571b1-512",
     #   api_key: ENV['REMOVE_BG_API_KEY'],
     # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
-  role: "Full Stack Shifu",
-  company_name: "Windsor Castle",
-  address: "Southwark", gender: "male",
+  role: "Back-end Developer",
+  company_name: "Facebook",
+  address: "Bermondsey", gender: "male",
   student: false, company_type: "Enterprise",
-  company_size: 5000,
+  company_size: 80000,
   funding_stage: "Post-IPO",
   hq_location: "California",
   bio: Faker::Quote.famous_last_words
@@ -71,15 +72,15 @@ User.create!(
     #   "https://ca.slack-edge.com/T02NE0241-UD478BM6G-8b49cda00a95-512",
     #   api_key: ENV['REMOVE_BG_API_KEY'],
     # ).save("app/assets/images/profile-img-no-bg-#{@counter += 1}.png"),
-  role: "Frontend Master",
-  company_name: "Le Dragon",
-  address: "Lambeth",
+  role: "Self Employed Full Stack Web Developer",
+  company_name: "Ife Odugbesan",
+  address: "Shoreditch",
   gender: "male",
   student: false,
   company_type: "Scale-up",
-  company_size: 250,
-  funding_stage: "Series-C",
-  hq_location: "Berlin",
+  company_size: 1,
+  funding_stage: "Pre-Seed",
+  hq_location: "London",
   bio: Faker::Quote.famous_last_words
 )
 

@@ -11,6 +11,9 @@ class ApplicationController < ActionController::Base
   end
 
   # def set_favourite_count
-  #   @favourite_count = current_user.favourites_as_student.count
-  # end
+
+  #   if current_user
+  #     @favourite_count = current_user.favourites_as_student.count
+  #   end
+
 end

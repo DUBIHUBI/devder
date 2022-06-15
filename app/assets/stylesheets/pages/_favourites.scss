@@ -47,3 +47,14 @@
     transform: scale(1.0);
   }
 }
+
+.favourites-back a {
+  text-decoration: none;
+  color: $light-gray;
+  margin-left: 16px;
+}
+
+.favourites-back i {
+  text-decoration: none;
+  color: $light-gray;
+}

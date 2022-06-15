@@ -1,5 +1,6 @@
 .filter {
   background-color: rgba($color: #9334E9, $alpha: 0.5);
+  box-shadow: 8px 8px 24px rgba(0,0,0,1);
   padding: 16px;
   // margin: 50px;
   // justify-content: center;
@@ -11,5 +12,9 @@
   .filter-content {
     margin-top: 8px;
     margin-bottom: 16px;
+  }
+
+  .result-count {
+    color: $light-gray;
   }
 }

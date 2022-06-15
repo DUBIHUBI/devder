@@ -1,6 +1,14 @@
 <div class="profiles-show">
   <div class="container">
     <div class="row">
+      <div class="col"></div>
+      <div class="col-8 favourites-back">
+        <br>
+        <p><i class="fa-solid fa-arrow-left"></i><%= link_to "Back to Professionals", users_path %></p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
       <div class="col">
       </div>
       <div class="col-4 profile-info">
@@ -9,27 +17,48 @@
           <h1> <%= @user.last_name.upcase %></h1>
         </div>
         <div class="row">
-          <h2><%= @user.role %></h3>
+          <% if @user.student %>
+            <h2>I aspire to be a...</h2>
+            <h2><%= @user.desired_role %></h2>
+          <% else %>
+            <h2><%= @user.role %></h2>
+          <% end %>
         </div>
-        <div class="row my-3">
-          <h3><%= @user.company_name %></h3>
-        </div>
-        <div class="row my-3">
-          <div class="col-6">
-            <p><i class="fa-solid fa-arrow-up-right-dots"></i> <%= @user.company_type %></p>
+        <% if !@user.student %>
+
+          <div class="row my-3">
+            <h3><%= @user.company_name %></h3>
           </div>
-          <div class="col-6">
-            <p><i class="fa-solid fa-sack-dollar"></i><%= @user.funding_stage %></p>
+
+          <div class="row my-3">
+            <div class="col-6">
+              <p><i class="fa-solid fa-arrow-up-right-dots"></i> <%= @user.company_type %></p>
+            </div>
+            <div class="col-6">
+              <p><i class="fa-solid fa-sack-dollar"></i><%= @user.funding_stage %></p>
+            </div>
           </div>
-        </div>
-        <div class="row my-3">
-          <div class="col-6">
-            <p><i class="fa-solid fa-people-group"></i> <%= @user.company_size %></p>
+
+          <div class="row my-3">
+            <div class="col-6">
+              <p><i class="fa-solid fa-people-group"></i> <%= @user.company_size %></p>
+            </div>
+            <div class="col-6">
+              <p><i class="fa-solid fa-location-dot"></i> <%= @user.address %></p>
+            </div>
           </div>
-          <div class="col-6">
-            <p><i class="fa-solid fa-location-dot"></i> <%= @user.address %></p>
+
+        <% else %>
+          <div class="row my-3">
+            <div class="col-6">
+
+            </div>
+            <div class="col-6">
+              <%# <p><i class="fa-brands fa-css3-alt"></i></p> %>
+            </div>
           </div>
-        </div>
+        <% end %>
+
       </div>
       <div class="col-4 text-center">
         <div class="image-container">

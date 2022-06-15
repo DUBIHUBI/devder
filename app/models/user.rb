@@ -38,4 +38,10 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def self.student
+    User.select { |student|
+      student.student
+    }
+  end
 end

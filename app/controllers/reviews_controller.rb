@@ -1,20 +1,16 @@
 class ReviewsController < ApplicationController
   before_action :find_professional, only: [:create]
+  include ActionView::RecordIdentifier
 
   def create
     @review = Review.new(review_params)
     @review.student = current_user
     @review.professional = @user
     if @review.save
-      redirect_to my_profile_path
+      redirect_to user_path(@user), notice: "Thanks for reviewing #{@user.first_name}!"
     else
       render 'users/my_profile', status: :unprocessable_entity
     end
-
-    # respond_to do |format|
-    #   format.html { redirect_to root_path }
-    #   format.text { render partial: "shared/meetings", locals: {review: @review}, formats: [:html] }
-    # end
   end
 
   private

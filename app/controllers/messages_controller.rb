@@ -5,15 +5,15 @@ class MessagesController < ApplicationController
     @message.chatroom = @chatroom
     @message.user = current_user
     if @message.save
+
       ChatroomChannel.broadcast_to(
         @chatroom,
-        render_to_string(partial: "message", locals: {message: @message})
+        render_to_string(partial: "message", locals: { message: @message, user_is_reciever: true })
       )
-      if request.referer.include?('profiles')
+      # if request.referer.include?('profiles')
         redirect_to chatrooms_path(active: @chatroom.id)
-      else
-        head :ok
-      end
+
+      # end
       # redirect_to chatrooms_path(active: @chatroom.id)
     else
       render "new", status: :unprocessable_entity
@@ -25,5 +25,4 @@ class MessagesController < ApplicationController
   def message_params
     params.require(:message).permit(:content)
   end
-
 end

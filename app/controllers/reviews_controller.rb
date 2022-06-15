@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     @review.student = current_user
     @review.professional = @user
     if @review.save
-      redirect_to user_path(@user)
+      redirect_to my_profile_path
     else
       render 'users/my_profile', status: :unprocessable_entity
     end

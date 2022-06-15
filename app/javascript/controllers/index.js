@@ -4,11 +4,11 @@
 
 import { application } from "./application"
 
-import FavouritesController from "./favourites_controller.js"
-application.register("favourites", FavouritesController)
-
 import ChatroomSubscriptionController from "./chatroom_subscription_controller.js"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
+
+import FavouritesController from "./favourites_controller.js"
+application.register("favourites", FavouritesController)
 
 import FilterController from "./filter_controller.js"
 application.register("filter", FilterController)
@@ -24,6 +24,9 @@ application.register("meeting-movement", MeetingMovementController)
 
 import MeetingsController from "./meetings_controller.js"
 application.register("meetings", MeetingsController)
+
+import MessageController from "./message_controller.js"
+application.register("message", MessageController)
 
 import NewReviewController from "./new_review_controller.js"
 application.register("new-review", NewReviewController)

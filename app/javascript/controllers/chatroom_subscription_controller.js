@@ -14,16 +14,20 @@ export default class extends Controller {
         received: (message) => {
           console.log(`Subscribe to the chatroom with the id ${this.chatroomIdValue}.`)
           this.messagesTarget.insertAdjacentHTML("beforeend", message)
-          this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+          // this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+          console.log(this.messagesTarget.scrollTop)
+          console.log(this.messagesTarget.scrollHeight)
 
-         }
-
-
-        // , html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"}
         }
 
 
-    )
+        // , html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"}
+      }
+
+
+      )
+      this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+      // this.messagesTarget.scrollTop = this.messagesTarget.scrollHeight
 
 
 

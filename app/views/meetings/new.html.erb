@@ -16,10 +16,10 @@
                 <h4 class="text-center mb-5"> Request A Meeting </h4>
                   <%= simple_form_for [@user, @meeting] do |f| %>
                     <div class="form-inputs background-color-white">
-                        <%= f.input :date, html5: true %>
+                        <%= f.input :date, html5: true, required: true %>
                     </div>
                     <div class="form-inputs">
-                        <%= f.input :time, html5: true %>
+                        <%= f.input :time, html5: true, required: true %>
                     </div>
                     <div class="form-actions">
                       <%= f.button :submit, "Send Request", class: "form-btn" %>

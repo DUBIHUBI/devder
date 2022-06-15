@@ -9,6 +9,7 @@
   box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
   min-height: 200px;
   min-width: 300px;
+
 }
 
 </style>
@@ -25,28 +26,23 @@
             </button>
 
             <div class="modal fade" id="createchat" tabindex="-1" aria-labelledby="createchatLabel" aria-hidden="true">
-              <div class="modal-dialog text-white">
+              <div class=" modal-dialog text-white">
 
-                <div class="modal-content mask-window justify-content-center">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="createchatLabel"><%= "Chat with #{@user.first_name} " %></h5>
+                <div class=" mask-window modal-content justify-content-center">
+                      <div class="modal-header ">
+                        <h5 class="text-center modal-title " id="createchatLabel"><%= "Chat with #{@user.first_name} " %></h5>
                       </div>
 
-
-                    <div class="abc">
-
-                      <div class="modal-body ">
+                      <div class="modal-body">
                         <%= simple_form_for [@chatroom, @message] do |f| %>
-                          <div class="form-inputs" >
-                            <%= f.input :content, as: :text, label: false %>
-                          </div>
-                          <div class="form-actions mb-3">
-                            <%= f.button :submit, "Send", class: "send-btn"%>
+                          <div class="form-inputs w-100" >
+                            <%= f.input :content, label: false %>
+                          </div><br>
+                          <div class="form-actions">
+                            <%= f.button :submit, "Send", class: "btn btn-white"%>
                           </div>
                         <% end %>
                       </div>
-
-                    </div>
 
                 </div>
 

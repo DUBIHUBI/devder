@@ -25,7 +25,7 @@ class ChatroomsController < ApplicationController
                           .order(created_at: :desc)
 
 
-    if params[:active].present?
+    if params[:active].present? && current_user
       @active_chatroom = @chatrooms.find(params[:active])
     else
       @active_chatroom = @chatrooms.first

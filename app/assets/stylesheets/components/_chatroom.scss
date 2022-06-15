@@ -1,3 +1,4 @@
+//chatroom_index
 .chatlist .active {
   background-color: purple;
   text-decoration: none;
@@ -8,11 +9,77 @@
   text-decoration: none;
 }
 
+.chatlist{
+  padding: 20px;
+}
+
 .chatlist a {
   color: white;
   text-decoration: none;
 }
 
+.name a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  &:hover{
+    text-decoration: none;
+    color: rgb(69, 32, 87);
+  }
+}
+
+#chatroom_container {
+  height:calc(100vh - 200px);
+  width: 100%;
+
+}
+
+#side_panel {
+  height: 80vh;
+  min-width: 25%;
+  margin-right: 0px !important;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: rgba(255,255,255,.1);
+  // margin-bottom: 55px;
+}
+
+#room_container {
+  height: 80vh;
+  margin-right: 0px !important;
+  position: relative;
+  background-color: rgb(0, 0, 0);
+}
+
+#name_head {
+  border-bottom: 0.5px solid lightgray;
+  height: 70px;
+
+
+}
+
+
+#chatbox {
+  height: 73vh;
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+}
+
+#typebox {
+  left:12px;
+  right:12px;
+  width: unset;
+  position: absolute;
+  bottom: 0;
+
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+}
+
+//_message html
 
 .msg-form {
   width: 100%;
@@ -20,32 +87,12 @@
   padding: 10px;
 }
 
-#messages {
-  height: calc(100vh - 200px);
+.messages {
+  height: 68vh;
   overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
-}
-
-#room_container {
-  height: 100vh;
-  margin-right: 0px !important;
-}
-
-#side_panel {
-  height: 100vh;
-  min-width: 25%;
-  margin-right: 0px !important;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  margin-bottom: 55px;
-}
-#chatroom_container {
-  height: 100vh;
-  min-width: 75%;
-  margin: 0 auto;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  padding-bottom: 16px;
 }
 
 .msg-content {
@@ -94,10 +141,10 @@
 }
 
 #new_message {
-  position: absolute;
-  bottom: 10px;
+
   width: 100%;
   display: flex;
+
 
   .msg-inputs {
     width: 75%;
@@ -112,9 +159,4 @@
     margin: 0;
   }
 
-}
-
-.chatlist{
-
-  padding: 20px;
 }

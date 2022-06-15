@@ -24,7 +24,6 @@ export default class extends Controller {
     // console.log(this.reviewedwrapperTarget)
     // console.log(this.reviewFormTargets)
     this.reviewFormTargets.forEach(element => {
-      console.log(element)
       element.classList.add('d-none')
     });
     this.reviewedwrapperTarget.insertAdjacentHTML("beforeend", e.target.parentElement.outerHTML)

@@ -51,13 +51,19 @@
 
           </div>
 
-
         </div>
       <% else %>
       <h4 class="text-center">You have no messages yet. </h4>
       <% end %>
     </div>
 
+    <% if current_user.student? && @active_chatroom %>
+      <div class="col-md-4">
+        <div class="row justify-content-end mt-5">
+          <%=link_to "Request A Meeting", new_user_meeting_path(@active_chatroom.professional), class:"btn btn-purple" %>
+        </div>
+      </div>
+    <% end %>
 
      <% if current_user.student? %>
         <%=link_to "Request A Meeting", new_user_meeting_path(@active_chatroom.professional), class:"btn btn-purple front" %>

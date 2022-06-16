@@ -3,13 +3,22 @@
 .mask-window {
   backdrop-filter: blur(15px);
   background-color: rgba(255,255,255,.5);
-  border-radius: 3em;
+  border-radius: 1em;
   border: 2px solid rgba(255,255,255,.1);
   background-clip: padding-box;
   box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
-  min-height: 200px;
+  min-height: 175px;
   min-width: 300px;
+}
 
+.modal-header {
+  justify-content: center;
+  font-size: 30px;
+  border: 1px solid transparent;
+}
+
+.modal-content {
+  background-color: #9334E9;
 }
 
 </style>
@@ -36,8 +45,8 @@
                       <div class="modal-body">
                         <%= simple_form_for [@chatroom, @message] do |f| %>
                           <div class="form-inputs w-100" >
-                            <%= f.input :content, label: false %>
-                          </div><br>
+                            <%= f.input :content, label: false, placeholder: "Introduce yourself to #{@user.first_name}!" %>
+                          </div>
                           <div class="form-actions">
                             <%= f.button :submit, "Send", class: "btn btn-white"%>
                           </div>

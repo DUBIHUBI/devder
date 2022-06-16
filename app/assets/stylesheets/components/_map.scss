@@ -11,3 +11,16 @@
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
+
+// .marker {
+//   background-color: $orange;
+// }
+.mapboxgl-marker {
+  svg {
+    height: 4rem !important;
+    width: 4rem !important;
+  }
+  path {
+    fill: orange;
+  }
+}

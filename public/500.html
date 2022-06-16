@@ -1,66 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
+  .devder-500-error-page {
+    background-color: #262626;
+    color: #F5F5F4;
+    height: 100vh;
+    padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
+  .devder-500-error-page-content {
+    text-align: center;
+    font-family: Helvetica;
   }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .devder-500-error-page-image img {
+    text-align: center;
+    width: 400px;
+    border-radius: 16px;
   }
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+<body class="devder-500-error-page">
+  <div class="devder-500-error-page-image">
+    <img src="https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/278384303_10160202351793336_6504741272217718315_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=c5iRn1VqtEsAX_1C_bq&tn=rshmWckyQ_F088Zj&_nc_ht=scontent-lhr8-1.xx&oh=00_AT_0NsHowXSC62xagMSAXlzvxzoyebPqYpvylx4FuH3k0g&oe=62B070D2" alt="_dog">
+  </div>
+  <div class="devder-500-error-page-content">
+    <h1>Oops! Error 500</h1>
+    <h2>Heroku's down again 🤦🏼‍♂️</h2>
   </div>
 </body>
 </html>

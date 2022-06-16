@@ -26,11 +26,15 @@
     <li><i class="fa-solid fa-laptop"></i>  <%= user.role %></li>
     </ul>
   </div>
-  <%= link_to user_path(user), class:"text-decoration-none" do %>
-    <div class="card-footer text-center btn-index">
-      View profile
-      <%# <small class="text-muted">Last updated 3 mins ago</small> %>
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <%= link_to user_path(user), class:"text-decoration-none" do %>
+        <div class="card-footer  text-center btn-purple-sm">
+          View profile
+          <%# <small class="text-muted">Last updated 3 mins ago</small> %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
 <% end %>

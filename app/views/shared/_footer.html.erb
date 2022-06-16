@@ -1,4 +1,6 @@
-<div class="footer <%= controller_name == "pages" && action_name == "home" ? "new-colour" : "" %> <%= controller_name == "sessions" && action_name == "new" ? "new-transparent" : "" %>">
+<div class="footer <%= controller_name == "pages" && action_name == "home" ? "new-colour" : "" %>
+  <%= controller_name == "sessions" && action_name == "new" ? "new-transparent" : "" %>
+  <%= controller_name == "meetings" && action_name == "new" ? "new-transparent" : "" %> ">
 
   <div class="footer-links">
     <a href="https://github.com/DUBIHUBI/devder" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>

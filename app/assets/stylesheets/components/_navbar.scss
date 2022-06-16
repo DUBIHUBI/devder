@@ -121,3 +121,17 @@
   text-align: center;
   height: 25px;
 }
+
+.dropdown-menu {
+  background: $purple !important;
+  border-radius: 8px !important;
+}
+
+.dropdown-item {
+  color: $white !important;
+
+  &:hover {
+    font-weight: bold !important;
+    background-color: transparent !important;
+  }
+}

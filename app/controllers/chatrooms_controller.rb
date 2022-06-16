@@ -22,7 +22,7 @@ class ChatroomsController < ApplicationController
 
   def index
     @chatrooms = Chatroom.joins(:messages).where.associated(:messages).where(student: current_user).or(Chatroom.where(professional: current_user)).distinct
-                          .order(created_at: :desc)
+                         .order(updated_at: :desc)
 
 
     if params[:active].present? && current_user

@@ -1,1 +1,2 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+<h1 align="center">Welcome to Devder!</h1>
+<h3 align="center">A platform connecting bootcamp students with professional developers working in industry</h3>

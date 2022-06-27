@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :meetings_as_student, class_name: "Meeting", foreign_key: :student_id
   has_many :meetings_as_professional, class_name: "Meeting", foreign_key: :professional_id
+
   has_many :favourites_as_student, class_name: "Favourite", foreign_key: :student_id
   has_many :favourites_as_professional, class_name: "Favourite", foreign_key: :professional_id
 
@@ -9,6 +10,9 @@ class User < ApplicationRecord
 
   has_many :reviews_as_student, class_name: "Review", foreign_key: :student_id
   has_many :reviews_as_professional, class_name: "Review", foreign_key: :professional_id
+
+  has_many :languages_as_student, class_name: "Meeting", foreign_key: :student_id
+  has_many :languages_as_professional, class_name: "Meeting", foreign_key: :professional_id
 
   has_one_attached :photo
 

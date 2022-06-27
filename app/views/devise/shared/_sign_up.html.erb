@@ -10,4 +10,4 @@
   <%= f.input :photo, as: :file,
               required: true %>
   <% languages_array = ["HTML", "JavaScript", "Ruby", "Ruby on Rails", "Python", "CSS"] %>
-  <%= f.input :languages, collection: ["HTML", "JavaScript", "Ruby", "Ruby on Rails", "Python", "CSS"], prompt: "Choose a programming language/framework", as: :check_boxes, multiple: true %>
+  <%= f.input :languages, collection: ["HTML", "JavaScript", "Ruby", "Ruby on Rails", "Python", "CSS"], prompt: "Choose a programming language/framework", as: :check_boxes, input_html: { multiple: true } %>

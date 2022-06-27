@@ -19,6 +19,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   def self.company_types
 
     User.distinct.pluck(:company_type).reject { |value| value.nil? }

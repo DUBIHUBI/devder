@@ -106,7 +106,7 @@
           <div class="col-5">
             <div class="profile-image">
               <div>
-                <%= cl_image_tag current_user.photo.key %>
+                <%= cl_image_tag current_user.photo.key, height: 550, width: 550, crop: :fill %>
               </div>
             </div>
           </div>

@@ -17,19 +17,16 @@
         data: {turbo: false}) do |f| %>
         <div data-controller="sign-up-form">
           <div class="form-inputs">
+
             <div data-action="change->sign-up-form#revealContent">
               <%= f.input :student,
                           required: true,
                           as: :radio_buttons %>
             </div>
-            <div data-sign-up-form-target="student">
-              <%= render partial: "devise/shared/sign_up", locals: {f: f} %>
-              <%= f.input :desired_role,
-                           required: true %>
-            </div>
+
+            <%= render partial: "devise/shared/sign_up", locals: {f: f} %>
 
             <div data-sign-up-form-target="professional" class="d-none">
-              <%= render partial: "devise/shared/sign_up", locals: {f: f} %>
               <%= f.input :role,
                           prompt: "Select your job title",
                           collection: ["Front-end developer", "Back-end developer", "Full-stack developer", "Software engineer", "Data scientist"] %>
@@ -44,9 +41,26 @@
               <%= f.input :hq_location,
                           label: 'Heaquarter location' %>
             </div>
+
+            <div data-sign-up-form-target="student">
+              <%= f.input :desired_role,
+                          required: true %>
+            </div>
+
+            <%= f.input :email,
+                        required: true,
+                        input_html: { autocomplete: "email" }%>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" } %>
+
           </div>
 
-          <div class="form-actions ">
+          <div class="form-actions">
             <%= f.button :submit, "Sign up", class:"form-btn"%>
           </div>
 

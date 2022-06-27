@@ -7,7 +7,7 @@
 .homepage-banner h1 {
   margin: 0;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 96px;
+  // font-size: 96px;
   font-weight: bolder;
   background-image: linear-gradient(45deg, #9CAEF5, $dark-orange, $purple, #FB1F5B);
   background-clip: text;
@@ -17,4 +17,24 @@
 
 .bc {
   background-image: linear-gradient(180deg, $dark-gray, #090909);
+}
+
+h1 {font-size:2.5rem;}
+@media (min-width: 375px) {
+  h1 {font-size:2.5rem;}
+}
+@media (min-width: 576px) {
+  h1 {font-size:3.3rem;}
+}
+@media (min-width: 768px) {
+  h1 {font-size:4rem;}
+}
+@media (min-width: 992px) {
+  h1 {font-size:6rem;}
+}
+@media (min-width: 1200px) {
+  h1 {font-size:6rem;}
+}
+@media (min-width: 1201px) and (max-width:1500px) {
+  h1 {font-size:6.5rem;}
 }

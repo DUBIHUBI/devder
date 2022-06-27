@@ -26,3 +26,11 @@
     padding-left: 16px;
   }
 }
+
+// .row {
+//   padding-left: 0px !important;
+// }
+
+@media (min-width: 992px) and (max-width:1200px) {
+  .testimonial-content {padding-left: 28px !important;}
+}

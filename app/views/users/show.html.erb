@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col">
       </div>
-      <div class="col-4 profile-info">
+      <div class="col-sm-12 col-lg-4  profile-info">
         <div class="row">
           <h1><%= @user.first_name.upcase %></h1>
           <h1> <%= @user.last_name.upcase %></h1>
@@ -60,7 +60,7 @@
         <% end %>
 
       </div>
-      <div class="col-4 text-center">
+      <div class="col-lg-4 col-sm-12 text-center">
         <div class="image-container">
           <%= image_tag(@user.image_url) %>
         </div>

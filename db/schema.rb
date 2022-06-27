@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_27_201410) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_27_202040) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,10 +64,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_201410) do
   create_table "languages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "student_id"
-    t.bigint "professional_id"
-    t.index ["professional_id"], name: "index_languages_on_professional_id"
-    t.index ["student_id"], name: "index_languages_on_student_id"
   end
 
   create_table "meetings", force: :cascade do |t|
@@ -101,6 +97,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_201410) do
     t.datetime "updated_at", null: false
     t.index ["professional_id"], name: "index_reviews_on_professional_id"
     t.index ["student_id"], name: "index_reviews_on_student_id"
+  end
+
+  create_table "user_languages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "student_id"
+    t.bigint "professional_id"
+    t.bigint "language_id"
+    t.index ["language_id"], name: "index_user_languages_on_language_id"
+    t.index ["professional_id"], name: "index_user_languages_on_professional_id"
+    t.index ["student_id"], name: "index_user_languages_on_student_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -139,12 +146,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_201410) do
   add_foreign_key "chatrooms", "users", column: "student_id"
   add_foreign_key "favourites", "users", column: "professional_id"
   add_foreign_key "favourites", "users", column: "student_id"
-  add_foreign_key "languages", "users", column: "professional_id"
-  add_foreign_key "languages", "users", column: "student_id"
   add_foreign_key "meetings", "users", column: "professional_id"
   add_foreign_key "meetings", "users", column: "student_id"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "users", column: "professional_id"
   add_foreign_key "reviews", "users", column: "student_id"
+  add_foreign_key "user_languages", "languages"
+  add_foreign_key "user_languages", "users", column: "professional_id"
+  add_foreign_key "user_languages", "users", column: "student_id"
 end

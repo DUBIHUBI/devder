@@ -17,42 +17,19 @@
         data: {turbo: false}) do |f| %>
         <div data-controller="sign-up-form">
           <div class="form-inputs">
-            <%= f.input :email,
-                        required: true,
-                        input_html: { autocomplete: "email" }%>
-            <%= f.input :password,
-                        required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
-            <%= f.input :password_confirmation,
-                        required: true,
-                        input_html: { autocomplete: "new-password" } %>
-            <%= f.input :first_name,
-                        autofocus: true,
-                        required: true,
-                        error: 'Your name is mandatory, please specify one' %>
-            <%= f.input :last_name,
-                        required: true,
-                        error: 'Your name is mandatory, please specify one' %>
-            <%= f.input :age,
-                        collection: 18..60,
-                        prompt: "Select your age",
-                        # selected: 21,
-                        required: true %>
-            <%= f.input :address,
-                        required: true %>
-            <%= f.input :bio,
-                        required: true %>
             <div data-action="change->sign-up-form#revealContent">
               <%= f.input :student,
                           required: true,
                           as: :radio_buttons %>
             </div>
             <div data-sign-up-form-target="student">
+              <%= render partial: "devise/shared/sign_up", locals: {f: f} %>
               <%= f.input :desired_role,
-                          required: true %>
+                           required: true %>
             </div>
+
             <div data-sign-up-form-target="professional" class="d-none">
+              <%= render partial: "devise/shared/sign_up", locals: {f: f} %>
               <%= f.input :role,
                           prompt: "Select your job title",
                           collection: ["Front-end developer", "Back-end developer", "Full-stack developer", "Software engineer", "Data scientist"] %>
@@ -85,3 +62,9 @@
   </div>
 </div>
 </body>
+
+   <%# <%= f.input :age,
+                        collection: 18..60,
+                        prompt: "Select your age",
+                        # selected: 21,
+                        required: true %>

@@ -107,6 +107,7 @@
             <div class="profile-image">
               <div>
                 <%= image_tag("profile-img-no-bg-#{current_user.id}") %>
+                <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
               </div>
             </div>
           </div>

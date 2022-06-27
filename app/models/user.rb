@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :reviews_as_student, class_name: "Review", foreign_key: :student_id
   has_many :reviews_as_professional, class_name: "Review", foreign_key: :professional_id
 
+  has_one_attached :photo
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   # Include default devise modules. Others available are:

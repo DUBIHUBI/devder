@@ -1,0 +1,11 @@
+  <%= f.input :first_name,
+              autofocus: true,
+              required: true,
+              error: 'Your name is mandatory, please specify one' %>
+  <%= f.input :last_name,
+              required: true,
+              error: 'Your name is mandatory, please specify one' %>
+  <%= f.input :address,
+              required: true %>
+  <%= f.input :photo, as: :file,
+              required: true %>

@@ -19,6 +19,20 @@ legend ~ div.form-check:first-of-type {
 }
 }
 
+.cancel-btn {
+  background-color: rgb(173, 10, 10);
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+
+  &:hover{
+    box-shadow: 10px 10px 30px #cbc2c8;
+    color: whitesmoke;
+  }
+}
+
 .mask-custom {
   backdrop-filter: blur(15px);
   background-color: rgba(255,255,255,.2);

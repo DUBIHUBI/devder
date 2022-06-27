@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :address, :student, :desired_role, :role, :company_name, :company_type, :company_size, :funding_stage, :hq_location, :photo])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :address, :student, :desired_role, :role, :company_name, :company_type, :company_size, :funding_stage, :hq_location, :photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :address, :student, :desired_role, :role, :company_name, :company_type, :company_size, :funding_stage, :hq_location, :photo, :available])
   end
 
   # def set_favourite_count

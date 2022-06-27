@@ -44,3 +44,34 @@
 //   }
 
 // }
+
+// @media (max-width: 767px) {
+//   .card {
+//     // flex-direction: column;
+//     flex: 0 1 48%;
+//   }
+// }
+
+
+@media (max-width: 1199px) {
+  .card {
+    // flex-direction: column;
+    flex: 0 1 32%;
+  }
+}
+
+
+
+@media (max-width: 991px) {
+  .card {
+    // flex-direction: column;
+    flex: 0 1 48%;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    // flex-direction: column;
+    flex: 0 1 100%;
+  }
+}

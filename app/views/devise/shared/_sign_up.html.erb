@@ -9,3 +9,4 @@
               required: true %>
   <%= f.input :photo, as: :file,
               required: true %>
+  <%= f.input :languages, collection: ["HTML", "JavaScript", "Ruby", "Ruby on Rails", "Python", "CSS"], prompt: "Choose a programming language/framework", as: :check_boxes %>

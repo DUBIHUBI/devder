@@ -67,6 +67,7 @@
   }
 
   .review-card {
+    min-width: 334px;
     margin: 40px 0px;
     padding: 8px 16px;
     box-shadow: 4px 4px 0px 4px #181818;
@@ -88,5 +89,4 @@
   .review-author {
     text-align: end;
   }
-
 }

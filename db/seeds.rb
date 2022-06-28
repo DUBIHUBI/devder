@@ -12,6 +12,7 @@ Review.destroy_all
 Chatroom.destroy_all
 Favourite.destroy_all
 Message.destroy_all
+Language.destroy_all
 User.destroy_all
 
 puts "Seeding the database!"

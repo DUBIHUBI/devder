@@ -41,12 +41,8 @@
               <%= f.input :hq_location,
                           label: 'Heaquarter location' %>
               <%= f.label "Choose a programming language/framework" %>
-              <%= f.collection_check_boxes(:language_ids, Language.all, :id, :title) do |b| %>
-                <div class="collection-check-box mt-2 mb-3">
-                  <%= b.check_box %>
-                  <i class="fa fa-heart mx-3"></i>
-                  <%= b.label %>
-                </div>
+              <%= f.collection_check_boxes :language_ids, Language.all, :id, :title do |b| %>
+                <%= render partial: "devise/shared/languages_icons", locals: {b: b} %>
               <% end %>
 
             </div>
@@ -55,11 +51,7 @@
               <%= f.input :desired_role,
                           required: true %>
               <%= f.collection_check_boxes :language_ids, Language.all, :id, :title do |b| %>
-                <div class="collection-check-box mt-2 mb-3">
-                  <%= b.check_box %>
-                  <i class="fa fa-heart mx-3"></i>
-                  <%= b.label %>
-                </div>
+                <%= render partial: "devise/shared/languages_icons", locals: {b: b} %>
               <% end %>
             </div>
 
@@ -92,9 +84,3 @@
   </div>
 </div>
 </body>
-
-   <%# <%= f.input :age,
-                        collection: 18..60,
-                        prompt: "Select your age",
-                        # selected: 21,
-                        required: true %>

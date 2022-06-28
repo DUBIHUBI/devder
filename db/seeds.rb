@@ -363,8 +363,10 @@ puts "Seeding the database!"
 #   bio: Faker::Quote.famous_last_words
 # )
 
-10.times do
-  Language.create!(title: Faker::ProgrammingLanguage.name)
+languages = ["Ruby", "Ruby on Rails", "Python", "Java", "PHP", "C#", "C++", "SQL", "MySQL", "PostgreSQL", "Redis", "Oracle", "JavaScript", "TypeScript", "React", "Vue.js", "Angular", "HTML", "CSS", "Sass", "Bootstrap"]
+
+languages.each do |language|
+  Language.create!(title: language)
 end
 
 puts "Finished!"

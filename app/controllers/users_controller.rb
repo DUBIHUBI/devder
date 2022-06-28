@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
     sql_query = "first_name ILIKE :query OR last_name ILIKE :query OR company_name ILIKE :query"
 

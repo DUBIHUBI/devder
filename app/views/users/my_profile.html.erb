@@ -40,7 +40,11 @@
                   <i class="fa-solid fa-cake-candles"></i>
                 </div>
                 <div class="col-9">
-                  <p><%= current_user.age %></p>
+
+                  <% current_user.languages.each do |language| %>
+                    <%= language.title %>
+                  <% end %>
+
                 </div>
               </div>
               <div class="row">

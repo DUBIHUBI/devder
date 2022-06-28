@@ -11,8 +11,8 @@ class User < ApplicationRecord
   has_many :reviews_as_student, class_name: "Review", foreign_key: :student_id
   has_many :reviews_as_professional, class_name: "Review", foreign_key: :professional_id
 
-  has_many :languages_as_student, class_name: "Meeting", foreign_key: :student_id
-  has_many :languages_as_professional, class_name: "Meeting", foreign_key: :professional_id
+  has_many :user_languages
+  has_many :languages, through: :user_languages
 
   has_one_attached :photo
 
@@ -22,7 +22,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
 
   def self.company_types
 

@@ -59,3 +59,29 @@ legend ~ div.form-check:first-of-type {
   text-decoration:none;
   color:black;
 }
+
+.language-icons {
+
+  .checkbox {
+    height: 18px;
+    width: 18px;
+
+    &:hover {
+      height: 22px;
+      width: 22px;
+    }
+  }
+
+  i {
+    color: $purple !important;
+    margin-right: 24px !important;
+    font-size: 38px !important;
+  }
+
+}
+
+.collection-check-box {
+  display: flex;
+  align-items: center;
+
+}

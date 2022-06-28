@@ -1,7 +1,46 @@
- <div class="collection-check-box mt-2 mb-3">
-                  <%= b.check_box %>
-                  <% if b.text == "Ruby" %>
-                    <i class="devicon-ruby-plain"></i>
-                  <% end %>
-                  <%= b.label %>
-                </div>
+<div class="collection-check-box mt-2 mb-3">
+  <%= b.check_box %>
+  <% case b.text %>
+  <% when "Ruby" %>
+    <i class="devicon-ruby-plain"></i>
+  <% when "Ruby on Rails" %>
+    <i class="devicon-rails-plain-wordmark"></i>
+  <% when "Python" %>
+    <i class="devicon-python-plain"></i>
+  <% when "Java" %>
+    <i class="devicon-java-plain"></i>
+  <% when "PHP" %>
+    <i class="devicon-php-plain"></i>
+  <% when "C#" %>
+    <i class="devicon-csharp-plain"></i>
+  <% when "C++" %>
+    <i class="devicon-cplusplus-plain"></i>
+  <% when "MySQL" %>
+    <i class="devicon-mysql-plain-wordmark"></i>
+  <% when "PostgreSQL" %>
+    <i class="devicon-postgresql-plain-wordmark"></i>
+  <% when "Redis" %>
+    <i class="devicon-redis-plain-wordmark"></i>
+  <% when "Oracle" %>
+    <i class="devicon-oracle-original"></i>
+  <% when "JavaScript" %>
+    <i class="devicon-javascript-plain"></i>
+  <% when "TypeScript" %>
+    <i class="devicon-typescript-plain"></i>
+  <% when "React" %>
+    <i class="devicon-react-original"></i>
+  <% when "Vue.js" %>
+    <i class="devicon-vuejs-plain-wordmark"></i>
+  <% when "Angular" %>
+    <i class="devicon-angularjs-plain"></i>
+  <% when "HTML" %>
+    <i class="devicon-html5-plain"></i>
+  <% when "CSS" %>
+    <i class="devicon-css3-plain"></i>
+  <% when "Sass" %>
+    <i class="devicon-sass-original"></i>
+  <% when "Bootstrap" %>
+    <i class="devicon-bootstrap-plain"></i>
+  <% end %>
+  <%= b.label %>
+</div>

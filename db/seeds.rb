@@ -364,7 +364,7 @@ puts "Seeding the database!"
 #   bio: Faker::Quote.famous_last_words
 # )
 
-languages = ["Ruby", "Ruby on Rails", "Python", "Java", "PHP", "C#", "C++", "SQL", "MySQL", "PostgreSQL", "Redis", "Oracle", "JavaScript", "TypeScript", "React", "Vue.js", "Angular", "HTML", "CSS", "Sass", "Bootstrap"]
+languages = ["Ruby", "Ruby on Rails", "Python", "Java", "PHP", "C#", "C++", "MySQL", "PostgreSQL", "Redis", "Oracle", "JavaScript", "TypeScript", "React", "Vue.js", "Angular", "HTML", "CSS", "Sass", "Bootstrap"]
 
 languages.each do |language|
   Language.create!(title: language)

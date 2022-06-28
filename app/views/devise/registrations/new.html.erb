@@ -41,7 +41,7 @@
               <%= f.input :hq_location,
                           label: 'Heaquarter location' %>
               <%= f.label "Choose a programming language/framework" %>
-              <%= f.collection_check_boxes :language_ids, Language.all, :id, :title do |b| %>
+              <%= f.collection_check_boxes(:language_ids, Language.all, :id, :title) do |b| %>
                 <div class="collection-check-box mt-2 mb-3">
                   <%= b.check_box %>
                   <i class="fa fa-heart mx-3"></i>

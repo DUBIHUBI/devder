@@ -89,6 +89,8 @@
 
   .navbar .navbar-collapse .avatar {
     width: 60px;
+    height: 60px;
+    object-fit: cover;
   }
 
   .navbar-nav {

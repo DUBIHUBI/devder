@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     post "meetings/:id/accept", to: 'meetings#accept'
     resources :reviews, only: [:new, :create]
   end
+
   resources :chatrooms do
     resources :messages, only: [:create]
   end

@@ -22,7 +22,9 @@
           </div>
           <div class="col-5">
             <div class="profile-name">
-              <i class="fa-solid fa-pen-to-square icon-gray"></i>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa-solid fa-pen-to-square icon-gray"></i>
+              <% end %>
               <h1><%= current_user.first_name.upcase %></h1>
               <h1><%= current_user.last_name.upcase %></h1>
             </div>
@@ -110,7 +112,7 @@
           <div class="col-5">
             <div class="profile-image">
               <div>
-                <%= cl_image_tag current_user.photo.key %>
+                <%= cl_image_tag current_user.photo.key, height: 550, width: 550, crop: :fill %>
               </div>
             </div>
           </div>

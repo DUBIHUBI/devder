@@ -39,10 +39,14 @@
               </div>
               <div class="row">
                 <div class="col-3">
-                  <i class="fa-solid fa-cake-candles"></i>
-                </div>
-                <div class="col-9">
-                  <p><%= current_user.age %></p>
+
+                  <div class="col-9">
+                    <% current_user.languages.each do |language| %>
+                      <%= language.title %>
+                      <%= render partial: "language_icons", locals: {language: language} %>
+                    <% end %>
+                  </div>
+
                 </div>
               </div>
               <div class="row">

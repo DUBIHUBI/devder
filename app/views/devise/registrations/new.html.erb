@@ -40,11 +40,20 @@
                           collection: ["Pre-Seed", "Seed", "Series A", "Series B", "Series C", "Series D", "Post-IPO"]%>
               <%= f.input :hq_location,
                           label: 'Heaquarter location' %>
+              <%= f.label "Choose a programming language/framework" %>
+              <%= f.collection_check_boxes :language_ids, Language.all, :id, :title do |b| %>
+                <%= render partial: "devise/shared/languages_icons", locals: {b: b} %>
+              <% end %>
+
             </div>
 
             <div data-sign-up-form-target="student">
               <%= f.input :desired_role,
                           required: true %>
+              <%= f.label "Choose a programming language/framework:", required: true, class:"mb-3" %>
+              <%= f.collection_check_boxes :language_ids, Language.all, :id, :title do |b| %>
+                <%= render partial: "devise/shared/languages_icons", locals: {b: b} %>
+              <% end %>
             </div>
 
             <%= f.input :email,
@@ -76,9 +85,3 @@
   </div>
 </div>
 </body>
-
-   <%# <%= f.input :age,
-                        collection: 18..60,
-                        prompt: "Select your age",
-                        # selected: 21,
-                        required: true %>

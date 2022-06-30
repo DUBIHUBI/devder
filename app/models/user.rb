@@ -11,10 +11,12 @@ class User < ApplicationRecord
   has_many :reviews_as_student, class_name: "Review", foreign_key: :student_id
   has_many :reviews_as_professional, class_name: "Review", foreign_key: :professional_id
 
-  has_many :user_languages
+  has_many :user_languages, dependent: :destroy
   has_many :languages, through: :user_languages
 
   has_one_attached :photo
+
+  validates :photo, presence: true
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

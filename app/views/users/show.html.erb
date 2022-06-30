@@ -62,7 +62,7 @@
       </div>
       <div class="col-lg-4 col-sm-12 text-center">
         <div class="image-container">
-          <%= image_tag(@user.image_url) %>
+          <%= cl_image_tag @user.photo.key %>
         </div>
       </div>
       <div class="col">

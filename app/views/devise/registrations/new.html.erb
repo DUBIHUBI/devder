@@ -21,7 +21,9 @@
             <div data-action="change->sign-up-form#revealContent">
               <%= f.input :student,
                           required: true,
-                          as: :radio_buttons %>
+                          as: :radio_buttons,
+                          label: 'Are you a student?',
+                          collection: [ ['Yes, I am a student', true ], ['No, I am a professional', false ] ]%>
             </div>
 
             <%= render partial: "devise/shared/sign_up", locals: {f: f} %>
